@@ -1,0 +1,362 @@
+DevOps Batch :: 17th Apr. 2023 
+
+weekdays : 7pm to 10pm
+
+************************************
+
+##################
+Day 1 : 17th Apr. 
+##################
+
+			Intro. to DevOps ::::
+			Fundamentals of Application Development 
+			Fundamentals of Cloud (AWS)
+			Fundamentals of Linux 
+			Java Programming 
+			Python Programming
+			SQL 
+			Selenium Testing Tools
+			Git 
+			
+				Lab Session ::: ( AWS )
+				
+				
+
+			Intro. to DevOps ::::
+			
+				SDLC -- Software Development Lifecyle.
+				
+				
+				Software -- > Application
+				
+					Web Application 
+					Desktop Application 
+					Mobile Application
+					
+				How we create the software applications??
+				
+				Software Development Lifecyle process :::
+				
+					Requirement Analysis
+					Design 
+					Develop / Code 
+					Test 
+					Implement / Deploy
+					Monitoring / maintain
+				
+					Waterfall Model  --- Linear Approach
+					
+				Ecommerce portal 
+				Web video Streaming 
+				Facebook 
+				Online Reservation / Ticket booking 
+				Online Banking system
+				
+					
+					
+					Waterfall Model  --- Linear Approach
+
+						Requirement Analysis
+						Design 
+						Develop / Code 
+						Test 
+						Implement / Deploy
+						Monitoring / maintain
+
+
+						Requirement Analysis
+						Design 
+						Develop / Code 
+						Test 
+						Implement / Deploy
+						Monitoring / maintain
+
+
+					Agile Methodologies :::
+					
+
+					Iterations1 ::: User_registration
+						Requirement Analysis
+						Design 
+						Develop / Code 
+						Test 
+						Implement / Deploy
+						Monitoring / maintain					
+					
+					Iterations2 ::: User_Sign-IN
+						Requirement Analysis
+						Design 
+						Develop / Code 
+						Test 
+						Implement / Deploy
+						Monitoring / maintain					
+					
+					Application 
+							Splitted into various Modules :::							
+					
+					Ecommerce Portal :			Production Deployment can be done at the application level. Not at the Iterations level.
+					
+						User_registration	Iterations1				Analyze, Design, Code & Test. But we can't Deploy to Production.
+						User_Sign-IN 		Iterations2				Analyze, Design, Code & Test. But we can't Deploy to Production.
+						Search for product 	Iterations3
+						Add to Cart 
+						Place the  order 
+						Make_payment()
+						Track		
+
+						
+							
+							
+					Monolith Application Architecture :::
+					
+					
+					In Agile Methodologies :: 
+					
+							We can achieve - Continuous Delivery but not Continuous Deployment.
+							
+							
+				DevOps ::: Is a Software Development Strategy/Process.
+				
+						We can achieve Continuous Delivery as well as Continuous Deployment
+					
+						Monolith Application Architecture ::: 
+										(vs)
+						Micro service based Application Architecture :::
+				
+				
+					Ecommerce Portal :			Production Deployment can be done at the application level. Not at the Iterations level.
+					
+						User_registration							microservice1				Analyze, Design, Code & Test & deployed to Production.
+						User_Sign-IN 								microservice2				Analyze, Design, Code & Test & deployed to Production.
+						Search for product 							microservice3
+						Add to Cart 
+						Place the  order 
+						Make payment   service
+						Track 				
+						introduce bitcoin based transaction 		microservice 			Analyze, Design, Code & Test & deployed to Production.				
+				
+				Monolith Application Architecture :::
+				
+					ecommerce_appln.java
+					
+						User_registration()									
+						User_Sign-IN() 								
+						Search for product() 							
+						Add to Cart() 
+						Place the  order() 
+						Make payment()									
+				
+				Micro service based Application Architecture :::
+
+						User_registration.java			microservice1				Analyze, Design, Code & Test & deployed to Production
+						User_Sign-IN.java 				microservice2				Analyze, Design, Code & Test & deployed to Production
+						Search for product.java 		microservice3
+						Add to Cart.java 
+						Place the  order.java 
+						Make payment.java
+						Track.java 					
+				
+				
+##################
+Day 2 : 18th Apr. 
+##################					
+					
+		DevOps :
+		
+		Various Teams :
+		
+			Infra-Structure Team 			---> Provision the servers and perform server and application configurations.
+			Development AD Team				---> Develop the application. 
+			Testing Teams					---> Testing the application.
+			Release Management Team			---> Responsible for timely release of software products.
+			Production Support Teams		---> Production Maintainence
+			Production Monitoring Team		---> Monitoring prod envi. and application
+			Security Team 					---> enforce the end-to-end security policies. 
+					
+					
+		DevOps Team :::			
+					
+					
+		Telecomm Domain :::
+		
+			T-SP1 --> Introduce a new offer/service to their customers, ASAP this offer shd reach the customer.
+			T-SP2 --> Introduce a new offer/service to their customers, ASAP this offer shd reach the customer.
+			
+		
+		DevOps Stages ::::
+		
+			Continuous Development	::	---> Is to improve the productivity of developers.
+			
+				Provide the Development Tools like :
+				
+					IDEs - Integrated Development Environment. 
+							Eclipse based IDEs , Visual Studio Code, Visual Studio, Pycharm, Intellij.....
+					
+				Developer --> Coding, compile the code, Create the artifacts, Promote the artifacts to higher environments for further testing.
+				
+					Coding 	--> Java(High level Language)
+					Build 	--> Process of compiling the source code & Creating the artifacts(Binaries/Executable) *.war/*.jar/*.exec/*.dll
+			
+				Automated build thru DevOps
+			
+			Continuous Integration  ::
+				
+				Is to integrate the changes for further testing. Promote the artifacts to higher environments for further testing.
+				
+			
+			Continuous Testing		:: 
+			
+				Automated Testing 	--> to automate the testing 
+										test case/scenarios/data
+										100% test coverage 
+							
+			
+			Continuous Delivery / Deployment ::
+			
+				Environments:::
+				
+				
+			Non-Prod Environments												Production Environments	
+			
+				Dev Environment
+				Build Environment (Unit testing)
+				Test Environments
+					QA 	(Quality Assurance Testing)
+					UAT (User Acceptance Testing)
+					Pre-Prod Environment
+					Staging Environment						=====>					Production Environment
+
+				Continuous Delivery
+							Needs Manual Approval for Production Release.
+							***Need some production downtime!
+					Banking Applications
+							
+				Continuous Deployment ::
+							This Approach doesnt require any Manual Approvals.
+							Production Releases are fully automated.
+					www.amazon.com 
+					netflix
+					facebook
+					google
+			
+			
+			www.amazon.com 
+			
+			
+			Production Release ???
+				
+				During some production window - 4hrs to 6hrs.
+						fix
+						revert
+				
+			
+				www.amazon.com 
+				netflix
+				facebook
+				google
+				
+				
+			Continuous Monitoring::
+				
+				Monitor the prod environments / Applications running in production environments
+				
+				
+			
+			DevOps Lifecycle :::
+				
+				
+					-	People / Teams 
+					
+					-	Strategy / Process
+					
+					-	Tools 
+					
+			DevOps Associates,Engg.,Lead,Architects,Consultants .....
+					
+				Assessment 	
+					
+				for Continuous IMPROVEMENT!
+					
+					
+			DevOps Tools ::
+
+				Continuous Development			==> IDEs - Eclipse based IDEs, Visual Studio Code, GIT SCM Tool
+				Continuous Integration			==> Jenkins, Build tools - Maven/Ant/Gradle
+				Continuous Testing				==> Jenkins,Test automation tools integrated with Jenkins - JUNIT/TestNG/Selenium
+				Continuous Delivery/Deployment	==> Jenkins,Ansible,Docker,Kubernetes
+				Continuous Monitoring			==> Jenkins, Promethus,Grafana,AppDynamic,Splunk,Nagios 
+				Infra-Structure					==> Terraforms/CFT,ARM,Ansible - IAC Tools 
+				
+			DevOps Open Source / Self Managed Tools ::
+			
+			
+			DevOps Managed Services/Tools ::	
+				Provided by Cloud service providers like AWS/Az/GCP
+			
+			
+			CI/CD ==> Automated using Jenkins.	
+				Continuous Integration / Continuous Delivery/Deployment
+							
+
+##################
+Day 3 : 19th Apr. 
+##################
+
+			Cloud Adoption and DevOps Implementation !!!!
+				
+			On-premises
+				
+				2 phases ::: 250 appln.
+					
+						1 Phase -- Migrated all the light weight appln. to cloud and implemented devops (Continuous Deployment) 110 
+						
+						2 Phase -- Migrated all the Critical appln. to cloud and implemented devops (Continuous Delivery)
+							
+							
+							
+							
+							
+				Continuous Development ::::			
+					
+			Non-Prod Environments												Production Environments	
+			
+				Dev Environment
+				Build Environment (Unit testing)
+				Test Environments
+					QA 	(Quality Assurance Testing)
+					UAT (User Acceptance Testing)
+					Pre-Prod Environment
+					Staging Environment						=====>					Production Environment					
+					
+					
+					
+			Continuous Development ::::		
+			
+				Pre-requisites :::
+				
+					==> IDEs - Eclipse based IDEs, Visual Studio Code, Visual Studio, GIT SCM Tool
+					==> Build tools like Maven, Testing Tools like JUnit
+					==> Computing Device
+							Infra-Structure.
+							
+				Infra-Structure ::::
+					AWS Cloud Infra-Structure
+					Create an Account with AWS 
+					Create the Computing Devices 
+					Install and Config all the required tools
+					Start Creating the Application
+					
+						index.jsp program ==> 
+						
+						Local / Remote Repositories (Github) 
+					
+					Repositories ==> Collection of Files and Folders 
+							
+				Actually start the coding & Development. 
+					Develop Java programs
+					
+				https://github.com/			===> Remote Repository  storing the files and folders 
+					
+		
+
+				
