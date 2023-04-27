@@ -1,0 +1,192 @@
+    1  ls
+    2  ls -a
+    3  pwd
+    4  ls
+    5  echo "Hello Team"
+    6  echo "Hello Team" >> file1.txt
+    7  ls
+    8  cat file1.txt
+    9  echo "Hello Team" >> file2.txt
+   10  ls
+   11  clear
+   12  ls
+   13  echo "record two" >> file1.txt
+   14  cat file1.txt
+   15  echo "record two" >> file1.txt
+   16  cat file1.txt
+   17  echo "record two" >> file1.txt
+   18  cat file1.txt
+   19  echo "Record1" > file1.txt
+   20  cat file1.txt
+   21  echo "Record1" > file1.doc
+   22  cat file1.doc
+   23  ls -a
+   24  cd /etc
+   25  ls
+   26  cd ~
+   27  clear
+   28  ls
+   29  cat file2.txt
+   30  pwd
+   31  ls
+   32  mkdir dir1
+   33  ls
+   34  cd dir1/
+   35  pwd
+   36  ls
+   37  clear
+   38  ls
+   39  pwd
+   40  cd ..
+   41  pwd
+   42  ls
+   43  cd dir1/
+   44  ls
+   45  echo >> s1.txt
+   46  echo >> s2.txt
+   47  echo >> s3.txt
+   48  echo >> s4.txt
+   49  ls
+   50  pwd
+   51  mkdir sdir1
+   52  ls
+   53  cat s1.txt
+   54  mkdir sdir2
+   55  ls
+   56  cd dir1
+   57  cd sdir1
+   58  pwd
+   59  cd ..
+   60  clear
+   61  ls
+   62  echo "rec1" > s1.txt
+   63  cat s1.txt
+   64  pwd
+   65  ls
+   66  cp s1.txt sdir1
+   67  ls
+   68  cd sdir1/
+   69  ls
+   70  cd ..
+   71  cd sdir1
+   72  cd ..
+   73  ls
+   74  cd sdir2/
+   75  ls
+   76  cd ..
+   77  ls
+   78  mv s2.txt sdir2/
+   79  ls
+   80  cd sdir2/
+   81  ls
+   82  clear
+   83  ls
+   84  mv s2.txt abc.doc
+   85  ls
+   86  mv abc.doc abc.doc
+   87  clear
+   88  ls
+   89  rm abc.doc
+   90  ls
+   91  pwd
+   92  ls
+   93  echo "rec1" >> q1.txt
+   94  ls
+   95  rm q1.txt
+   96  ls
+   97  echo "rec1" >> w1.txt
+   98  ls
+   99*
+  100  ls
+  101  clear
+  102  ls
+  103  echo "rec1" >> s1.txt
+  104  echo "rec1" >> s2.txt
+  105  echo "rec1" >> s3.txt
+  106  echo "rec1" >> w1.txt
+  107  echo "rec1" >> q1.txt
+  108  echo "rec1" >> dq1.txt
+  109  ls
+  110  rm -f s2.txt s3.txt
+  111  ls
+  112  rm -f
+  113  ls
+  114  clear
+  115  ls
+  116  echo "REC" >> q1.doc
+  117  echo "REC" >> q2.doc
+  118  echo "REC" >> q2.java
+  119  echo "REC" >> q4.java
+  120  ls
+  121  rm -f *.doc
+  122  ls
+  123  cd ..
+  124  ls
+  125  rm sdir1/
+  126  rm -r sdir1/
+  127  y
+  128  clear
+  129  ls
+  130  mkdir dummydir1
+  131  ls
+  132  rm -rf dummydir1/
+  133  ls
+  134  mkdir dummydir2
+  135  ls
+  136  cd dummydir2/
+  137  touch f1.txt
+  138  ls
+  139  cat f1.txt
+  140  ls
+  141  cd ..
+  142  s
+  143  ls
+  144  r
+  145  clear
+  146  ls
+  147  rm -f dummydir2/
+  148  clear
+  149  rm -r dummydir2/
+  150  ls
+  151  mkdir dummydir3
+  152  ls
+  153  cd dummydir3/
+  154  ls
+  155  touch f1.txt
+  156  touch f2.txt
+  157  touch f3.txt
+  158  ls
+  159  pwd
+  160  cd ..
+  161  pwd
+  162  ls
+  163  rm -rf dummydir3/
+  164  ls
+  165  history
+  166  clear
+  167  clear
+  168  ls
+  169  pwd
+  170  cd ..
+  171  ls
+  172  mkdir dir2
+  173  cd dir
+  174  cd dir1/
+  175  ls
+  176  pwd
+  177  ls
+  178  cd ..
+  179  ls
+  180  pwd
+  181  cd dir1/
+  182  ls
+  183  mv *.txt dir2
+  184  ls
+  185  pwd
+  186  mv *.txt /root/dir2/
+  187  ls
+  188  cd ..
+  189  ls
+  190  cd dir2/
+  191  ls
+  192  history
