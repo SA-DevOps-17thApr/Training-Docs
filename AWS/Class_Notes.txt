@@ -1,0 +1,310 @@
+
+Day - 4 - 20th Apr. 2023.
+
+	Fundamentals of Cloud Computing :::
+	
+		AWS 
+	Cloud service is provider.
+
+	github account.
+
+	AWS Account - Free tier.
+
+	Virtual Machines.
+
+	What are the benefits of Cloud Computing ?
+
+		Avoid upfront investment cost of IT Services like Storage, Computing, Networks.
+		Easy Installation
+		High Availability
+		High Reliability
+		Data Security
+		Easy to access
+		Dynamic Scaling
+	
+	Cloud Service Providers ???
+
+		AWS Cloud
+		Azure Cloud
+		Google Cloud platform - GCP
+
+	DevOps :::
+
+		Azure DevOps Services:		Managed Services.	(vs)	Opensource services
+
+			Azure Repos							github
+			Azure Pipeline							jenkins
+			Azure Boards							jira
+			Azure Artifacts							jfrog artifatory
+			Azure Test							jenkins with automated test tools
+
+	AWS --> cloud platform for all our demo.
+
+		Create AWS Account. - free tier account.
+			valid Email ID, Active Contact Number, Credit/Debit Card(Eligible for International Transaction)
+
+		Access/Login to AWS Console.
+			Login as root user>
+
+		Region :::
+
+			Virtual Machines in AWS Cloud Platform
+
+		Regions		Different Geographical Locations :
+			Availabilty Zones	Data Centers.	1 + 1
+		
+			AWS 1 VM usage 750 hrs per month.
+
+			10 VMs ===> 75Hrs.
+
+
+		What is Virtual Machine >>>?
+
+			EC2 Instances in AWS.
+
+
+
+
+
+
+		Local windows MAchine ?
+
+			Hypervisor ===> Virtual MAchines1 - Linux
+					Virutal Machines2 - MAc....'
+
+
+
+		Create AWS EC2 Instance ::
+				Linux :
+					Centos/Ubuntu/REHEL,Fedora,.........
+
+				Windows
+
+				Mac
+
+		Login to AWS Console
+		Goto EC2 Dashboard
+
+		Launch Instance	
+			Create the EC2 instances.
+
+
+
+			Connect to that ec2 instance:
+
+				EC2 Instance Connect 
+				Using SSH Clients :
+					MobaXterm /putty
+				Using terminals 
+
+
+
+Day - 5 - 21st Apr. 2023.
+
+	7 - 10 PM 
+	
+	7 - 08 	==> Doubt Clarification Sessions.
+	8 - 10 	==> LIVE Session.
+
+	Fundamentals of AWS Cloud Platform :
+	
+	Create AWS Account. - free tier account.
+	Login -- How to create VMs. 
+
+
+
+	Why we need cloud platform?
+		
+
+	Why we need Ec2 Instances ?
+			Virtual Machines!
+
+
+		Mumbai - AWS Region :
+			Data Center/Availabity Zone - 	ap-south-1a	 Server1,..........,n (Virtual Machine/EC2 Instances)Linux/Mac/Windows
+							ap-south-1b	 Server1,..........,n				 
+			Physical Machine!		
+		EC2 Instance are jus VMs, - Computing Devices. 
+		Why we need EC2 Instance ???
+
+			Teach Linux Adminstration. ==> Batch. 
+			Local Windows Destop Machine. 
+			Physical Machine 
+
+		DevOps Engg. - DevOps Tools - Jenkins, Docker, K8s, Ansible, Terraform, Git, Prometheus, Grafana.....
+			VM - Jenkins Server.
+			VM - K8s
+
+	How to Create EC2 Instances / VMs ?
+		1 - Using AWS Console & Launch.
+		2 - Using Scripts - IAC - Infra Structure as Code - Tools 	
+	
+	0 - Create AWS Free tier Account.	
+	1 - Using AWS Console & Launch.
+
+
+		AMI
+		Instance Type
+		Key Pair 
+			It is used to enable secure access to EC2 Instance.
+			private & public keys.
+			ssh connection 
+			pem/ppk.
+		SSH Client :::
+			
+			Local Windows Destop Machine. ==> Want to connect to my aws ec2 Linux instance
+
+			MobaXterm --> *.pem
+			Putty 	  --> *.ppk
+
+		SSH Client :::
+
+
+
+**************
+24th Apr. 2023
+**************
+		On-prem ==> 30 yrs. ==> Cloud Adoption 
+
+		Accessment ==> 
+
+			Cloud Migration == In multiple phases 
+				Phase 1 - Migrate all the light weight components to cloud 
+
+
+
+		EC2 -- Created - Virtual Machine!!!
+
+		EC2 - Instance 
+		AMI - Amazon Machine Image! - to identify OS
+		Instance Type - to Identify the CPU/RAM --> t2.mirco instance type ==> 1 GB RAM & 1 CPU & Use 30GB of EBS Volume
+		
+		Create a EC2 Instance 
+		Login to the instance 
+
+		
+
+
+		Linux OS - Open Source -- Distributions -->  ssh conn.
+				Fedora
+				centos,RHEL,Amazon Linux2,Ubuntu
+
+			Package Managers ::			====> are executed as a root user.
+				yum		can be used in centos,RHEL,Amazon Linux2
+				apt-get		ubuntu
+				rpm			
+				dnf		Febora
+				
+		Windows
+		Mac
+
+		Linux ::: 
+
+		DevOps Tools ::::
+			GIT,JEnkins,Docker, K8s, Monitoring tools... ansible, terraform ......
+
+
+**************
+25th Apr. 2023
+**************
+			AWS Account -- 
+			
+			Non-prod 		Prod_Account		SandBox_Acccount
+									
+									IAM Users
+
+
+			Authentication 
+				Giving access to login
+		
+			Authorization 
+				The Level of Access
+
+			Role Based Access Control - RBAC
+
+			IAM User_ID 	: user1......user100
+
+			Group		: ADMIN_GROUP / DEV_GROUP
+
+			Role		: Developer / Admin
+
+
+
+		Container Services ::::
+
+			Package the appln. for deployment.
+
+
+
+
+
+		Environments :	
+		
+		Non-Prod	VM				Prod 
+
+			dev					Prod Servers e-commerce - www.amazon.com
+			test
+				qa/uat/pre-prod				 (replication) Prod Servers1,2,3,4,...,n	
+
+
+
+								Load Balance
+										Scale-up / Scale-Down
+
+
+			
+	Install the tools and services in Linux/.
+		
+		Pre-requisites
+		Install the actual tool
+		Do the post installation setup.
+
+##############
+26th Apr. 2023
+##############
+
+Install Jenkins on Ubuntu :::
+
+sudo apt update
+sudo apt install openjdk-11-jre
+java -version
+
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+
+	Jenkins ==> runs as a service. It runs in port 8080
+
+	Unlock jenkins :
+	cat /var/lib/jenkins/secrets/initialAdminPassword
+
+	Install default plugins
+
+	Create User with UserName,Password,Full Name, EmailID
+	Login to Jenkins.
+
+Install Ansible on Ubuntu :::
+
+	sudo apt-add-repository ppa:ansible/ansible
+	sudo apt update
+	sudo apt install ansible
+
+
+Next :::
+
+	Fundamentals of Linux :::
+
+		What is OS ?
+		What is Linux OS, Architecture 
+		Linux command used in day-to-day activities 
+		
+
