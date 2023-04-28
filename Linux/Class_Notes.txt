@@ -190,3 +190,169 @@
   190  cd dir2/
   191  ls
   192  history
+
+
+
+***************
+28th Apr. 2023
+***************
+	Roles & Responsibilities :::
+
+	- Linux Administration --> 
+
+		Manage Files and Directories
+		Install & Manage DevOps Tools & Services
+		Manage Users		
+		Manage the Authentication & Authorization
+			Types of Authentication ::
+				Password based Auth.
+				Token based Auth.
+				Key Based Auth.
+				Passwordless Auth.
+		Manage the Remote Servers
+		Manage the credentials
+		Manage the Backup and Recovery
+		Shell Scripting
+
+
+	user1 -- dev_group
+	user2 -- dev_group
+	user3 -- test_group
+
+
+	user1		--> 	created file1.txt
+	user1		--> 	created copy1.sh
+	user1		--> 	created dir1
+
+ll
+-rw-r--r--
+-rwxr-xr-x
+drwxr-xr-x
+
+chmod ==> 
+
+	How to create Linux Users
+		adduser user1
+	Login to user accnt
+		su - user1
+
+
+	Create User 
+	Create password	
+		passwd <username> 
+	Create SSH Keys ==> public & Private key == id_rsa.pub & id_rsa
+		ssh-keygen
+
+
+[devopsadmin@ip-172-31-5-205 .ssh]$ history
+    1  clear
+    2  pwd
+    3  ls
+    4  ls -a
+    5  exit
+    6  clear
+    7  ls
+    8  ls -a
+    9  ssh-keygen
+   10  ls -a
+   11  cd .ssh/
+   12  ll
+   13  cat id_rsa.pub
+   14  cat id_rsa
+   15  history
+
+  267  clear
+  268  cd /home/ec2-user/
+  269  ls
+  270  ll
+  271  cat f1.txt
+  272  exit
+  273  pwd
+  274  exit
+  275  clear
+  276  cd /home/
+  277  ls
+  278  cat /etc/passwd
+  279   clear
+  280  cd ~
+  281  clear
+  282  useradd -m -d /home/linuxadmindir linuxadminuser
+  283  cd /home/
+  284  ls
+  285  ll
+  286  useradd user1
+  287  ll
+  288  clear
+  289  ll
+  290  su - linuxadminuser
+  291  exit
+  292  su - linuxadminuser
+  293  clear
+  294  passwd linuxadminuser
+  295  exit
+  296  passwd devopsadmin
+  297  clear
+  298  useradd jenkinsadmin
+  299  passwd jenkinsadmin
+  300  cd /
+  301  ls
+  302  cd ~
+  303  ls
+  304  pwd
+  305  clear
+  306  pwd
+  307  su - linuxadminuser
+  308  ls
+  309  cd dir1/
+  310  ls
+  311  cd sdir2/
+  312  pwd
+  313  ls
+  314  pwd
+  315  cd ~
+  316  ls
+  317  pwd
+  318  clear
+  319  ls
+  320  cd /
+  321  ls
+  322  cd /
+  323  ls
+  324  pwd
+  325  cd home/
+  326  cd .
+  327  cd ..
+  328  ls
+  329  ll
+  330  passwd ec2-user
+  331  cat /etc/passwd
+  332  clear
+  333  cd /etc
+  334  ls
+  335  clear
+  336  cd ..
+  337  cd ~
+  338  clear
+  339  su - devopsadmin
+  340  exit
+  341  ls -a
+  342  exit
+  343  clear
+  344  ls -a
+  345  cd .ssh/
+  346  ll
+  347  cat authorized_keys
+  348  clear
+  349  su - devopsadmin
+  350  history
+
+
+Summary :::
+ 		File and Dir. --> ll Command
+	d read, write, execute 
+	
+	Created User - useradd user1
+	go to home dir
+	create key pair
+	ssh-keygen
+	creates : id_rsa id_rsa.pub
