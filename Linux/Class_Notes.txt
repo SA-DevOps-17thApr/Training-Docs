@@ -356,3 +356,118 @@ Summary :::
 	create key pair
 	ssh-keygen
 	creates : id_rsa id_rsa.pub
+
+
+
+#############
+1st May. 2023
+#############
+
+	Working with SSH Keys
+		Public and Private Keys
+	Password based authentication
+	Passwordless Authentication
+
+Remote Servers :::	
+	Valid UserID
+	Password/key/token
+	Passwordless auth.
+
+	The Tool Specific userID
+		jenkins 
+
+	key based authentication
+	passwordless authentication
+
+
+	Server1 
+		ssh-keys
+			public & private
+	Client1
+		
+		authorized_keys
+
+
+	Client1 
+		user - devopsuser1
+		passwd - devopsuser1
+
+	Serve1
+		user - devopsadmin
+		ssh-keys
+			id_rsa 	   - private
+			id_rsa.pub - public key
+
+
+	cat id_rsa.pub > authorized_keys
+
+		ssh_copy_id
+
+
+
+
+
+
+Use Cases :::
+ 1 - Server1	
+
+	RemoteServer1  - Ansible	create sshkeys - private key & public key
+
+		ClientMachine1. install git, mvn. public key(authroized_keys)
+		ClientMachine2. install git, mvn. public key(authroized_keys)
+		ClientMachine3. install git, mvn. public key(authroized_keys)
+	
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Login to Client Machine. Perform below activities:
+
+#Add User in Client Machine : 
+
+sudo -i
+
+useradd -m -d /home/devopsuser1 devopsuser1
+#(or)
+useradd devopsuser1
+
+passwd devopsuser1
+
+#Enter New Password:
+#Confirm Password:
+
+#Goto:
+
+vi /etc/ssh/sshd_config
+
+#Enable Password Authentication to Yes and save the file
+#Execute Below command to update the changes.
+
+service sshd reload
+
+su - devopsuser1
+
+ls -a 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Login to Server:
+
+#Add User in Server Machine : 
+
+sudo -i
+
+useradd -m -d /home/devopsadmin devopsadmin
+#(or)
+useradd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ssh-copy-id devopsuser1@172.31.6.133
+
+#Type yes for confirmation
+#Enter the password for devopsuser1
+
+#### Verify the key copied in Server under /home/devopsuser1/.ssh/
+
+ssh devopsuser1@172.31.6.133
