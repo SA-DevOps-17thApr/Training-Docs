@@ -1,0 +1,2410 @@
+
+Day - 4 - 20th Apr. 2023.
+
+	Fundamentals of Cloud Computing :::
+	
+		AWS 
+	Cloud service is provider.
+
+	github account.
+
+	AWS Account - Free tier.
+
+	Virtual Machines.
+
+	What are the benefits of Cloud Computing ?
+
+		Avoid upfront investment cost of IT Services like Storage, Computing, Networks.
+		Easy Installation
+		High Availability
+		High Reliability
+		Data Security
+		Easy to access
+		Dynamic Scaling
+	
+	Cloud Service Providers ???
+
+		AWS Cloud
+		Azure Cloud
+		Google Cloud platform - GCP
+
+	DevOps :::
+
+		Azure DevOps Services:		Managed Services.	(vs)	Opensource services
+
+			Azure Repos							github
+			Azure Pipeline							jenkins
+			Azure Boards							jira
+			Azure Artifacts							jfrog artifatory
+			Azure Test							jenkins with automated test tools
+
+	AWS --> cloud platform for all our demo.
+
+		Create AWS Account. - free tier account.
+			valid Email ID, Active Contact Number, Credit/Debit Card(Eligible for International Transaction)
+
+		Access/Login to AWS Console.
+			Login as root user>
+
+		Region :::
+
+			Virtual Machines in AWS Cloud Platform
+
+		Regions		Different Geographical Locations :
+			Availabilty Zones	Data Centers.	1 + 1
+		
+			AWS 1 VM usage 750 hrs per month.
+
+			10 VMs ===> 75Hrs.
+
+
+		What is Virtual Machine >>>?
+
+			EC2 Instances in AWS.
+
+
+
+
+
+
+		Local windows MAchine ?
+
+			Hypervisor ===> Virtual MAchines1 - Linux
+					Virutal Machines2 - MAc....'
+
+
+
+		Create AWS EC2 Instance ::
+				Linux :
+					Centos/Ubuntu/REHEL,Fedora,.........
+
+				Windows
+
+				Mac
+
+		Login to AWS Console
+		Goto EC2 Dashboard
+
+		Launch Instance	
+			Create the EC2 instances.
+
+
+
+			Connect to that ec2 instance:
+
+				EC2 Instance Connect 
+				Using SSH Clients :
+					MobaXterm /putty
+				Using terminals 
+
+
+
+Day - 5 - 21st Apr. 2023.
+
+	7 - 10 PM 
+	
+	7 - 08 	==> Doubt Clarification Sessions.
+	8 - 10 	==> LIVE Session.
+
+	Fundamentals of AWS Cloud Platform :
+	
+	Create AWS Account. - free tier account.
+	Login -- How to create VMs. 
+
+
+
+	Why we need cloud platform?
+		
+
+	Why we need Ec2 Instances ?
+			Virtual Machines!
+
+
+		Mumbai - AWS Region :
+			Data Center/Availabity Zone - 	ap-south-1a	 Server1,..........,n (Virtual Machine/EC2 Instances)Linux/Mac/Windows
+							ap-south-1b	 Server1,..........,n				 
+			Physical Machine!		
+		EC2 Instance are jus VMs, - Computing Devices. 
+		Why we need EC2 Instance ???
+
+			Teach Linux Adminstration. ==> Batch. 
+			Local Windows Destop Machine. 
+			Physical Machine 
+
+		DevOps Engg. - DevOps Tools - Jenkins, Docker, K8s, Ansible, Terraform, Git, Prometheus, Grafana.....
+			VM - Jenkins Server.
+			VM - K8s
+
+	How to Create EC2 Instances / VMs ?
+		1 - Using AWS Console & Launch.
+		2 - Using Scripts - IAC - Infra Structure as Code - Tools 	
+	
+	0 - Create AWS Free tier Account.	
+	1 - Using AWS Console & Launch.
+
+
+		AMI
+		Instance Type
+		Key Pair 
+			It is used to enable secure access to EC2 Instance.
+			private & public keys.
+			ssh connection 
+			pem/ppk.
+		SSH Client :::
+			
+			Local Windows Destop Machine. ==> Want to connect to my aws ec2 Linux instance
+
+			MobaXterm --> *.pem
+			Putty 	  --> *.ppk
+
+		SSH Client :::
+
+
+
+**************
+24th Apr. 2023
+**************
+		On-prem ==> 30 yrs. ==> Cloud Adoption 
+
+		Accessment ==> 
+
+			Cloud Migration == In multiple phases 
+				Phase 1 - Migrate all the light weight components to cloud 
+
+
+
+		EC2 -- Created - Virtual Machine!!!
+
+		EC2 - Instance 
+		AMI - Amazon Machine Image! - to identify OS
+		Instance Type - to Identify the CPU/RAM --> t2.mirco instance type ==> 1 GB RAM & 1 CPU & Use 30GB of EBS Volume
+		
+		Create a EC2 Instance 
+		Login to the instance 
+
+		
+
+
+		Linux OS - Open Source -- Distributions -->  ssh conn.
+				Fedora
+				centos,RHEL,Amazon Linux2,Ubuntu
+
+			Package Managers ::			====> are executed as a root user.
+				yum		can be used in centos,RHEL,Amazon Linux2
+				apt-get		ubuntu
+				rpm			
+				dnf		Febora
+				
+		Windows
+		Mac
+
+		Linux ::: 
+
+		DevOps Tools ::::
+			GIT,JEnkins,Docker, K8s, Monitoring tools... ansible, terraform ......
+
+
+**************
+24th Apr. 2023
+**************
+			AWS Account -- 
+			
+			Non-prod 		Prod_Account		SandBox_Acccount
+									
+									IAM Users
+
+
+			Authentication 
+				Giving access to login
+		
+			Authorization 
+				The Level of Access
+
+			Role Based Access Control - RBAC
+
+			IAM User_ID 	: user1......user100
+
+			Group		: ADMIN_GROUP / DEV_GROUP
+
+			Role		: Developer / Admin
+
+
+
+		Container Services ::::
+
+			Package the appln. for deployment.
+
+
+
+
+
+		Environments :	
+		
+		Non-Prod	VM				Prod 
+
+			dev					Prod Servers e-commerce - www.amazon.com
+			test
+				qa/uat/pre-prod				 (replication) Prod Servers1,2,3,4,...,n	
+
+
+
+								Load Balance
+										Scale-up / Scale-Down
+
+
+			
+	Install the tools and services in Linux/.
+		
+		Pre-requisites
+		Install the actual tool
+		Do the post installation setup.
+
+
+
+Install Jenkins on Ubuntu :::
+
+sudo apt update
+sudo apt install openjdk-11-jre
+java -version
+
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+
+	Jenkins ==> runs as a service. It runs in port 8080
+
+	Unlock jenkins :
+	cat /var/lib/jenkins/secrets/initialAdminPassword
+
+	Install default plugins
+
+	Create User with UserName,Password,Full Name, EmailID
+	Login to Jenkins.
+
+Install Ansible on Ubuntu :::
+
+	sudo apt-add-repository ppa:ansible/ansible
+	sudo apt update
+	sudo apt install ansible
+
+
+Next :::
+
+	Fundamentals of Linux :::
+
+		What is OS ?
+		What is Linux OS, Architecture 
+		Linux command used in day-to-day activities 
+		
+***************
+27th Apr. 2023
+***************
+
+	Launch Linux Machine in AWS Cloud Platform
+	Work on Linux fundamentals.
+
+	Basic Linux Commands we use on day-to-day bases :
+
+	
+		Linux OS - Open Source -- Distributions -->  ssh conn.
+				Fedora
+				centos,RHEL,Amazon Linux2,Ubuntu
+
+			Package Managers ::			====> are executed as a root user.
+				yum		can be used in centos,RHEL,Amazon Linux2
+				apt-get		ubuntu
+				rpm			
+				dnf		Febora
+
+
+	
+	Amazon Linux 2 --> 2023 ==> Fedora Distribution, will work with dnf pkg manager.
+	Ubuntu		apt-get
+
+
+	Linux Commands :: - CLI 
+
+	GUI - Graphical User Interface				
+	CLI - Command Line Interface
+
+	Linux Commands to work in Linux CLI
+
+	On DevOps perspective :::
+
+	Operating System :
+		Admin Level
+		User Level
+
+	DevOps Level :::
+	Linux Operating System :::
+		To work with DevOps tool and Users 
+
+	Roles & Responsibilities :::
+
+	- Linux Administration --> 
+
+		Manage Files and Directories
+		Install & Manage DevOps Tools & Services
+		Manage Users		
+		Manage the Authentication & Authorization
+			Types of Authentication ::
+				Password based Auth.
+				Token based Auth.
+				Key Based Auth.
+				Passwordless Auth.
+		Manage the Remote Servers
+		Manage the credentials
+		Manage the Backup and Recovery
+		Shell Scripting
+
+	- Fundamental Linux Commands :::
+
+	
+    1  ls
+    2  ls -a
+    3  pwd
+    4  ls
+    5  echo "Hello Team"
+    6  echo "Hello Team" >> file1.txt
+    7  ls
+    8  cat file1.txt
+    9  echo "Hello Team" >> file2.txt
+   10  ls
+   11  clear
+   12  ls
+   13  echo "record two" >> file1.txt
+   14  cat file1.txt
+   15  echo "record two" >> file1.txt
+   16  cat file1.txt
+   17  echo "record two" >> file1.txt
+   18  cat file1.txt
+   19  echo "Record1" > file1.txt
+   20  cat file1.txt
+   21  echo "Record1" > file1.doc
+   22  cat file1.doc
+   23  ls -a
+   24  cd /etc
+   25  ls
+   26  cd ~
+   27  clear
+   28  ls
+   29  cat file2.txt
+   30  pwd
+   31  ls
+   32  mkdir dir1
+   33  ls
+   34  cd dir1/
+   35  pwd
+   36  ls
+   37  clear
+   38  ls
+   39  pwd
+   40  cd ..
+   41  pwd
+   42  ls
+   43  cd dir1/
+   44  ls
+   45  echo >> s1.txt
+   46  echo >> s2.txt
+   47  echo >> s3.txt
+   48  echo >> s4.txt
+   49  ls
+   50  pwd
+   51  mkdir sdir1
+   52  ls
+   53  cat s1.txt
+   54  mkdir sdir2
+   55  ls
+   56  cd dir1
+   57  cd sdir1
+   58  pwd
+   59  cd ..
+   60  clear
+   61  ls
+   62  echo "rec1" > s1.txt
+   63  cat s1.txt
+   64  pwd
+   65  ls
+   66  cp s1.txt sdir1
+   67  ls
+   68  cd sdir1/
+   69  ls
+   70  cd ..
+   71  cd sdir1
+   72  cd ..
+   73  ls
+   74  cd sdir2/
+   75  ls
+   76  cd ..
+   77  ls
+   78  mv s2.txt sdir2/
+   79  ls
+   80  cd sdir2/
+   81  ls
+   82  clear
+   83  ls
+   84  mv s2.txt abc.doc
+   85  ls
+   86  mv abc.doc abc.doc
+   87  clear
+   88  ls
+   89  rm abc.doc
+   90  ls
+   91  pwd
+   92  ls
+   93  echo "rec1" >> q1.txt
+   94  ls
+   95  rm q1.txt
+   96  ls
+   97  echo "rec1" >> w1.txt
+   98  ls
+   99*
+  100  ls
+  101  clear
+  102  ls
+  103  echo "rec1" >> s1.txt
+  104  echo "rec1" >> s2.txt
+  105  echo "rec1" >> s3.txt
+  106  echo "rec1" >> w1.txt
+  107  echo "rec1" >> q1.txt
+  108  echo "rec1" >> dq1.txt
+  109  ls
+  110  rm -f s2.txt s3.txt
+  111  ls
+  112  rm -f
+  113  ls
+  114  clear
+  115  ls
+  116  echo "REC" >> q1.doc
+  117  echo "REC" >> q2.doc
+  118  echo "REC" >> q2.java
+  119  echo "REC" >> q4.java
+  120  ls
+  121  rm -f *.doc
+  122  ls
+  123  cd ..
+  124  ls
+  125  rm sdir1/
+  126  rm -r sdir1/
+  127  y
+  128  clear
+  129  ls
+  130  mkdir dummydir1
+  131  ls
+  132  rm -rf dummydir1/
+  133  ls
+  134  mkdir dummydir2
+  135  ls
+  136  cd dummydir2/
+  137  touch f1.txt
+  138  ls
+  139  cat f1.txt
+  140  ls
+  141  cd ..
+  142  s
+  143  ls
+  144  r
+  145  clear
+  146  ls
+  147  rm -f dummydir2/
+  148  clear
+  149  rm -r dummydir2/
+  150  ls
+  151  mkdir dummydir3
+  152  ls
+  153  cd dummydir3/
+  154  ls
+  155  touch f1.txt
+  156  touch f2.txt
+  157  touch f3.txt
+  158  ls
+  159  pwd
+  160  cd ..
+  161  pwd
+  162  ls
+  163  rm -rf dummydir3/
+  164  ls
+  165  history
+  166  clear
+  167  clear
+  168  ls
+  169  pwd
+  170  cd ..
+  171  ls
+  172  mkdir dir2
+  173  cd dir
+  174  cd dir1/
+  175  ls
+  176  pwd
+  177  ls
+  178  cd ..
+  179  ls
+  180  pwd
+  181  cd dir1/
+  182  ls
+  183  mv *.txt dir2
+  184  ls
+  185  pwd
+  186  mv *.txt /root/dir2/
+  187  ls
+  188  cd ..
+  189  ls
+  190  cd dir2/
+  191  ls
+  192  history
+
+
+
+
+	root user ==> have the admin level access.	
+
+
+***************
+28th Apr. 2023
+***************
+	Roles & Responsibilities :::
+
+	- Linux Administration --> 
+
+		Manage Files and Directories
+		Install & Manage DevOps Tools & Services
+		Manage Users		
+		Manage the Authentication & Authorization
+			Types of Authentication ::
+				Password based Auth.
+				Token based Auth.
+				Key Based Auth.
+				Passwordless Auth.
+		Manage the Remote Servers
+		Manage the credentials
+		Manage the Backup and Recovery
+		Shell Scripting
+
+
+	user1 -- dev_group
+	user2 -- dev_group
+	user3 -- test_group
+
+
+	user1		--> 	created file1.txt
+	user1		--> 	created copy1.sh
+	user1		--> 	created dir1
+
+ll
+-rw-r--r--
+-rwxr-xr-x
+drwxr-xr-x
+
+chmod ==> 
+
+	How to create Linux Users
+		adduser user1
+	Login to user accnt
+		su - user1
+
+
+	Create User 
+	Create password	
+		passwd <username> 
+	Create SSH Keys ==> public & Private key == id_rsa.pub & id_rsa
+		ssh-keygen
+
+
+[devopsadmin@ip-172-31-5-205 .ssh]$ history
+    1  clear
+    2  pwd
+    3  ls
+    4  ls -a
+    5  exit
+    6  clear
+    7  ls
+    8  ls -a
+    9  ssh-keygen
+   10  ls -a
+   11  cd .ssh/
+   12  ll
+   13  cat id_rsa.pub
+   14  cat id_rsa
+   15  history
+
+  267  clear
+  268  cd /home/ec2-user/
+  269  ls
+  270  ll
+  271  cat f1.txt
+  272  exit
+  273  pwd
+  274  exit
+  275  clear
+  276  cd /home/
+  277  ls
+  278  cat /etc/passwd
+  279   clear
+  280  cd ~
+  281  clear
+  282  useradd -m -d /home/linuxadmindir linuxadminuser
+  283  cd /home/
+  284  ls
+  285  ll
+  286  useradd user1
+  287  ll
+  288  clear
+  289  ll
+  290  su - linuxadminuser
+  291  exit
+  292  su - linuxadminuser
+  293  clear
+  294  passwd linuxadminuser
+  295  exit
+  296  passwd devopsadmin
+  297  clear
+  298  useradd jenkinsadmin
+  299  passwd jenkinsadmin
+  300  cd /
+  301  ls
+  302  cd ~
+  303  ls
+  304  pwd
+  305  clear
+  306  pwd
+  307  su - linuxadminuser
+  308  ls
+  309  cd dir1/
+  310  ls
+  311  cd sdir2/
+  312  pwd
+  313  ls
+  314  pwd
+  315  cd ~
+  316  ls
+  317  pwd
+  318  clear
+  319  ls
+  320  cd /
+  321  ls
+  322  cd /
+  323  ls
+  324  pwd
+  325  cd home/
+  326  cd .
+  327  cd ..
+  328  ls
+  329  ll
+  330  passwd ec2-user
+  331  cat /etc/passwd
+  332  clear
+  333  cd /etc
+  334  ls
+  335  clear
+  336  cd ..
+  337  cd ~
+  338  clear
+  339  su - devopsadmin
+  340  exit
+  341  ls -a
+  342  exit
+  343  clear
+  344  ls -a
+  345  cd .ssh/
+  346  ll
+  347  cat authorized_keys
+  348  clear
+  349  su - devopsadmin
+  350  history
+
+
+Summary :::
+ 		File and Dir. --> ll Command
+	d read, write, execute 
+	
+	Created User - useradd user1
+	go to home dir
+	create key pair
+	ssh-keygen
+	creates : id_rsa id_rsa.pub
+
+
+
+#############
+1st May. 2023
+#############
+
+	Working with SSH Keys
+		Public and Private Keys
+	Password based authentication
+	Passwordless Authentication
+
+Remote Servers :::	
+	Valid UserID
+	Password/key/token
+	Passwordless auth.
+
+	The Tool Specific userID
+		jenkins 
+
+	key based authentication
+	passwordless authentication
+
+
+	Server1 
+		ssh-keys
+			public & private
+	Client1
+		
+		authorized_keys
+
+
+	Client1 
+		user - devopsuser1
+		passwd - devopsuser1
+
+	Serve1
+		user - devopsadmin
+		ssh-keys
+			id_rsa 	   - private
+			id_rsa.pub - public key
+
+
+	cat id_rsa.pub > authorized_keys
+
+		ssh_copy_id
+
+
+
+
+
+
+Use Cases :::
+ 1 - Server1	
+
+	RemoteServer1  - Ansible	create sshkeys - private key & public key
+
+		ClientMachine1. install git, mvn. public key(authroized_keys)
+		ClientMachine2. install git, mvn. public key(authroized_keys)
+		ClientMachine3. install git, mvn. public key(authroized_keys)
+
+
+#Login to Client Machine. Perform below activities:
+
+#Add User in Client Machine : 
+
+sudo -i
+
+useradd -m -d /home/devopsuser1 devopsuser1
+#(or)
+useradd devopsuser1
+
+passwd devopsuser1
+
+#Enter New Password:
+#Confirm Password:
+
+#Goto:
+
+vi /etc/ssh/sshd_config
+
+#Enable Password Authentication to Yes and save the file
+#Execute Below command to update the changes.
+
+service sshd reload
+
+su - devopsuser1
+
+ls -a 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Login to Server:
+
+#Add User in Server Machine : 
+
+sudo -i
+
+useradd -m -d /home/devopsadmin devopsadmin
+#(or)
+useradd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ssh-copy-id devopsuser1@172.31.6.133
+
+#Type yes for confirmation
+#Enter the password for devopsuser1
+
+#### Verify the key copied in Server under /home/devopsuser1/.ssh/
+
+ssh devopsuser1@172.31.6.133
+
+
+##############################################################################################################################
+
+2nd May 2023
+############
+
+	Linux Scripting Language :::
+
+	Linux or any OS ::: 	Terminal ===> CLI used to interact with OS.
+
+
+	> echo "rec1" >> file.txt  thousand files ???
+	> echo "rec1" >> file.txt 
+
+	Automation Scripts :::
+
+		echo "rec1" >> file.txt
+
+
+	Progamming Lang.	===>  	It is used to develop the business application.
+					It is where developer write the business Logics.
+					It include Application Development Frameworks - build, compile , test, create artifacts.
+					E.g.: JAVA, C#.Net, C, C++, Python, NodeJS.... used to create Application pgms/software.
+						int sno = 1001;
+
+	
+	3-tier Application ::
+
+		Front End - UI	--> 	HTML ///
+
+		Business Logic ==> Used to recv. the user request and process the request using database. --> Application Programming.
+
+		BackEnd	- Database --> store the user information - MYSQL/ORACLE
+
+
+	Scripting Lang. 	===>	It is lightweight entity when compared to Progamming Lang.
+					It is used to create some process automation.
+					It is NOT for application Development.
+					E.g.: VBScripts, JavaScripts, python-script, shell, yaml, groovy scripts 
+						sno = 1001
+						sname = asdfasd
+		
+					Client/Server Side Scripting
+
+
+
+echo == output -- used to print the statement
+print
+println
+cout
+
+
+	Linux Script :::
+
+		Building Blocks :::
+
+		Data!
+
+			variables     		a = 5 ===> c:/memory loc.
+			type - datatype
+			size - int,string,float
+			Array ==> mobile_number[38] = 12312313,........,38
+			Validation :::
+				IF, switch case statement
+			Iteration - Loops :::
+				for, while, do-while
+			Store the data ::
+				Flat files -- 
+					craete, open, read, write, udpate, delete 
+
+				Database 		used to organize the relation data 	
+					Relational Database Management System
+					Rows and Columns 
+					Stud#	Stud_Name	Contact#
+					S101	2342342342	ajhscasdhbashdfbasdf
+			Remote Servers 
+					
+		
+
+	Shell Script :: DevOps Perspective :::
+
+		Installation of Tools & Services
+		Managing the Users and Credentials
+		Manage the Servers/Storage Volumes
+		Automate the process :
+			build, deployment, backup & Recovery....
+
+		Fundamental Knowldege about shell scripting
+
+	Sample Scripts :::
+
+		
+
+
+
+
+
+Programming Lang / Scripting Lang. 
+
+	Algorithm 	: 	Step by step process to perform a task.
+				Can be written in high level lang.(English)
+
+	Psudo Code	:	It is also same like algorithm, but it is not written in high level lang.(English)
+				It is written based on the specific programming/scripting Lang. 
+
+	program/script 	:	The actual source code written based on the algorithm
+				Should be written by following the proper syntax of programming/scripting Lang.
+
+
+Req. Analysis
+Design
+Code
+
+shell 
+
+	Read the input value 1
+	Read the input value 2
+	Calculate c as sum of inp1 and inp2
+	display the value of c
+
+
+Write an algorithm to calc sum of three numbers? 56 45 43
+
+Write an algorithm to calc sum of n numbers? 
+	n = 10 
+	1,2,3,4,5,6,7,8,9,0
+	n = 5
+	1,2,3,4,5
+
+Write an algorithm to find the given number is a prime number or not? 50 ==> 
+	The Number divisible by 1 or by itself.
+
+Write an algorithm to reverse the given string of characters?  Star ==> rats
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Source Code:
+
+#!/bin/bash
+#
+echo "Hello World"
+
+save this file as myfirstscript.sh
+
+	./myfirstscript.sh
+	sh myfirstscript.sh
+	bash myfirstscript.sh
+
+File/Dir Access Management :::
+chmod 			change the File/Dir Permission/Access Mode
+
+vi scriptfile1.sh
+
+chmod 755 scriptfile1.sh
+
+ls -alrt 
+
+Eg.: chmod 744 myfirstscript.sh
+
+chown			Change the Ownership
+
+Eg.:	chown user1:user1 myfirstscritp.sh
+
+
+chown <owner_id>:<group_id> myfirstscript.sh
+
+Should not be used  : 777
+
+Script/
+
+
+############
+4th May 2023
+############
+
+	*.pem ===> 
+
+		key-pair --> 
+
+	Test_Servers --> Launch - key-pair 
+	While starting the server, dynamically create the key pair. and start.
+	Terraform ==> How to automate all these activities.
+
+
+
+
+	Continuous Development Stage ::
+		Infra - AWS 
+		OS 	Linux
+		Application Fundamentals
+			Java
+				Console application
+				Web Application
+				Java Maven Applications with jUnit Testing  
+			Python 
+			Database - SQL 
+			
+
+
+	Continuous Integration / CD 
+
+		GIT
+		Jenkins 
+
+
+
+	Continous Testing 
+		TestNG
+		Junit
+		Selenium
+
+
+
+
+
+Application Development Fundamentals 4hrs
+	• Overview of Application Development 
+
+		Application Development 
+			SDLC 
+
+			Types of Application :
+				Desktop/Console Applications			
+				Web Applications 
+				Mobile Applications
+	
+		Software :
+			Application Software
+				Eg.: E-Commerce portals, Banking, Finance, Retail
+				Types :
+					Desktop/Console Applications			
+					Web Applications 
+					Mobile Applications
+
+			Diff layers ::
+			Application Architecture :
+				1 - tier Architecture
+				Multi-tier Architecture
+					2 - tier 
+					3 - tier
+
+			Web Application :::		
+			
+			1 - tier - GUI - User Interface.
+
+				Front-End Design :::
+			simple web-site --> blog sites/articles 
+
+			Multi - Tier :::
+
+				Frontend - GUI User Interface 
+					Registration Form
+
+				Business Logic 	== > written using Application prog. lang like java,python,.net
+
+				Backend - Dabase ==> SQL, Oracle, .....
+
+				What is a Database ?
+					Store Data ?
+						Used to store the Relational Data(processed data)
+
+				Data ??? Jus a raw text/content --> without any meaning
+
+				Processed Data is called as Information.
+
+				INDIA ->
+
+				INDIA is a Country ==> Information 
+
+				Database ::
+					Collection of Tables
+						Tables ==> Collection of records/columns
+
+			Tables :
+
+				Country 
+				INDIA
+				CHINA
+			1001
+
+			Stud_No 	Name		Contact#
+			1001		asdfasdf	2323423
+			1002		asdfasdf	234234
+
+			
+			
+			
+	
+			Web Application :
+				User_Registration Service ==> signup 
+
+			Web portal - Registration Form ==> created using Java prog. lang.
+				
+			source code 	==> Registration.java
+
+			Build		==> Compile the source code, Create the artifacts(binaries)
+						*.war/*.jar
+			Deployment 	==> Deploy the artifacts to QA-Server for further Testing
+					    Deploy the artifacts to high-environments for further Testing
+						
+
+			Non-prod 				Prod
+
+			Dev
+			Build
+			Test
+			  QA
+			  UAT
+			Pre-Prod / Staging	===>		PROD.
+		
+		Tools ::
+			IDE - Integrated Development Environment 
+				Eg.: Eclipse based IDEs, Visual Studio Code, Visual Studio(.Net), Pycharm, Intellij
+					Build	--->  check for compilation error, syntax errors
+					GIT	--->  manage the source code
+					Junit	--->  to quickly perform  Unit Testing
+
+				Types of Build Tools for Java applications:
+					ANT, Gradle, Maven 
+
+
+	
+			System Software
+				Embedded Software
+				
+				Eg.:
+					Chip level programming		C lang & python prog
+					Microprocessor level programming
+					OS Level programming			
+						Middleware
+						Driver software 
+					Infotainment systems
+						DevOps 
+ 
+		
+			
+
+
+
+	• Various Types of Application
+	• Introduction to Databases
+	• Multi-tiered application architecture
+	• Overview of Monolithic and Microservice
+
+
+
+
+Next :
+
+	Java Fundamentals :::
+
+		Pre-requisites :
+
+			IDE --> Eclipse
+			jdk
+			tomcat
+			
+		Demo --
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to print the calender month by default.
+
+Source Code:
+
+#!/bin/bash
+#	     
+echo "The Month is"
+cal # cal command displays current month by default
+
+
+
+
+
+
+
+
+
+calc. sum of two number ???
+
+	read the input values 
+
+a  = 12
+
+b  = 12
+
+c = $a + $b
+
+echo "$c"
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo "hello"
+
+echo "$var1"
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to read user input and perform operations with them.
+
+Source Code:
+
+#!/bin/bash
+#
+
+echo -n "Enter number 1 : " # -n option supresses newline
+read NUM1 # Read the user input from Standard Input and store in Variable NUM1
+
+echo -n "Enter number 2 : "
+read NUM2
+
+SUM=$(($NUM1 + $NUM2)) # Arithmetic expansion using double parentheses
+echo "The sum is $SUM"
+
+SUM=`expr $NUM1 + $NUM2` # Arithmetic expansion using backticks. 
+			#Usage of expr command to evaluate the expression
+echo "The sum is $SUM"
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A script to show usage of if condition
+
+#Operators :: 6 Operators
+
+Source Code:
+
+#!/bin/bash
+
+NUM1=1 # variabe assignment
+NUM2=2
+
+if [ $NUM1 -gt $NUM2 ] # -gt is to test integer numbers
+then
+    echo "NUM1 > NUM2"
+fi
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show usage of if else condition
+
+Source Code:
+
+#!/bin/bash
+
+NUM1=2 # Variabe assignment
+NUM2=5
+
+if [ $NUM1 -lt $NUM2 ]  # -lt is to test integer numbers
+then
+    echo "NUM1 < NUM2"
+else
+    echo "NUM1 > NUM2"
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+lt gt eq ne 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show usage of else if condition
+
+Source Code:
+
+#!/bin/bash
+#
+
+echo -n "Enter a number: "
+read NUM
+
+if [ $NUM -gt 0 ]
+then
+    echo "$NUM is +ve"
+elif [ $NUM -lt 0 ]
+then
+    echo "$NUM is -ve"
+else
+    echo "$NUM is 0"
+fi
+
+echo "done"
+
+syntax of if then elif else statement
+
+operators ::: 
+Arithmetic ==>  + - * / %
+Logical
+Relational
+bitwise 
+
+
+== > < != >= <=
+
+-eq -gt -lt -ne -ge -le
+
+
+comparison/conditional/Relational
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to demonstrate case statement
+
+Source Code:  a e i o u
+
+#!/bin/bash
+
+echo -n "Enter a character: "
+read CHAR
+
+case $CHAR in
+	a) echo "You entered $CHAR which is a vowel";;  # ;; Terminates each option
+	e) echo "You entered $CHAR which is a vowel";;
+	i) echo "You entered $CHAR which is a vowel";;
+	o) echo "You entered $CHAR which is a vowel";;
+	u) echo "You entered $CHAR which is a vowel";;
+	*) echo "You entered $CHAR which is not a vowel";; # Defaults to everything else
+esac
+
+echo "What if you enter upper case letters!!?, Check the next example"
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to demonstrate case statement
+
+Source Code:
+
+#!/bin/bash
+
+echo -n "Enter a character: "
+read CHAR
+
+case $CHAR in
+	a | A) # Test for both Lower or Upper case letter
+		# You may write commands in this fashion too!!, means multiline commands
+		echo "You entered $CHAR which is a vowel"
+		;; # Terminates each option
+	e | E) 
+		echo "You entered $CHAR which is a vowel"
+		;;
+	i | I) 
+		echo "You entered $CHAR which is a vowel"
+		;;
+	o | O) 
+		echo "You entered $CHAR which is a vowel"
+		;;
+	u | U) 
+		echo "You entered $CHAR which is a vowel"
+		;;
+	*)  # Defaults to everything else
+		echo "You entered $CHAR which is not a vowel"
+		;;
+esac
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to demonstrate case statement
+
+Source Code:
+
+#!/bin/bash
+
+echo -n "Oceans are larger than lakes (True or False) : "
+read USER_INPUT
+
+case $USER_INPUT in
+	"TRUE"| "True" | "true")
+		echo "Yes you are right"
+		;; # Terminates each option
+	"FALSE" | "Fasle" | "false")
+		echo "No your are wrong"
+		;;
+	*)  # Defaults to everything else
+		echo "Please enter either True or False"
+		;;
+esac
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to show usage of string compare operator = and !=
+
+Source Code:
+
+#!/bin/bash
+
+STR1="Hello"
+STR2="Hello"
+
+if [ ${STR1} = ${STR2} ]
+then
+    echo "Strings match"
+else
+    echo "Strings don't match"
+fi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to show usage of string compare operator -z and -n
+
+Source Code:
+
+#!/bin/bash
+
+STR1="Hello"
+STR2="Hello"
+
+if [ -z "${STR1}" ]
+then
+    echo "String1 is empty"
+else
+    echo "String1 is NOT empty"
+fi
+
+echo ":$STR:"
+if [ -n "${STR2}" ]
+then
+    echo "String2 is NOT empty"
+else
+    echo "String2 is empty"
+fi
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to show usage of logical operators
+
+Source Code:
+
+#!/bin/bash
+
+echo -n "Enter a NUM: "
+read NUM
+
+# Check whether a number is between 10 and 20 (Using AND -a operator)
+if [ $NUM -ge 10 -a $NUM -le 20 ]
+then
+    echo "$NUM is between 10 and 20"
+else
+    echo "$NUM is NOT between 10 and 20"
+fi
+
+echo -n "Enter another NUM: "
+read NUM
+
+# Check whether a number is between 10 and 20 (Using OR -o operator)
+if [ $NUM -lt 10 -o $NUM -gt 20 ]
+then
+    echo "$NUM is NOT between 10 and 20"
+else
+    echo "$NUM is between 10 and 20"
+fi
+
+
+
+
+
+
+
+
+
+#!/bin/bash
+
+echo "Hello" 
+
+jdk
+downloaded repo & jenkins io keys 
+yum install jenkins -y
+
+
+
+
+#~~~~~~~~~~~~~
+
+
+#!/bin/bash
+
+echo "Hello"
+echo "Hello Team" >> filez.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to show usage while loop
+
+Source Code:
+
+#!/bin/bash
+#
+
+COUNT=0
+
+while [ $COUNT -lt 5 ]
+do
+    echo "Loop count is ${COUNT}"
+    COUNT=$((COUNT + 1))
+done
+
+echo "Done"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sum of N natural numbers using while loop
+
+Source Code:
+
+#!/bin/bash
+#
+
+echo -n "Enter a number: "
+read NUM
+
+let SUM=0; 
+let I=1
+while [ $I -le $NUM ]
+do
+	SUM=`expr $SUM + $I`
+	I=$((${I} + 1))
+done
+
+echo "The sum of the first $NUM numbers is: $SUM"
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A simple script to demonstarte for loop [ Bash syntax ]
+
+Source Code:
+
+#!/bin/bash
+#
+
+COUNT=0
+
+for i in 0 1 2 3 4
+do
+    echo "Loop count is ${COUNT}"
+    COUNT=$((COUNT + 1))
+done
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+calc sum of 'n' numbers 
+
+n = 1 
+
+for (i = 1 ; i < n ; i++)
+{
+	print i
+}
+
+0
+1
+2
+3
+4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A simple script to demonstarte for loop [ C syntax ]
+
+Source Code:
+
+#!/bin/bash
+
+COUNT=0
+
+for ((i = 0; i < 5; i++))
+do
+    echo "Loop count is ${COUNT}"
+    COUNT=$((COUNT + 1))
+done
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show the usage of command line arguments, Here we access positional arguments using $1, $2 …
+
+Source Code:
+
+#!/bin/bash
+
+echo "Total no. of argument: $#"
+
+echo "Program name: $0"
+echo "1st argument: $1"
+echo "2nd argument: $2"
+echo "3rd argument: $3"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ A script to show the usage of command line arguments, Here we access arguments by iterating over $@
+
+Source Code:
+
+#!/bin/bash
+
+echo "Total no. of argument: $#"
+echo "Argument list: $@" # Commonly used
+echo "Argument list: $*"
+
+# Iterate over arguments ($@)
+for ARG in $@
+do
+    echo $ARG
+done
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show the usage of function
+
+Source Code:
+
+#!/bin/bash
+
+# Function definition
+function print_hello()
+{
+    	echo "====="
+    	echo "Hello"
+    	echo "====="
+}
+
+# Call the function - print_hello
+print_hello
+
+print_hello
+print_hello
+print_hello
+print_hello
+print_hello
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~``
+
+perform email_id validation : asdfasd@asdf.com -- pgm.   - create a func.
+
+
+
+Sign-up module/service
+func()
+sign-in module
+func()
+update_profile Module
+func()
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show the usage of function and how to pass arguments
+
+Source Code:
+
+#!/bin/bash
+
+# Function definition
+function find_sum()
+{
+    SUM=`expr $1 + $2`
+    echo $SUM
+}
+
+# Pass arguments 10 and 20 to find_sum function
+find_sum 10 20 # 30
+
+# Save the output of function in a variable
+RESULT=`find_sum 100 200`
+echo $RESULT	# 300
+
+
+num1=5
+num2=5
+
+
+sample1.sh
+
+#!/bin/bash
+num1=$1
+num2=$2
+
+num3=$num1 + $num2
+
+num3=$1 + $2 + $3 
+
+echo $num3 
+
+sh sample1.sh 34 45 43
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show the usage of function and how to pass arguments Inside function:
+$# – Gives no. of arguments
+$@ – Contains the arguments to function
+Accessing function arguments is similar to accessing command line arguments
+
+Source Code:
+
+#!/bin/bash
+
+# Function definition
+function find_sum()
+{
+    echo "Arg count: $#"
+    echo "Arg list: $@"
+    SUM=0
+    # Iterate over function arguments
+    for ARG in $@
+    do
+	SUM=`expr $ARG + $SUM`
+    done
+
+    echo $SUM
+}
+
+# Call find_sum with many arguments
+find_sum 1 2 3 4 5
+
+find_sum 10 20
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to show how to declare an array and access its elements
+
+Source Code:
+
+#!/bin/bash
+
+# Declare an array
+FRUITS=(apple mango banana orange)
+
+# Print value of each element
+echo "element 0: ${FRUITS[0]}"
+echo "element 1: ${FRUITS[1]}"
+echo "element 2: ${FRUITS[2]}"
+echo "element 3: ${FRUITS[3]}"
+
+# Print size / length of array
+echo "Length: ${#FRUITS[@]}"
+echo "Whole array: ${FRUITS[@]}"
+echo "Whole array: ${FRUITS[*]}"
+
+echo "Looping over array elements"
+# Iterate over array elements
+for ITEM in ${FRUITS[@]}
+do
+    echo $ITEM
+done
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to store all cmd line arguments to a array and prints
+
+Source Code:
+
+#!/bin/bash
+
+ARG=($*)
+
+echo ${ARG[0]}
+echo ${ARG[1]}
+echo ${ARG[2]}
+echo ${ARG[3]}
+echo ${ARG[4]}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to demonstrate different types of array access
+
+Source Code:
+
+#!/bin/bash
+#
+
+array=(zero one two three four five)
+
+# Element 0   1   2    3   4   5
+echo ${array[0]}       #  zero
+echo ${array:0}        #  zero, Parameter expansion of first element,+ starting at position # 0 (1st character).
+echo ${array:1}        #  ero, Parameter expansion of first element, + starting at position # 1 (2nd character).
+echo "--------------"
+echo ${#array[0]}      #  4, Length of first element of array.
+echo ${#array}         #  4, Length of first element of array. (Alternate notation)
+echo ${#array[1]}      #  3, Length of second element of array. Arrays in Bash have zero-based indexing.
+echo ${#array[*]}      #  6, Number of elements in array.
+echo ${#array[@]}      #  6, Number of elements in array.
+echo "--------------"
+
+# Quoting permits embedding whitespace within individual array elements.
+array2=([0]="first element" [1]="second element" [3]="fourth element")
+
+echo "The ${array2[0]}"   # first element
+echo "The ${array2[1]}"   # second element
+echo "The ${array2[2]}"   # Skipped in initialization, and therefore null.
+echo "The ${array2[3]}"   # fourth element
+echo "The lenght of ${array2[0]} ${#array2[0]}" 	   # 13 (length of first element)
+echo "The number of elements in the array ${#array2[*]}"  # 3  (number of elements in array)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A script to demostrate usage of sed command
+
+Source Code:
+
+#!/bin/bash
+
+# Basic text substitution using sed
+echo "Bash Scripting Language" | sed 's/Bash/Perl/'
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Check whether the given Number is PRIME Number or NOT :
+
+#!/bin/bash
+echo "enter number"
+read num
+function prime
+{
+for((i=2; i<=num/2; i++))
+do
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num is not a prime number."
+    exit
+  fi
+done
+echo "$num is a prime number."
+}
+r=`prime $number`
+echo "$r"
+
+
+a/b = Q
+a%b = R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.88/bin/apache-tomcat-8.5.88.tar.gz
+
+*******************************************************************************************************
+*******************************************************************************************************
+
+#Install & configure Tomcat server :
+
+#Check out Official WebPage:
+#https://tomcat.apache.org/
+
+#Launch AWS EC2 Linux Instance:  8080 
+
+sudo -i 
+
+yum update -y 
+
+#Install JDK
+#Install epel Package:
+amazon-linux-extras install epel
+
+#Install Java: 
+amazon-linux-extras install java-openjdk11
+
+#Set Java Path / Environment Variables:
+#open .bashrc & add the following lines:
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.amzn2.0.1.x86_64"
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
+#Save the file
+#open .bash_profile & add the following lines:
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.amzn2.0.1.x86_64"
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
+#Save the file
+
+source ~/.bash_profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****************************************************************************************************
+
+sudo apt update
+sudo apt install openjdk-11-jre -y
+java -version
+
+
+#Install tomcat in Amazon Linux Instance:
+
+#https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.88/bin/apache-tomcat-8.5.88.tar.gz
+
+https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.88/bin/apache-tomcat-8.5.88.tar.gz
+
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.88/bin/apache-tomcat-8.5.88.tar.gz
+tar -xvzf /opt/apache-tomcat-8.5.88.tar.gz
+
+mv apache-tomcat-8.5.88 tomcat
+
+#Start Tomcat Server:
+#Goto:
+
+cd /opt/tomcat/bin
+./startup.sh
+
+****************************************************************************************************
+
+#Add-USer for Tomcat :
+
+Adding a New User for Tomcat :
+
+useradd -m -s /bin/bash devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+#cat id_rsa & copy the private key and paste it into jenkins node config. enter private key directly field.  Then,
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+
+#make devopsadmin user as a owner to tomcat dir :
+
+chown -R devopsadmin /opt/tomcat
+
+/home/devopsadmin
+
+
+Config. Target server in Jenkins:
+
+	Publish over ssh plugin.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#useradd -m -d /home/devopsadmin devopsadmin
+
+useradd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+cd /home/devopsadmin/.ssh
+
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+#make devopsadmin user as a owner to tomcat dir :
+
+chown -R devopsadmin /opt/tomcat
+
+/home/devopsadmin
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#!/bin/bash
+
+echo -n "Enter the file content: "
+read USER_INPUT
+
+echo $USER_INPUT 
+
+echo $USER_INPUT >> file1.txt
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#!/bin/bash
+
+echo -n "Enter the Stud_Number: "
+read sno
+echo -n "Enter the Stud_Name: "
+read sname
+echo -n "Enter the Stud_Contact-Number: "
+read phone-number
+
+
+echo $sno $sname $phone-number 
+
+echo $sno $sname $phone-number >> file1.txt
+
+scp file1.txt devopsuser1@172.31.7.77:/home/devopsuser1/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
