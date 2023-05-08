@@ -1261,6 +1261,93 @@ Next :
 
 
 
+############
+#05/05/2023#
+############
+
+	Fundamentals of Java Programming :::
+
+	DevOps Team :::
+ 
+	AD Team -- will approach DevOps Team to automate the build, test and deployments.
+
+	Create a Automated CI/CD Pipeline/Script to achieve this.
+
+	What are the types of Progamming Lang. 
+
+	Java		--> How it is develop, build, tested, deploy, run.
+				Tool: 
+					Develop --> IDE - Eclipse,GIT,JDK
+					Build	--> Maven
+					Test	--> Junit
+					Deploy 	--> Ansible,docker,kubernetes
+					Exec	--> Tomcat, Nginx
+	Python
+	.Net
+	Node/Angular
+	
+	
+	Tool: 
+		Develop --> IDE - Eclipse,GIT,JDK
+
+	Windows Machine
+	Eclipse :::	
+	VS Code
+	JDK
+	GIT
+
+	About Tomcat !!!
+
+
+		int stud_no=1001;
+		int stud_no1=1002;
+
+		int stud_no[20] = {1,2,3,4,5,6,7,8,9,10,11,22,33,44,55,66,77,88,99,20}
+		
+		    stud_no[2] = 3
+		    stud_no[19] = 20
+		
+		loops :: for loop, while, do-while...
+
+		Condtional stmts :: if, if-else, switch-case
+
+
+	Servers ::::
+
+		Dev_Server	--> Developments
+		Build_Server 	--> Build - compile & Create artifacts
+		Test_Server	--> Testing
+			QA	--> Hosted Server / Deployment / Target servers
+
+			Application Server(Software)
+			: Tomcat/Nginx
+
+		
+
+	Tool: 
+		Develop --> IDE - Eclipse,GIT,JDK
+
+	Windows Machine	::
+	
+	JDK :::
+		https://jdk.java.net/java-se-ri/11
+			- select window version
+		Define Environment Variable in Windows Machine.
+			C:\Software\jdk-11\bin
+		
+	Eclipse :::
+		https://www.eclipse.org/downloads/
+			Choose : Eclipse IDE for Enterprise Java and Web Developers  
+	
+	Tomcat :::
+		https://tomcat.apache.org/download-80.cgi
+	
+	GIT
+		
+	Mobaxterm
+	VS Code	
+
+
 
 
 
