@@ -1,0 +1,505 @@
+
+
+
+############
+4th May 2023
+############
+
+	*.pem ===> 
+
+		key-pair --> 
+
+	Test_Servers --> Launch - key-pair 
+	While starting the server, dynamically create the key pair. and start.
+	Terraform ==> How to automate all these activities.
+
+
+
+
+	Continuous Development Stage ::
+		Infra - AWS 
+		OS 	Linux
+		Application Fundamentals
+			Java
+				Console application
+				Web Application
+				Java Maven Applications with jUnit Testing  
+			Python 
+			Database - SQL 
+			
+
+
+	Continuous Integration / CD 
+
+		GIT
+		Jenkins 
+
+
+
+	Continous Testing 
+		TestNG
+		Junit
+		Selenium
+
+
+
+
+
+Application Development Fundamentals 4hrs
+	• Overview of Application Development 
+
+		Application Development 
+			SDLC 
+
+			Types of Application :
+				Desktop/Console Applications			
+				Web Applications 
+				Mobile Applications
+	
+		Software :
+			Application Software
+				Eg.: E-Commerce portals, Banking, Finance, Retail
+				Types :
+					Desktop/Console Applications			
+					Web Applications 
+					Mobile Applications
+
+			Diff layers ::
+			Application Architecture :
+				1 - tier Architecture
+				Multi-tier Architecture
+					2 - tier 
+					3 - tier
+
+			Web Application :::		
+			
+			1 - tier - GUI - User Interface.
+
+				Front-End Design :::
+			simple web-site --> blog sites/articles 
+
+			Multi - Tier :::
+
+				Frontend - GUI User Interface 
+					Registration Form
+
+				Business Logic 	== > written using Application prog. lang like java,python,.net
+
+				Backend - Dabase ==> SQL, Oracle, .....
+
+				What is a Database ?
+					Store Data ?
+						Used to store the Relational Data(processed data)
+
+				Data ??? Jus a raw text/content --> without any meaning
+
+				Processed Data is called as Information.
+
+				INDIA ->
+
+				INDIA is a Country ==> Information 
+
+				Database ::
+					Collection of Tables
+						Tables ==> Collection of records/columns
+
+			Tables :
+
+				Country 
+				INDIA
+				CHINA
+			1001
+
+			Stud_No 	Name		Contact#
+			1001		asdfasdf	2323423
+			1002		asdfasdf	234234
+
+			
+			
+			
+	
+			Web Application :
+				User_Registration Service ==> signup 
+
+			Web portal - Registration Form ==> created using Java prog. lang.
+				
+			source code 	==> Registration.java
+
+			Build		==> Compile the source code, Create the artifacts(binaries)
+						*.war/*.jar
+			Deployment 	==> Deploy the artifacts to QA-Server for further Testing
+					    Deploy the artifacts to high-environments for further Testing
+						
+
+			Non-prod 				Prod
+
+			Dev
+			Build
+			Test
+			  QA
+			  UAT
+			Pre-Prod / Staging	===>		PROD.
+		
+		Tools ::
+			IDE - Integrated Development Environment 
+				Eg.: Eclipse based IDEs, Visual Studio Code, Visual Studio(.Net), Pycharm, Intellij
+					Build	--->  check for compilation error, syntax errors
+					GIT	--->  manage the source code
+					Junit	--->  to quickly perform  Unit Testing
+
+				Types of Build Tools for Java applications:
+					ANT, Gradle, Maven 
+
+
+	
+			System Software
+				Embedded Software
+				
+				Eg.:
+					Chip level programming		C lang & python prog
+					Microprocessor level programming
+					OS Level programming			
+						Middleware
+						Driver software 
+					Infotainment systems
+						DevOps 
+ 
+		
+			
+
+
+
+	• Various Types of Application
+	• Introduction to Databases
+	• Multi-tiered application architecture
+	• Overview of Monolithic and Microservice
+
+
+
+
+Next :
+
+	Java Fundamentals :::
+
+		Pre-requisites :
+
+			IDE --> Eclipse
+			jdk
+			tomcat
+			
+		Demo --
+
+
+############
+#05/05/2023#
+############
+
+	Fundamentals of Java Programming :::
+
+	DevOps Team :::
+ 
+	AD Team -- will approach DevOps Team to automate the build, test and deployments.
+
+	Create a Automated CI/CD Pipeline/Script to achieve this.
+
+	What are the types of Progamming Lang. 
+
+	Java		--> How it is develop, build, tested, deploy, run.
+				Tool: 
+					Develop --> IDE - Eclipse,GIT,JDK
+					Build	--> Maven
+					Test	--> Junit
+					Deploy 	--> Ansible,docker,kubernetes
+					Exec	--> Tomcat, Nginx
+	Python
+	.Net
+	Node/Angular
+	
+	
+	Tool: 
+		Develop --> IDE - Eclipse,GIT,JDK
+
+	Windows Machine
+	Eclipse :::	
+	VS Code
+	JDK
+	GIT
+
+	About Tomcat !!!
+
+
+		int stud_no=1001;
+		int stud_no1=1002;
+
+		int stud_no[20] = {1,2,3,4,5,6,7,8,9,10,11,22,33,44,55,66,77,88,99,20}
+		
+		    stud_no[2] = 3
+		    stud_no[19] = 20
+		
+		loops :: for loop, while, do-while...
+
+		Condtional stmts :: if, if-else, switch-case
+
+
+	Servers ::::
+
+		Dev_Server	--> Developments
+		Build_Server 	--> Build - compile & Create artifacts
+		Test_Server	--> Testing
+			QA	--> Hosted Server / Deployment / Target servers
+
+			Application Server(Software)
+			: Tomcat/Nginx
+
+		
+
+	Tool: 
+		Develop --> IDE - Eclipse,GIT,JDK
+
+	Windows Machine	::
+	
+	JDK :::
+		https://jdk.java.net/java-se-ri/11
+			- select window version
+		Define Environment Variable in Windows Machine.
+			C:\Software\jdk-11\bin
+		
+	Eclipse :::
+		https://www.eclipse.org/downloads/
+			Choose : Eclipse IDE for Enterprise Java and Web Developers  
+	
+	Tomcat :::
+		https://tomcat.apache.org/download-80.cgi
+	
+	GIT
+		
+	Mobaxterm
+	VS Code	
+
+
+	
+
+
+			Development Environment 
+				Install JDK
+							https://openjdk.org/
+				Install Eclipse 
+							https://www.eclipse.org/downloads/
+							Choose - Eclipse for Enterprise Java and Web Developers - Edition							
+				Install Tomcat Web Appln. Server
+							https://tomcat.apache.org/							
+				Install Visual Studio Code *** 
+							https://code.visualstudio.com/download				
+
+
+
+##############
+8th May. 2023
+##############
+
+		Java Console Application
+		Java Web Application
+
+
+		Appln.:
+
+		SignUp_Module		Class  user_name Validation, Email_Validation, DOB_Validation --> Validation Programme --> jhbjhbjh
+		SignIn_Module		Class  user_name Validation, Email_Validation
+
+
+		sum()
+		{
+		 int a = 5, b = 5, c = 0;
+		 c = a + b;
+		 return c;
+		}
+
+		sum()
+
+		sum(int a, int b, int c)
+		{
+		 c = a + b;
+		 return c;
+		}		
+
+		invocation :  sum(5,5,0)
+
+		sum(int a, int b, int c, int d)
+		{
+		 d = a + b + c;
+		 return d;
+		}
+
+
+return code --> 00 -> successful
+
+error simple
+serious error
+fatal error
+
+
+DevOps Perspective :::
+
+	The Tools stack
+	Build Process:::
+
+
+
+	Build Tool -
+	Name of the Build Tool :
+		Maven --> one of the build tools.
+			How Maven perform build
+			Maven Dependencies
+			Maven Version and upgrades
+			Artifacts details/ Types ==> *.war/*.jar
+
+
+
+	Simple :
+		Java Console/Desktop Application
+			File -> New Project -> Select Java Project
+			Choose default workspace
+			Give the project Name
+			Access the Project folder from java perspective	- (Project Explorer)
+				Project_Folder
+					src 
+					   package
+						class
+				
+		
+		Java Web Application
+		Exec using Tomcat
+
+
+
+	Using Maven Tool :
+		Java Console Application
+		Java Web Application
+		Exec using Tomcat
+
+
+
+	Using Spring boot Maven : ==> Springboot is java application framework
+		Java Console Application
+		Java Web Application
+		Exec using Tomcat
+
+
+	Environments:::
+
+
+	Non-Prod						Prod 
+	
+	Dev
+	Build
+	Test
+	  QA/UAT
+
+
+
+##############
+9th May 2023
+##############
+
+	Java Application Build using Maven 
+
+		Application Build :::: 
+			Is a process of compiling the source code & Create artifacts.
+
+		
+		Deployment ? *.war / *.jar.
+
+
+
+		Dev. Envi	Create the source code
+		Build Envi	Build the source code --> compiling the source code & Create artifacts.
+			Unit Testing ==> 
+
+			Deploy the artifacts to target environment.
+
+
+		Test Envi
+			QA/UAT/
+			PROD
+
+
+		Build Tool :
+
+		Maven Build Tool --> Used to build and Create the artifacts.
+
+		Why Maven ???
+
+
+		signup.java ===> build - plugins, dependencies, Unit testing, tools
+		pom.xml ==> Which defines the application artifacts, plugins and all the required depedencies
+
+
+		How maven download and use the plugins and all the required depedencies>>>
+		Maven Repositories.
+
+			Central repo --> Remote Repo --> Local Repo
+		
+		Maven Project Structure :::
+
+		MVN_Poject1
+			src 
+				main
+					java
+				test
+					java
+			target
+				artifacts *.war / *.jar
+			pom.xml 			==> defines the application artifacts, plugins and all the required depedencies
+				By using Maven Archetypes
+			JRE_Libraries
+			MVN_Libraries
+
+
+		Maven Commands/goal:
+
+		Maven Goals :
+			● mvn clean - to clean the target folder.
+			● mvn compile - to compile the source code
+			● mvn test - to compile and execute junit test cases
+			● mvn package - to compile, test and package the application
+			● mvn install - to install the package to local repository.
+			● mvn deploy - to deploy the package from local repository to remote repository.	
+
+
+			Unit Testing :::
+				Unit Test Scenarios/ Test Data
+			
+			
+
+		Create a Maven Console Application
+		Create a Maven Web Application 
+		Create a Maven Springboot Application 
+
+		Junit Testing	 
+
+		Maven Archetype ::
+
+			org.apache.archetype 		maven-archetype-quickstart
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>www.loksaieta.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="jumbotron" style="background-color:white">
+      <img src="https://octodex.github.com/images/spidertocat.png" alt="Spidertocat"
+           class="img-responsive center-block" style="width:250px"/>
+      <h2 class="text-center">Hello Everyone</h2>
+      <p class="text-center">Application Modernization using DevOps - Loksai.ETA</p>
+  </div>
+</body>
+</html>
+
+
+
