@@ -1,0 +1,2034 @@
+
+Day - 4 - 20th Apr. 2023.
+
+	Fundamentals of Cloud Computing :::
+	
+		AWS 
+	Cloud service is provider.
+
+	github account.
+
+	AWS Account - Free tier.
+
+	Virtual Machines.
+
+	What are the benefits of Cloud Computing ?
+
+		Avoid upfront investment cost of IT Services like Storage, Computing, Networks.
+		Easy Installation
+		High Availability
+		High Reliability
+		Data Security
+		Easy to access
+		Dynamic Scaling
+	
+	Cloud Service Providers ???
+
+		AWS Cloud
+		Azure Cloud
+		Google Cloud platform - GCP
+
+	DevOps :::
+
+		Azure DevOps Services:		Managed Services.	(vs)	Opensource services
+
+			Azure Repos							github
+			Azure Pipeline							jenkins
+			Azure Boards							jira
+			Azure Artifacts							jfrog artifatory
+			Azure Test							jenkins with automated test tools
+
+	AWS --> cloud platform for all our demo.
+
+		Create AWS Account. - free tier account.
+			valid Email ID, Active Contact Number, Credit/Debit Card(Eligible for International Transaction)
+
+		Access/Login to AWS Console.
+			Login as root user>
+
+		Region :::
+
+			Virtual Machines in AWS Cloud Platform
+
+		Regions		Different Geographical Locations :
+			Availabilty Zones	Data Centers.	1 + 1
+		
+			AWS 1 VM usage 750 hrs per month.
+
+			10 VMs ===> 75Hrs.
+
+
+		What is Virtual Machine >>>?
+
+			EC2 Instances in AWS.
+
+
+
+
+
+
+		Local windows MAchine ?
+
+			Hypervisor ===> Virtual MAchines1 - Linux
+					Virutal Machines2 - MAc....'
+
+
+
+		Create AWS EC2 Instance ::
+				Linux :
+					Centos/Ubuntu/REHEL,Fedora,.........
+
+				Windows
+
+				Mac
+
+		Login to AWS Console
+		Goto EC2 Dashboard
+
+		Launch Instance	
+			Create the EC2 instances.
+
+
+
+			Connect to that ec2 instance:
+
+				EC2 Instance Connect 
+				Using SSH Clients :
+					MobaXterm /putty
+				Using terminals 
+
+
+
+Day - 5 - 21st Apr. 2023.
+
+	7 - 10 PM 
+	
+	7 - 08 	==> Doubt Clarification Sessions.
+	8 - 10 	==> LIVE Session.
+
+	Fundamentals of AWS Cloud Platform :
+	
+	Create AWS Account. - free tier account.
+	Login -- How to create VMs. 
+
+
+
+	Why we need cloud platform?
+		
+
+	Why we need Ec2 Instances ?
+			Virtual Machines!
+
+
+		Mumbai - AWS Region :
+			Data Center/Availabity Zone - 	ap-south-1a	 Server1,..........,n (Virtual Machine/EC2 Instances)Linux/Mac/Windows
+							ap-south-1b	 Server1,..........,n				 
+			Physical Machine!		
+		EC2 Instance are jus VMs, - Computing Devices. 
+		Why we need EC2 Instance ???
+
+			Teach Linux Adminstration. ==> Batch. 
+			Local Windows Destop Machine. 
+			Physical Machine 
+
+		DevOps Engg. - DevOps Tools - Jenkins, Docker, K8s, Ansible, Terraform, Git, Prometheus, Grafana.....
+			VM - Jenkins Server.
+			VM - K8s
+
+	How to Create EC2 Instances / VMs ?
+		1 - Using AWS Console & Launch.
+		2 - Using Scripts - IAC - Infra Structure as Code - Tools 	
+	
+	0 - Create AWS Free tier Account.	
+	1 - Using AWS Console & Launch.
+
+
+		AMI
+		Instance Type
+		Key Pair 
+			It is used to enable secure access to EC2 Instance.
+			private & public keys.
+			ssh connection 
+			pem/ppk.
+		SSH Client :::
+			
+			Local Windows Destop Machine. ==> Want to connect to my aws ec2 Linux instance
+
+			MobaXterm --> *.pem
+			Putty 	  --> *.ppk
+
+		SSH Client :::
+
+
+
+**************
+24th Apr. 2023
+**************
+		On-prem ==> 30 yrs. ==> Cloud Adoption 
+
+		Accessment ==> 
+
+			Cloud Migration == In multiple phases 
+				Phase 1 - Migrate all the light weight components to cloud 
+
+
+
+		EC2 -- Created - Virtual Machine!!!
+
+		EC2 - Instance 
+		AMI - Amazon Machine Image! - to identify OS
+		Instance Type - to Identify the CPU/RAM --> t2.mirco instance type ==> 1 GB RAM & 1 CPU & Use 30GB of EBS Volume
+		
+		Create a EC2 Instance 
+		Login to the instance 
+
+		
+
+
+		Linux OS - Open Source -- Distributions -->  ssh conn.
+				Fedora
+				centos,RHEL,Amazon Linux2,Ubuntu
+
+			Package Managers ::			====> are executed as a root user.
+				yum		can be used in centos,RHEL,Amazon Linux2
+				apt-get		ubuntu
+				rpm			
+				dnf		Febora
+				
+		Windows
+		Mac
+
+		Linux ::: 
+
+		DevOps Tools ::::
+			GIT,JEnkins,Docker, K8s, Monitoring tools... ansible, terraform ......
+
+
+**************
+24th Apr. 2023
+**************
+			AWS Account -- 
+			
+			Non-prod 		Prod_Account		SandBox_Acccount
+									
+									IAM Users
+
+
+			Authentication 
+				Giving access to login
+		
+			Authorization 
+				The Level of Access
+
+			Role Based Access Control - RBAC
+
+			IAM User_ID 	: user1......user100
+
+			Group		: ADMIN_GROUP / DEV_GROUP
+
+			Role		: Developer / Admin
+
+
+
+		Container Services ::::
+
+			Package the appln. for deployment.
+
+
+
+
+
+		Environments :	
+		
+		Non-Prod	VM				Prod 
+
+			dev					Prod Servers e-commerce - www.amazon.com
+			test
+				qa/uat/pre-prod				 (replication) Prod Servers1,2,3,4,...,n	
+
+
+
+								Load Balance
+										Scale-up / Scale-Down
+
+
+			
+	Install the tools and services in Linux/.
+		
+		Pre-requisites
+		Install the actual tool
+		Do the post installation setup.
+
+
+
+Install Jenkins on Ubuntu :::
+
+sudo apt update
+sudo apt install openjdk-11-jre
+java -version
+
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install jenkins
+
+
+	Jenkins ==> runs as a service. It runs in port 8080
+
+	Unlock jenkins :
+	cat /var/lib/jenkins/secrets/initialAdminPassword
+
+	Install default plugins
+
+	Create User with UserName,Password,Full Name, EmailID
+	Login to Jenkins.
+
+Install Ansible on Ubuntu :::
+
+	sudo apt-add-repository ppa:ansible/ansible
+	sudo apt update
+	sudo apt install ansible
+
+
+Next :::
+
+	Fundamentals of Linux :::
+
+		What is OS ?
+		What is Linux OS, Architecture 
+		Linux command used in day-to-day activities 
+		
+***************
+27th Apr. 2023
+***************
+
+	Launch Linux Machine in AWS Cloud Platform
+	Work on Linux fundamentals.
+
+	Basic Linux Commands we use on day-to-day bases :
+
+	
+		Linux OS - Open Source -- Distributions -->  ssh conn.
+				Fedora
+				centos,RHEL,Amazon Linux2,Ubuntu
+
+			Package Managers ::			====> are executed as a root user.
+				yum		can be used in centos,RHEL,Amazon Linux2
+				apt-get		ubuntu
+				rpm			
+				dnf		Febora
+
+
+	
+	Amazon Linux 2 --> 2023 ==> Fedora Distribution, will work with dnf pkg manager.
+	Ubuntu		apt-get
+
+
+	Linux Commands :: - CLI 
+
+	GUI - Graphical User Interface				
+	CLI - Command Line Interface
+
+	Linux Commands to work in Linux CLI
+
+	On DevOps perspective :::
+
+	Operating System :
+		Admin Level
+		User Level
+
+	DevOps Level :::
+	Linux Operating System :::
+		To work with DevOps tool and Users 
+
+	Roles & Responsibilities :::
+
+	- Linux Administration --> 
+
+		Manage Files and Directories
+		Install & Manage DevOps Tools & Services
+		Manage Users		
+		Manage the Authentication & Authorization
+			Types of Authentication ::
+				Password based Auth.
+				Token based Auth.
+				Key Based Auth.
+				Passwordless Auth.
+		Manage the Remote Servers
+		Manage the credentials
+		Manage the Backup and Recovery
+		Shell Scripting
+
+	- Fundamental Linux Commands :::
+
+	
+    1  ls
+    2  ls -a
+    3  pwd
+    4  ls
+    5  echo "Hello Team"
+    6  echo "Hello Team" >> file1.txt
+    7  ls
+    8  cat file1.txt
+    9  echo "Hello Team" >> file2.txt
+   10  ls
+   11  clear
+   12  ls
+   13  echo "record two" >> file1.txt
+   14  cat file1.txt
+   15  echo "record two" >> file1.txt
+   16  cat file1.txt
+   17  echo "record two" >> file1.txt
+   18  cat file1.txt
+   19  echo "Record1" > file1.txt
+   20  cat file1.txt
+   21  echo "Record1" > file1.doc
+   22  cat file1.doc
+   23  ls -a
+   24  cd /etc
+   25  ls
+   26  cd ~
+   27  clear
+   28  ls
+   29  cat file2.txt
+   30  pwd
+   31  ls
+   32  mkdir dir1
+   33  ls
+   34  cd dir1/
+   35  pwd
+   36  ls
+   37  clear
+   38  ls
+   39  pwd
+   40  cd ..
+   41  pwd
+   42  ls
+   43  cd dir1/
+   44  ls
+   45  echo >> s1.txt
+   46  echo >> s2.txt
+   47  echo >> s3.txt
+   48  echo >> s4.txt
+   49  ls
+   50  pwd
+   51  mkdir sdir1
+   52  ls
+   53  cat s1.txt
+   54  mkdir sdir2
+   55  ls
+   56  cd dir1
+   57  cd sdir1
+   58  pwd
+   59  cd ..
+   60  clear
+   61  ls
+   62  echo "rec1" > s1.txt
+   63  cat s1.txt
+   64  pwd
+   65  ls
+   66  cp s1.txt sdir1
+   67  ls
+   68  cd sdir1/
+   69  ls
+   70  cd ..
+   71  cd sdir1
+   72  cd ..
+   73  ls
+   74  cd sdir2/
+   75  ls
+   76  cd ..
+   77  ls
+   78  mv s2.txt sdir2/
+   79  ls
+   80  cd sdir2/
+   81  ls
+   82  clear
+   83  ls
+   84  mv s2.txt abc.doc
+   85  ls
+   86  mv abc.doc abc.doc
+   87  clear
+   88  ls
+   89  rm abc.doc
+   90  ls
+   91  pwd
+   92  ls
+   93  echo "rec1" >> q1.txt
+   94  ls
+   95  rm q1.txt
+   96  ls
+   97  echo "rec1" >> w1.txt
+   98  ls
+   99*
+  100  ls
+  101  clear
+  102  ls
+  103  echo "rec1" >> s1.txt
+  104  echo "rec1" >> s2.txt
+  105  echo "rec1" >> s3.txt
+  106  echo "rec1" >> w1.txt
+  107  echo "rec1" >> q1.txt
+  108  echo "rec1" >> dq1.txt
+  109  ls
+  110  rm -f s2.txt s3.txt
+  111  ls
+  112  rm -f
+  113  ls
+  114  clear
+  115  ls
+  116  echo "REC" >> q1.doc
+  117  echo "REC" >> q2.doc
+  118  echo "REC" >> q2.java
+  119  echo "REC" >> q4.java
+  120  ls
+  121  rm -f *.doc
+  122  ls
+  123  cd ..
+  124  ls
+  125  rm sdir1/
+  126  rm -r sdir1/
+  127  y
+  128  clear
+  129  ls
+  130  mkdir dummydir1
+  131  ls
+  132  rm -rf dummydir1/
+  133  ls
+  134  mkdir dummydir2
+  135  ls
+  136  cd dummydir2/
+  137  touch f1.txt
+  138  ls
+  139  cat f1.txt
+  140  ls
+  141  cd ..
+  142  s
+  143  ls
+  144  r
+  145  clear
+  146  ls
+  147  rm -f dummydir2/
+  148  clear
+  149  rm -r dummydir2/
+  150  ls
+  151  mkdir dummydir3
+  152  ls
+  153  cd dummydir3/
+  154  ls
+  155  touch f1.txt
+  156  touch f2.txt
+  157  touch f3.txt
+  158  ls
+  159  pwd
+  160  cd ..
+  161  pwd
+  162  ls
+  163  rm -rf dummydir3/
+  164  ls
+  165  history
+  166  clear
+  167  clear
+  168  ls
+  169  pwd
+  170  cd ..
+  171  ls
+  172  mkdir dir2
+  173  cd dir
+  174  cd dir1/
+  175  ls
+  176  pwd
+  177  ls
+  178  cd ..
+  179  ls
+  180  pwd
+  181  cd dir1/
+  182  ls
+  183  mv *.txt dir2
+  184  ls
+  185  pwd
+  186  mv *.txt /root/dir2/
+  187  ls
+  188  cd ..
+  189  ls
+  190  cd dir2/
+  191  ls
+  192  history
+
+
+
+
+	root user ==> have the admin level access.	
+
+
+***************
+28th Apr. 2023
+***************
+	Roles & Responsibilities :::
+
+	- Linux Administration --> 
+
+		Manage Files and Directories
+		Install & Manage DevOps Tools & Services
+		Manage Users		
+		Manage the Authentication & Authorization
+			Types of Authentication ::
+				Password based Auth.
+				Token based Auth.
+				Key Based Auth.
+				Passwordless Auth.
+		Manage the Remote Servers
+		Manage the credentials
+		Manage the Backup and Recovery
+		Shell Scripting
+
+
+	user1 -- dev_group
+	user2 -- dev_group
+	user3 -- test_group
+
+
+	user1		--> 	created file1.txt
+	user1		--> 	created copy1.sh
+	user1		--> 	created dir1
+
+ll
+-rw-r--r--
+-rwxr-xr-x
+drwxr-xr-x
+
+chmod ==> 
+
+	How to create Linux Users
+		adduser user1
+	Login to user accnt
+		su - user1
+
+
+	Create User 
+	Create password	
+		passwd <username> 
+	Create SSH Keys ==> public & Private key == id_rsa.pub & id_rsa
+		ssh-keygen
+
+
+[devopsadmin@ip-172-31-5-205 .ssh]$ history
+    1  clear
+    2  pwd
+    3  ls
+    4  ls -a
+    5  exit
+    6  clear
+    7  ls
+    8  ls -a
+    9  ssh-keygen
+   10  ls -a
+   11  cd .ssh/
+   12  ll
+   13  cat id_rsa.pub
+   14  cat id_rsa
+   15  history
+
+  267  clear
+  268  cd /home/ec2-user/
+  269  ls
+  270  ll
+  271  cat f1.txt
+  272  exit
+  273  pwd
+  274  exit
+  275  clear
+  276  cd /home/
+  277  ls
+  278  cat /etc/passwd
+  279   clear
+  280  cd ~
+  281  clear
+  282  useradd -m -d /home/linuxadmindir linuxadminuser
+  283  cd /home/
+  284  ls
+  285  ll
+  286  useradd user1
+  287  ll
+  288  clear
+  289  ll
+  290  su - linuxadminuser
+  291  exit
+  292  su - linuxadminuser
+  293  clear
+  294  passwd linuxadminuser
+  295  exit
+  296  passwd devopsadmin
+  297  clear
+  298  useradd jenkinsadmin
+  299  passwd jenkinsadmin
+  300  cd /
+  301  ls
+  302  cd ~
+  303  ls
+  304  pwd
+  305  clear
+  306  pwd
+  307  su - linuxadminuser
+  308  ls
+  309  cd dir1/
+  310  ls
+  311  cd sdir2/
+  312  pwd
+  313  ls
+  314  pwd
+  315  cd ~
+  316  ls
+  317  pwd
+  318  clear
+  319  ls
+  320  cd /
+  321  ls
+  322  cd /
+  323  ls
+  324  pwd
+  325  cd home/
+  326  cd .
+  327  cd ..
+  328  ls
+  329  ll
+  330  passwd ec2-user
+  331  cat /etc/passwd
+  332  clear
+  333  cd /etc
+  334  ls
+  335  clear
+  336  cd ..
+  337  cd ~
+  338  clear
+  339  su - devopsadmin
+  340  exit
+  341  ls -a
+  342  exit
+  343  clear
+  344  ls -a
+  345  cd .ssh/
+  346  ll
+  347  cat authorized_keys
+  348  clear
+  349  su - devopsadmin
+  350  history
+
+
+Summary :::
+ 		File and Dir. --> ll Command
+	d read, write, execute 
+	
+	Created User - useradd user1
+	go to home dir
+	create key pair
+	ssh-keygen
+	creates : id_rsa id_rsa.pub
+
+
+
+#############
+1st May. 2023
+#############
+
+	Working with SSH Keys
+		Public and Private Keys
+	Password based authentication
+	Passwordless Authentication
+
+Remote Servers :::	
+	Valid UserID
+	Password/key/token
+	Passwordless auth.
+
+	The Tool Specific userID
+		jenkins 
+
+	key based authentication
+	passwordless authentication
+
+
+	Server1 
+		ssh-keys
+			public & private
+	Client1
+		
+		authorized_keys
+
+
+	Client1 
+		user - devopsuser1
+		passwd - devopsuser1
+
+	Serve1
+		user - devopsadmin
+		ssh-keys
+			id_rsa 	   - private
+			id_rsa.pub - public key
+
+
+	cat id_rsa.pub > authorized_keys
+
+		ssh_copy_id
+
+
+
+
+
+
+Use Cases :::
+ 1 - Server1	
+
+	RemoteServer1  - Ansible	create sshkeys - private key & public key
+
+		ClientMachine1. install git, mvn. public key(authroized_keys)
+		ClientMachine2. install git, mvn. public key(authroized_keys)
+		ClientMachine3. install git, mvn. public key(authroized_keys)
+
+
+#Login to Client Machine. Perform below activities:
+
+#Add User in Client Machine : 
+
+sudo -i
+
+useradd -m -d /home/devopsuser1 devopsuser1
+#(or)
+useradd devopsuser1
+
+passwd devopsuser1
+
+#Enter New Password:
+#Confirm Password:
+
+#Goto:
+
+vi /etc/ssh/sshd_config
+
+#Enable Password Authentication to Yes and save the file
+#Execute Below command to update the changes.
+
+service sshd reload
+
+su - devopsuser1
+
+ls -a 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#Login to Server:
+
+#Add User in Server Machine : 
+
+sudo -i
+
+useradd -m -d /home/devopsadmin devopsadmin
+#(or)
+useradd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen
+
+ssh-copy-id devopsuser1@172.31.6.133
+
+#Type yes for confirmation
+#Enter the password for devopsuser1
+
+#### Verify the key copied in Server under /home/devopsuser1/.ssh/
+
+ssh devopsuser1@172.31.6.133
+
+
+##############################################################################################################################
+
+2nd May 2023
+############
+
+	Linux Scripting Language :::
+
+	Linux or any OS ::: 	Terminal ===> CLI used to interact with OS.
+
+
+	> echo "rec1" >> file.txt  thousand files ???
+	> echo "rec1" >> file.txt 
+
+	Automation Scripts :::
+
+		echo "rec1" >> file.txt
+
+
+	Progamming Lang.	===>  	It is used to develop the business application.
+					It is where developer write the business Logics.
+					It include Application Development Frameworks - build, compile , test, create artifacts.
+					E.g.: JAVA, C#.Net, C, C++, Python, NodeJS.... used to create Application pgms/software.
+						int sno = 1001;
+
+	
+	3-tier Application ::
+
+		Front End - UI	--> 	HTML ///
+
+		Business Logic ==> Used to recv. the user request and process the request using database. --> Application Programming.
+
+		BackEnd	- Database --> store the user information - MYSQL/ORACLE
+
+
+	Scripting Lang. 	===>	It is lightweight entity when compared to Progamming Lang.
+					It is used to create some process automation.
+					It is NOT for application Development.
+					E.g.: VBScripts, JavaScripts, python-script, shell, yaml, groovy scripts 
+						sno = 1001
+						sname = asdfasd
+		
+					Client/Server Side Scripting
+
+
+
+echo == output -- used to print the statement
+print
+println
+cout
+
+
+	Linux Script :::
+
+		Building Blocks :::
+
+		Data!
+
+			variables     		a = 5 ===> c:/memory loc.
+			type - datatype
+			size - int,string,float
+			Array ==> mobile_number[38] = 12312313,........,38
+			Validation :::
+				IF, switch case statement
+			Iteration - Loops :::
+				for, while, do-while
+			Store the data ::
+				Flat files -- 
+					craete, open, read, write, udpate, delete 
+
+				Database 		used to organize the relation data 	
+					Relational Database Management System
+					Rows and Columns 
+					Stud#	Stud_Name	Contact#
+					S101	2342342342	ajhscasdhbashdfbasdf
+			Remote Servers 
+					
+		
+
+	Shell Script :: DevOps Perspective :::
+
+		Installation of Tools & Services
+		Managing the Users and Credentials
+		Manage the Servers/Storage Volumes
+		Automate the process :
+			build, deployment, backup & Recovery....
+
+		Fundamental Knowldege about shell scripting
+
+	Sample Scripts :::
+
+		
+
+
+
+
+
+Programming Lang / Scripting Lang. 
+
+	Algorithm 	: 	Step by step process to perform a task.
+				Can be written in high level lang.(English)
+
+	Psudo Code	:	It is also same like algorithm, but it is not written in high level lang.(English)
+				It is written based on the specific programming/scripting Lang. 
+
+	program/script 	:	The actual source code written based on the algorithm
+				Should be written by following the proper syntax of programming/scripting Lang.
+
+
+Req. Analysis
+Design
+Code
+
+shell 
+
+	Read the input value 1
+	Read the input value 2
+	Calculate c as sum of inp1 and inp2
+	display the value of c
+
+
+Write an algorithm to calc sum of three numbers? 56 45 43
+
+Write an algorithm to calc sum of n numbers? 
+	n = 10 
+	1,2,3,4,5,6,7,8,9,0
+	n = 5
+	1,2,3,4,5
+
+Write an algorithm to find the given number is a prime number or not? 50 ==> 
+	The Number divisible by 1 or by itself.
+
+Write an algorithm to reverse the given string of characters?  Star ==> rats
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Source Code:
+
+#!/bin/bash
+#
+echo "Hello World"
+
+save this file as myfirstscript.sh
+
+	./myfirstscript.sh
+	sh myfirstscript.sh
+	bash myfirstscript.sh
+
+File/Dir Access Management :::
+chmod 			change the File/Dir Permission/Access Mode
+
+vi scriptfile1.sh
+
+chmod 755 scriptfile1.sh
+
+ls -alrt 
+
+Eg.: chmod 744 myfirstscript.sh
+
+chown			Change the Ownership
+
+Eg.:	chown user1:user1 myfirstscritp.sh
+
+
+chown <owner_id>:<group_id> myfirstscript.sh
+
+Should not be used  : 777
+
+Script/
+
+
+############
+4th May 2023
+############
+
+	*.pem ===> 
+
+		key-pair --> 
+
+	Test_Servers --> Launch - key-pair 
+	While starting the server, dynamically create the key pair. and start.
+	Terraform ==> How to automate all these activities.
+
+
+
+
+	Continuous Development Stage ::
+		Infra - AWS 
+		OS 	Linux
+		Application Fundamentals
+			Java
+				Console application
+				Web Application
+				Java Maven Applications with jUnit Testing  
+			Python 
+			Database - SQL 
+			
+
+
+	Continuous Integration / CD 
+
+		GIT
+		Jenkins 
+
+
+
+	Continous Testing 
+		TestNG
+		Junit
+		Selenium
+
+
+
+
+
+Application Development Fundamentals 4hrs
+	• Overview of Application Development 
+
+		Application Development 
+			SDLC 
+
+			Types of Application :
+				Desktop/Console Applications			
+				Web Applications 
+				Mobile Applications
+	
+		Software :
+			Application Software
+				Eg.: E-Commerce portals, Banking, Finance, Retail
+				Types :
+					Desktop/Console Applications			
+					Web Applications 
+					Mobile Applications
+
+			Diff layers ::
+			Application Architecture :
+				1 - tier Architecture
+				Multi-tier Architecture
+					2 - tier 
+					3 - tier
+
+			Web Application :::		
+			
+			1 - tier - GUI - User Interface.
+
+				Front-End Design :::
+			simple web-site --> blog sites/articles 
+
+			Multi - Tier :::
+
+				Frontend - GUI User Interface 
+					Registration Form
+
+				Business Logic 	== > written using Application prog. lang like java,python,.net
+
+				Backend - Dabase ==> SQL, Oracle, .....
+
+				What is a Database ?
+					Store Data ?
+						Used to store the Relational Data(processed data)
+
+				Data ??? Jus a raw text/content --> without any meaning
+
+				Processed Data is called as Information.
+
+				INDIA ->
+
+				INDIA is a Country ==> Information 
+
+				Database ::
+					Collection of Tables
+						Tables ==> Collection of records/columns
+
+			Tables :
+
+				Country 
+				INDIA
+				CHINA
+			1001
+
+			Stud_No 	Name		Contact#
+			1001		asdfasdf	2323423
+			1002		asdfasdf	234234
+
+			
+			
+			
+	
+			Web Application :
+				User_Registration Service ==> signup 
+
+			Web portal - Registration Form ==> created using Java prog. lang.
+				
+			source code 	==> Registration.java
+
+			Build		==> Compile the source code, Create the artifacts(binaries)
+						*.war/*.jar
+			Deployment 	==> Deploy the artifacts to QA-Server for further Testing
+					    Deploy the artifacts to high-environments for further Testing
+						
+
+			Non-prod 				Prod
+
+			Dev
+			Build
+			Test
+			  QA
+			  UAT
+			Pre-Prod / Staging	===>		PROD.
+		
+		Tools ::
+			IDE - Integrated Development Environment 
+				Eg.: Eclipse based IDEs, Visual Studio Code, Visual Studio(.Net), Pycharm, Intellij
+					Build	--->  check for compilation error, syntax errors
+					GIT	--->  manage the source code
+					Junit	--->  to quickly perform  Unit Testing
+
+				Types of Build Tools for Java applications:
+					ANT, Gradle, Maven 
+
+
+	
+			System Software
+				Embedded Software
+				
+				Eg.:
+					Chip level programming		C lang & python prog
+					Microprocessor level programming
+					OS Level programming			
+						Middleware
+						Driver software 
+					Infotainment systems
+						DevOps 
+ 
+		
+			
+
+
+
+	• Various Types of Application
+	• Introduction to Databases
+	• Multi-tiered application architecture
+	• Overview of Monolithic and Microservice
+
+
+
+
+Next :
+
+	Java Fundamentals :::
+
+		Pre-requisites :
+
+			IDE --> Eclipse
+			jdk
+			tomcat
+			
+		Demo --
+
+
+############
+#05/05/2023#
+############
+
+	Fundamentals of Java Programming :::
+
+	DevOps Team :::
+ 
+	AD Team -- will approach DevOps Team to automate the build, test and deployments.
+
+	Create a Automated CI/CD Pipeline/Script to achieve this.
+
+	What are the types of Progamming Lang. 
+
+	Java		--> How it is develop, build, tested, deploy, run.
+				Tool: 
+					Develop --> IDE - Eclipse,GIT,JDK
+					Build	--> Maven
+					Test	--> Junit
+					Deploy 	--> Ansible,docker,kubernetes
+					Exec	--> Tomcat, Nginx
+	Python
+	.Net
+	Node/Angular
+	
+	
+	Tool: 
+		Develop --> IDE - Eclipse,GIT,JDK
+
+	Windows Machine
+	Eclipse :::	
+	VS Code
+	JDK
+	GIT
+
+	About Tomcat !!!
+
+
+		int stud_no=1001;
+		int stud_no1=1002;
+
+		int stud_no[20] = {1,2,3,4,5,6,7,8,9,10,11,22,33,44,55,66,77,88,99,20}
+		
+		    stud_no[2] = 3
+		    stud_no[19] = 20
+		
+		loops :: for loop, while, do-while...
+
+		Condtional stmts :: if, if-else, switch-case
+
+
+	Servers ::::
+
+		Dev_Server	--> Developments
+		Build_Server 	--> Build - compile & Create artifacts
+		Test_Server	--> Testing
+			QA	--> Hosted Server / Deployment / Target servers
+
+			Application Server(Software)
+			: Tomcat/Nginx
+
+		
+
+	Tool: 
+		Develop --> IDE - Eclipse,GIT,JDK
+
+	Windows Machine	::
+	
+	JDK :::
+		https://jdk.java.net/java-se-ri/11
+			- select window version
+		Define Environment Variable in Windows Machine.
+			C:\Software\jdk-11\bin
+		
+	Eclipse :::
+		https://www.eclipse.org/downloads/
+			Choose : Eclipse IDE for Enterprise Java and Web Developers  
+	
+	Tomcat :::
+		https://tomcat.apache.org/download-80.cgi
+	
+	GIT
+		
+	Mobaxterm
+	VS Code	
+
+
+	
+
+
+			Development Environment 
+				Install JDK
+							https://openjdk.org/
+				Install Eclipse 
+							https://www.eclipse.org/downloads/
+							Choose - Eclipse for Enterprise Java and Web Developers - Edition							
+				Install Tomcat Web Appln. Server
+							https://tomcat.apache.org/							
+				Install Visual Studio Code *** 
+							https://code.visualstudio.com/download				
+
+
+
+##############
+8th May. 2023
+##############
+
+		Java Console Application
+		Java Web Application
+
+
+		Appln.:
+
+		SignUp_Module		Class  user_name Validation, Email_Validation, DOB_Validation --> Validation Programme --> jhbjhbjh
+		SignIn_Module		Class  user_name Validation, Email_Validation
+
+
+		sum()
+		{
+		 int a = 5, b = 5, c = 0;
+		 c = a + b;
+		 return c;
+		}
+
+		sum()
+
+		sum(int a, int b, int c)
+		{
+		 c = a + b;
+		 return c;
+		}		
+
+		invocation :  sum(5,5,0)
+
+		sum(int a, int b, int c, int d)
+		{
+		 d = a + b + c;
+		 return d;
+		}
+
+
+return code --> 00 -> successful
+
+error simple
+serious error
+fatal error
+
+
+DevOps Perspective :::
+
+	The Tools stack
+	Build Process:::
+
+
+
+	Build Tool -
+	Name of the Build Tool :
+		Maven --> one of the build tools.
+			How Maven perform build
+			Maven Dependencies
+			Maven Version and upgrades
+			Artifacts details/ Types ==> *.war/*.jar
+
+
+
+	Simple :
+		Java Console/Desktop Application
+			File -> New Project -> Select Java Project
+			Choose default workspace
+			Give the project Name
+			Access the Project folder from java perspective	- (Project Explorer)
+				Project_Folder
+					src 
+					   package
+						class
+				
+		
+		Java Web Application
+		Exec using Tomcat
+
+
+
+	Using Maven Tool :
+		Java Console Application
+		Java Web Application
+		Exec using Tomcat
+
+
+
+	Using Spring boot Maven : ==> Springboot is java application framework
+		Java Console Application
+		Java Web Application
+		Exec using Tomcat
+
+
+	Environments:::
+
+
+	Non-Prod						Prod 
+	
+	Dev
+	Build
+	Test
+	  QA/UAT
+
+
+
+##############
+9th May 2023
+##############
+
+	Java Application Build using Maven 
+
+		Application Build :::: 
+			Is a process of compiling the source code & Create artifacts.
+
+		
+		Deployment ? *.war / *.jar.
+
+
+
+		Dev. Envi	Create the source code
+		Build Envi	Build the source code --> compiling the source code & Create artifacts.
+			Unit Testing ==> 
+
+			Deploy the artifacts to target environment.
+
+
+		Test Envi
+			QA/UAT/
+			PROD
+
+
+		Build Tool :
+
+		Maven Build Tool --> Used to build and Create the artifacts.
+
+		Why Maven ???
+
+
+		signup.java ===> build - plugins, dependencies, Unit testing, tools
+		pom.xml ==> Which defines the application artifacts, plugins and all the required depedencies
+
+
+		How maven download and use the plugins and all the required depedencies>>>
+		Maven Repositories.
+
+			Central repo --> Remote Repo --> Local Repo
+		
+		Maven Project Structure :::
+
+		MVN_Poject1
+			src 
+				main
+					java
+				test
+					java
+			target
+				artifacts *.war / *.jar
+			pom.xml 			==> defines the application artifacts, plugins and all the required depedencies
+				By using Maven Archetypes
+			JRE_Libraries
+			MVN_Libraries
+
+
+		Maven Commands/goal:
+
+		Maven Goals :
+			● mvn clean - to clean the target folder.
+			● mvn compile - to compile the source code
+			● mvn test - to compile and execute junit test cases
+			● mvn package - to compile, test and package the application
+			● mvn install - to install the package to local repository.
+			● mvn deploy - to deploy the package from local repository to remote repository.	
+
+
+			Unit Testing :::
+				Unit Test Scenarios/ Test Data
+			
+			
+
+		Create a Maven Console Application
+		Create a Maven Web Application 
+		Create a Maven Springboot Application 
+
+		Junit Testing	 
+
+		Maven Archetype ::
+
+			org.apache.archetype 		maven-archetype-quickstart
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>www.loksaieta.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="jumbotron" style="background-color:white">
+      <img src="https://octodex.github.com/images/spidertocat.png" alt="Spidertocat"
+           class="img-responsive center-block" style="width:250px"/>
+      <h2 class="text-center">Hello Everyone</h2>
+      <p class="text-center">Application Modernization using DevOps - Loksai.ETA</p>
+  </div>
+</body>
+</html>
+
+
+
+Summary :
+		
+		How to create simple java console application  & Web Application using Eclipse?
+		How to create simple java Maven Console application using Eclipse?
+		How to create simple java Maven Console application using JUnit Testing?
+		Importance of Maven Project, pom.xml file
+		Maven Repositories 
+		How to create POM.xml File?
+		
+		Maven Goals :
+			● mvn clean - to clean the target folder.
+			● mvn compile - to compile the source code
+			● mvn test - to compile and execute junit test cases
+			● mvn package - to compile, test and package the application
+			● mvn install - to install the package to local repository.
+			● mvn deploy - to deploy the package from local repository to remote repository.
+
+
+		How to create Maven Web Application??????
+
+
+
+
+
+
+##############
+10th May 2023
+##############
+
+
+	Validate a Email_ID :::
+
+
+		asdfasdfasdf@adfsadf.com
+
+			23423423423423423423424234		
+
+
+
+		read :: String email_id = "asdfasdfasdf@adfsadf.com"
+	
+			System.out.println("Enter your Input: ");
+			String email_id = System.console().readLine();
+
+
+		Algorithm ::::
+
+		DOB : DD/MM/YYYY   2030   40 test scenarios 
+
+		Date Validation Logic :::
+
+		DD ==> 1 and 31, depends on MM ==> 1 to 12, year ==>
+
+		Jan = 31
+
+		Feb = 28 / 29 based on year 
+
+		Developer == 	Code 
+				Commit the code in any src code repo like github/gitlab/az repo/aws codecommit/bitbucket/
+
+		Continuous Development :::
+
+			How to improve the productivity of Developers???
+
+				- By providing all the req. tools ( IDE, Dev, Build,)
+
+				- Developers Work is to create the src code as per design. = Commit the code in Src Code Repo. 
+
+					Build & Create artifacts
+					Do all manual unit testing
+					Deployed the code to test environment
+					Send Email to Testing team
+
+				- By Automate 
+
+		DevOps 	==> Using Jenkins Pipeline :: CICD Pipelines
+				- By Automate 
+					Build & Create artifacts
+						Send Notification to Dev Team 
+					Do all sort of unit testing
+						Send Notification to Dev Team 
+					Deployed the code to test environment
+						Send Notification to Dev Team & Testing Team
+
+		Continuous Integration :::
+
+
+			Source Code Repository ::::
+
+		Java Module ==> Assignment ==> 
+
+		Maven Module 
+		
+		Git Module ===>
+
+
+		DevOps Tools :
+
+			GIT 
+			Jenkins 
+			Docker 
+			Kubernetes
+			Ansible
+			Terraform
+			Monitoring Tools like Prometheus & Grafana
+
+		Continuous Integration :::
+
+			Source Code Management System using GIT	:::
+
+			Source Code Management System ::::
+
+Calculator.java						 	
+
+package calc;
+
+public class Calculator {
+
+	public int sum(int a, int b) {
+		return a + b;
+	}
+
+	public int minus(int a, int b) {
+		return a - b;  // ERROR!!!
+	}			
+
+
+	public int minus(int a, int b) {	
+		return a - b;  // ERROR!!!
+	}				
+
+	public int divide(int a, int b) {		
+		return a / b;
+	}
+
+
+
+
+
+	
+	Version Control System :
+
+		Is used to Version Control the file changes using version_number/tag/commit_id
+		Is used to Track the file changes
+		Is used to perform parallel development
+				
+
+
+Calculator.java					Day 1  ---> saved as Calculator.java_v1.0	 	--> Using Version Control System
+
+package calc;
+
+public class Calculator {
+
+	public int sum(int a, int b) {
+		return a + b;
+	}
+
+	public int minus(int a, int b) {
+		return a - b;  // ERROR!!!
+	}			
+
+
+	public int minus(int a, int b) {	Day 2 ---> saved as Calculator.java_v1.1	
+		return a - b;  // ERROR!!!
+	}				
+
+	public int divide(int a, int b) {	Day 3 ---> saved as Calculator.java_v1.2	
+		return a / b;
+	}
+	
+
+	Various Types of Version Control System :::
+
+
+
+		1. Local Version Control System 	LVCS
+		2. Central Version Control System 	CVCS
+		3. Distributed Version Control System	DVCS
+
+
+
+		1. Local Version Control System 	LVCS 
+				Install GIT Client in my local Machine.		
+
+		2. Central Version Control System 	CVCS
+
+		3. Distributed Version Control System	DVCS
+			GIT is a Open Source Distributed Version Control System
+				- Is used to Version Control the file changes using version_number/tag/commit_id
+				- Is used to Track the file changes
+				- Is used to perform parallel development
+
+
+		Local Machine							Remote Machines/Servers
+
+		GIT Client								GIT GUI --> github/gitlab/az-repo/aws_codecommit/bitbuckets
+											Self-Managed Remote GIT Server 
+												AWS VM -- Install GIT, Instal GIT-GUI Plugins
+												
+
+
+
+Summary :
+
+	Java Assignments
+		Junit Testing
+	What is VCS?
+	Types of VCS
+	What is GIT
+
+
+
+##############
+11th May 2023
+##############
+
+		GIT SCM Tool 
+	
+		Installation of GIT
+		Various Environment
+		GIT Misc. Commands
+			Git Repositories
+			Branches
+			Parallel Development
+			Remote Repositories.
+		
+
+
+
+			GIT is a Open Source Distributed Version Control System
+				- Is used to Version Control the file changes using version_number/tag/commit_id
+				- Is used to Track the file changes
+				- Is used to perform parallel development
+
+
+
+
+		Install GIT ::::
+
+			Windows/Linux/Mac
+
+			Install git :
+
+			Use Git Bash in Windows Machine :
+
+			Folder Structure :
+
+				SA-17thApr
+					Repo1
+					Repo2
+					Repo3
+
+
+			What is the actual Task ????
+
+			Developers' Workload ????
+
+				Create the source code ????
+
+			New S/W Project:
+				Src Code it will be present in Local Machine   ==> Pushing the New project Src Code to Remote Server
+
+	
+			Project Enhancement  
+			Bug fixing
+
+				- Src Code will be already present in Remote Server. 
+				==> Clone the src code from Remote Server in to Local Machine ==> Make necessary changes ==> Push it back to Remote Server.
+
+			
+
+			git init ==> Used to Initialize local git repository.
+				It will create a GIT_DIR
+				It will create default branch (master/main)
+
+
+
+			Git File Workflow :::::
+
+
+			Local Machine												Remote Server
+			
+			Working Directory		==> Staging Area		==> Local Repository	
+			(Physical file loc.)
+
+			file1.txt	------------------> Staging Area   ------------->   Local Repository	--------------> Remote Repository
+					   git add 		             git commit				    git push
+
+
+
+
+																Remote Server
+																10 files(100 KB)
+
+			git clone ==> Is used to clone/copy the remote repository into the local Machine/Repository
+
+			Local Machine
+			10 files(100 KB)
+
+
+
+ 																Remote Server
+																11 files(110 KB)
+
+
+			git fetch ==> 	Is used to check if there is any incremental changes available in remote repository
+					If there is any incremental changes available in remote repository, It will just update the change in Local Repository.
+					It will NEVER Update the changes in Working Directory.
+				 	
+			git pull  ==> 	Is used to check if there is any incremental changes available in remote repository. 
+					If there is any incremental changes available in remote repository, It will just update the change in Local Repository and 
+					It will Update the changes in Working Directory as well.
+
+
+
+	
+			git init	==> Used to Initialize local git repository.		
+			git status	==> Used to check the current status of GIT repository.
+			git add 	==> Used to add the changes fro working dir. to Staging Area
+			git commit 	==> Used to permanantly commit the changes from stagin area to local repository
+
+		
+			git clone	==> Is used to clone/copy the entire remote repository into the local Machine/Repository
+
+			git fetch/pull 	==> Is used to handle the incremental changes from remote repository.
+
+			git fetch ==> 	Is used to check if there is any incremental changes available in remote repository
+					If there is any incremental changes available in remote repository, It will just update the change in Local Repository.
+					It will NEVER Update the changes in Working Directory.
+				 	
+			git pull  ==> 	Is used to check if there is any incremental changes available in remote repository. 
+					If there is any incremental changes available in remote repository, It will just update the change in Local Repository and 
+					It will Update the changes in Working Directory as well.
+
+			git push  ==> 	Is used to push the incremental changes from local repository to remote repository			
+			
+			git fork  ==> 	Is used to clone/copy the entire remote repository to another remote repository
+
+
+			
+
+			Tracking the changes means ???
+
+				Who ?
+				What ?
+				When ?
+				Which file ?
+			
+
+			GIT CONFIGURATION :::
+				- Local 
+				- global 
+
+
+			global conf :
+			git config --global user.name "Loksai"
+			git config --global user.email "Loksai@xyz.com"
+
+			local conf : is within the repo.
+			git config user.name "LoksaiETA"
+			git config user.email "Loksai@xyz.com"
+
+			git log ==> Used to get the list of commit & its history
+
+
+
+    1  git --version
+    2  pwd
+    3  mkdir SA-17th-Apr
+    4  cd SA-17th-Apr/
+    5  clear
+    6  pwd
+    7  mkdir repo1
+    8  cd repo1/
+    9  clear
+   10  pwd
+   11  clear
+   12  echo "rec1" >> file1.txt
+   13  ls
+   14  echo "rec2" >> file1.txt
+   15  echo "rec3" >> file1.txt
+   16  echo "rec4" >> file1.txt
+   17  clear
+   18  cat file1.txt 
+   19  ll
+   20  cd ..
+   21  mkdir testrepo1
+   22  cd testrepo1/
+   23  CLEAR
+   24  ls
+   25  ll
+   26  ls -a
+   27  clear
+   28  git init
+   29  ls 
+   30  ls -a
+   31  cd .git/
+   32  ls
+   33  clear
+   34  pwd
+   35  cd ..
+   36  git status
+   37  pwd
+   38  cd ..
+   39  cd repo1/
+   40  ls
+   41  clear
+   42  pwd
+   43  ls
+   44  cat file1.txt 
+   45  clear
+   46  ls -a
+   47  git status
+   48  cd ..
+   49  cd testrepo1/
+   50  clear
+   51  git status
+   52  ls 
+   53  ls
+   54  clear
+   55  echo "rec1" >> file1.txt
+   56  ls
+   57  git status
+   58  ls
+   59  clear
+   60  ls
+   61  git add file1.txt 
+   62  git status
+   63  clear
+   64  git status
+   65  git commit -m "Created file1.txt"
+   66  git status
+   67  git config --global user.name "Loksai"
+   68  git config --global user.email "Loksai@xyz.com"
+   69  git commit -m "Created file1.txt"
+   70  git log 
+   71  cd ..
+   72  mkdir testrepo2
+   73  cd testrepo2
+   74  git init
+   75  echo "rec1" >> s1.txt
+   76  git add s1.txt 
+   77  git commit -m "Created s1.txt file"
+   78  git log
+   79  git config user.name "LoksaiETA"
+   80  echo "rec1" >> s2.txt
+   81  git add s2.txt 
+   82  git commit -m "Created s2.txt file"
+   83  git log 
+   84  cd ..
+   85  cd testrepo1/
+   86  git status
+   87  echo "rec1" >> d1.txt
+   88  git add d1.txt 
+   89  git commit -m "Created d1.txt"
+   90  git log
+   91  history
+
