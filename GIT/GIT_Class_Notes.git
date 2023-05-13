@@ -2032,3 +2032,111 @@ Summary :
    90  git log
    91  history
 
+
+
+
+##############
+12th May 2023
+##############
+
+
+		GIT Misc. Commands 
+			
+
+		git add file.txt
+		git add file.txt file2.txt
+		git add *.txt
+		git add .
+
+		git rm -f file.txt		==> will permanently remove the file from staging area & WDir
+		git rm --cached file.txt	==> will just remove from staging area.
+
+		git log 
+
+
+
+		git repo1
+
+
+		HEAD Pointer ::
+
+		cm1
+		HEAD
+
+		cm1	cm2
+			HEAD
+		
+		cm1	cm2	cm3
+				HEAD
+
+
+
+		git log:
+		git log 
+		git log --oneline
+		git log --stat
+		git log -2
+		git log -2 --oneline
+
+		git status 
+
+		ls ==> 
+		git ls-files
+
+		git show <commit_id>
+
+		git diff	=> used to track the changes in working dir and committed files
+
+		git diff --cached
+		git diff --name-only --cached
+		git diff <commit_id1> <commit_id2>
+
+		git ignore :::
+
+		.gitignore ==> file.
+
+		Java_web_appln:
+		 src/main/java
+			*.java
+		 src/main/test
+			*.java
+		 target
+			*.war
+
+
+		As a best practise ::::
+
+			Always create .gitignore file in the src code repo. 
+
+
+
+		Java_web_appln:
+		 src/main/java		access the Dbase
+			*.java
+		 src/main/test
+			*.java
+		 target
+			*.war
+		 app.properties
+		 app.configs
+		 db_cred(Duser_name,DSec_Token)
+		 secrets(Duser_name,USSNo)
+
+
+
+		git add ==> Staging ares ==> commited to Local Repo.	====> Push the changes to Remote Repo.
+
+
+		.gitignore::: 
+
+
+		Remote Repo ::: Github...
+
+
+			
+
+
+
+
+
+
