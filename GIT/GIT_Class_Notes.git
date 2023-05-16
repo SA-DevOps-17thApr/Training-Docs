@@ -2415,6 +2415,186 @@ New Release : to be commited : rel_1.5
 
 
 
+##############
+16th May 2023
+##############	
+
+		How to create and working with git branches
+
+
+
+	master
+		dev_branch
+			feature1
+			feature2
+
+		Create GIT Branches:
+
+	
+		git switch -c feature1
+
+		git branch feature2
+
+		git checkout -b feature3
+
+
+		git merge command -- is used to merge the changes from one branch to another.
+		
+					this command should be executed from target branch.
+
+		
+
+		master 
+		 feature1
+		 feature2
+		 feature3
+		 feature4
+
+
+		Work onthese branches :: Merging 
+
+
+
+		master
+			feature2 
+
+
+	Merge Conflict ::::
+		During Merge, When more than one user/feature try to update the same record in same file, merge conflict occurs.
+
+	How to fix the Merge Conflict :::
+
+		- Identify the file(s) that is causing merge conflict.
+		- Review the file content
+		- Decide which changes to be retained in target branch.
+		- Update the file as required.
+		- Add and Commit the Changes in Target Branch.
+
+	Best Practise is to prevent Merge Conflicts at any level.
+			Detailed review should be done before Merge and ensure there is no Merge conflict.
+
+			****Pull-Request == Using Pull request, we can perform review.
+
+	How git provides some features to prevent merge conflict in Master Branch.
+	
+		
+		master 			cm1,cm2,cm3,f1cm1,f1cm2
+
+			feature1	cm1,cm2,cm3	f1cm1,f1cm2
+			feature2	cm1,cm2,cm3	f2cm1,f2cm2
+
+	Git Rebase ::::
+		It is used to keep the current branch in-sync with the target branch.
+
+		master 			cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+
+			feature1	cm1,cm2,cm3	f1cm1,f1cm2
+			feature2	cm1,cm2,cm3	f2cm1,f2cm2
+				git rebase master
+					cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+
+			git rebase -- will maintain the linear commit history.
+
+
+		master ::: 	cm1,cm2,cm3 (initial commits before any merge)
+				cm1,cm2,cm3,f1cm1,f1cm2
+				cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+
+			feature1 --> cm1,cm2,cm3,f1cm1,f1cm2
+				git switch master
+				git merge feature1 
+
+			feature2 --> cm1,cm2,cm3,f2cm1,f2cm2
+				git rebase master
+				cm1,cm2,cm3,f1cm1,f1cm2,f2cm1,f2cm2
+
+				git switch master 
+				git merge feature2
+
+
+			
+	Git Squash :::	Is used to combine more than one commits into a single commit point.
+
+		master :::	cm1,cm2,cm3
+				cm1,cm2,cm3,f1c1,2,3,4,5,6,7,8,9,..........,n,f2c1,2,3,4,5,6,7,8,9,..........,n
+				cm1,cm2,cm3,final-f1cm
+
+			feature1 : cm1,cm2,cm3,f1c1,2,3,4,5,6,7,8,9,..........,n
+
+				git merge --squash  
+					cm1,cm2,cm3,final-f1cm
+				git switch master
+				git merge feature1
+
+			feature1 : cm1,cm2,cm3,f1c1,2,3,4,5,6,7,8,9,..........,n
+
+
+				git switch master
+				git merge feature1
+
+			feature2 : cm1,cm2,cm3,f2c1,2,3,4,5,6,7,8,9,..........,n
+
+				git switch master
+				git merge feature2
+
+
+		How to perform Squash???
+
+			1. Done while working on the current branch (Before Merge)
+
+				feature1 --> index.java --> create 5 funcs. 
+
+					cm1,cm2,cm3,f1cm1,2,3,4,5,6
+
+				git rebase -i HEAD~6
+
+			2. While Merging.
+				
+				git switch master
+				git merge --squash feature1
+
+
+
+
+    master ---> cm1,cm2,cm3,Rel-v1
+
+	Release_Branch ::: cm1,cm2,cm3,team1-changes,team2-changes
+
+		Integration_Branch : cm1,cm2,cm3,team1-dev1-changes,team1-dev2-changes					Team1
+
+			Developer1_Branch - cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3,f3-cm1,f3-cm2,f3-cm3 - team1-dev1-changes
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer2_Branch - cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3,f3-cm1,f3-cm2,f3-cm3
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+
+		Integration_Branch : cm1,cm2,cm3,team2-dev1-changes,team2-dev2-changes  				Team2
+
+			Developer1_Branch - cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3,f3-cm1,f3-cm2,f3-cm3
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer2_Branch - cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3,f3-cm1,f3-cm2,f3-cm3
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+		
+		git cherry-pick <commit_id> 
+
+
+		git cherry-pick team1-changes
+
+
+		
+
+
+
 
 
 
