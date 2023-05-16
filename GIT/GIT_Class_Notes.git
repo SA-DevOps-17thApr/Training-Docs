@@ -2133,6 +2133,303 @@ Summary :
 		Remote Repo ::: Github...
 
 
+##############
+15th May 2023
+##############			
+
+	git revert / reset
+
+	git reset ::
+
+		git add 		-->
+		git commit 		-->
+		HEAD Point 		-->
+		stage/index Area
+
+	
+	git reset :::
+
+		git reset --soft	
+			==> 	remove the changes from local repo. (HEAD Pointer Move to previous commit point)
+				Changes will be back to staging area.
+				It will not remove the changes from Working Dir.
+
+		git reset --mixed	(***default)
+			==> 	remove the changes from local repo. & Staging Area.
+				It will NOT remove the changes from Working Dir.
+	
+		git reset --hard
+			==> 	remove the changes from local repo., Staging Area as well as from Working Dir.
+
+		cm5,cm4,cm3,cm2,cm1
+		git reset cm3
+			cm3,cm2,cm1
+
+		Observations:
+			reset ==> It just remove the commits based on reset point.
+				  It never create any new commit to track the changes. 
+				  Hence, it is not recommended to use reset in shared repository.				
+
+
+	git revert :::
+		
+		Is used to undo a specific commit.
+		It will create a new commit point to track the changes.
+		It revert is recommended to use in shared repo.
+
+
+
+	cm1,2,3,4,5
+
+	f1,f2,f3,f4,f5.txt
+
+	git revert cm3
+		
+		f1,f2,f4,f5.txt
+
+commit history 
+
+	cm1,2,3,4,5,cm6(revert)
+
+
+		During Production Deployment ::::
+
+		Existing Rel : 
+			rel_1.0 
+			rel_1.1 
+			rel_1.2 
+			rel_1.3 
+			rel_1.4
+
+New Release : to be commited : rel_1.5
+			
+			 rel_1.5		--> prod. testing (deployment window-> 4 - 6hr.)
+			 				- Try to fix.
+							- revert / reset ??
+
+			rel_1.0 
+			rel_1.1 
+			rel_1.2 
+			rel_1.3 
+			rel_1.4
+			rel_1.5 
+			revert rel_1.5
+
+    1  git --version
+    2  pwd
+    3  mkdir SA-17th-Apr
+    4  cd SA-17th-Apr/
+    5  clear
+    6  pwd
+    7  mkdir repo1
+    8  cd repo1/
+    9  clear
+   10  pwd
+   11  clear
+   12  echo "rec1" >> file1.txt
+   13  ls
+   14  echo "rec2" >> file1.txt
+   15  echo "rec3" >> file1.txt
+   16  echo "rec4" >> file1.txt
+   17  clear
+   18  cat file1.txt 
+   19  ll
+   20  cd ..
+   21  mkdir testrepo1
+   22  cd testrepo1/
+   23  CLEAR
+   24  ls
+   25  ll
+   26  ls -a
+   27  clear
+   28  git init
+   29  ls 
+   30  ls -a
+   31  cd .git/
+   32  ls
+   33  clear
+   34  pwd
+   35  cd ..
+   36  git status
+   37  pwd
+   38  cd ..
+   39  cd repo1/
+   40  ls
+   41  clear
+   42  pwd
+   43  ls
+   44  cat file1.txt 
+   45  clear
+   46  ls -a
+   47  git status
+   48  cd ..
+   49  cd testrepo1/
+   50  clear
+   51  git status
+   52  ls 
+   53  ls
+   54  clear
+   55  echo "rec1" >> file1.txt
+   56  ls
+   57  git status
+   58  ls
+   59  clear
+   60  ls
+   61  git add file1.txt 
+   62  git status
+   63  clear
+   64  git status
+   65  git commit -m "Created file1.txt"
+   66  git status
+   67  git config --global user.name "Loksai"
+   68  git config --global user.email "Loksai@xyz.com"
+   69  git commit -m "Created file1.txt"
+   70  git log 
+   71  cd ..
+   72  mkdir testrepo2
+   73  cd testrepo2
+   74  git init
+   75  echo "rec1" >> s1.txt
+   76  git add s1.txt 
+   77  git commit -m "Created s1.txt file"
+   78  git log
+   79  git config user.name "LoksaiETA"
+   80  echo "rec1" >> s2.txt
+   81  git add s2.txt 
+   82  git commit -m "Created s2.txt file"
+   83  git log 
+   84  cd ..
+   85  cd testrepo1/
+   86  git status
+   87  echo "rec1" >> d1.txt
+   88  git add d1.txt 
+   89  git commit -m "Created d1.txt"
+   90  git log
+   91  history
+
+
+
+	GIT Branching Techniques ::::
+
+
+		Parallel Development :::
+
+			- Can be achieved using Branches.
+
+			- 
+
+	Initialize any repo. 
+
+		default branch - master / main ==> Considered as a prod copy.
+			index.html  ---> 1 -- 100 recs.
+
+		create feature_Branch1
+			index.html  ---> 1 -- 100 recs.	
+		
+		create feature_Branch2
+			index.html  ---> 1 -- 100 recs.	
+
+
+	GIT Branching Strategies :::
+		- The main goal of Git Branching Strategies is to maintain the integrity of master branch.
+
+	Single User: 	
+	Repo :
+
+		master --> Branch --> cm1,cm2,cm3 (index.jsp)
+
+			feature1_Branch --> cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+
+			feature2_Branch --> cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+
+ 		merge --> all the changes from feature1_Branch to master
+				master --> Branch --> cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+ 		merge --> all the changes from feature2_Branch to master			
+				master --> Branch --> cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3
+	
+
+	master :: cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3
+	Merge Conflict ::: 
+
+		master --> cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer_Branch - cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3,f2-cm1,f2-cm2,f2-cm3,f3-cm1,f3-cm2,f3-cm3
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+	master ---> cm1,cm2,cm3
+
+		Integration_Branch : cm1,cm2,cm3 --------------,  --------------
+
+			Developer1_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Fearure3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer2_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer3_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Fearure3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer4_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+
+
+    master ---> cm1,cm2,cm3
+
+	Release_Branch ::: cm1,cm2,cm3 --------------,  -------------- ,--------------,  --------------
+
+		Integration_Branch : cm1,cm2,cm3 --------------,  --------------		Team1
+
+			Developer1_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer2_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+
+		Integration_Branch : cm1,cm2,cm3 --------------,  --------------		Team2
+
+			Developer1_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+			Developer2_Branch - cm1,cm2,cm3 --------------
+				Feature1 -	cm1,cm2,cm3,f1-cm1,f1-cm2,f1-cm3
+				Feature2 -	cm1,cm2,cm3,f2-cm1,f2-cm2,f2-cm3
+				Feature3 -	cm1,cm2,cm3,f3-cm1,f3-cm2,f3-cm3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
 
 
