@@ -1,0 +1,140 @@
+
+##############
+18th May 2023
+##############	
+
+		CI / CD ---> 
+
+		Jenkins - Build Orchestration Tool ::::
+
+		Code Integration ???
+
+		C-Developement
+		C-Integration		--->	
+		C-Delivery
+		C-Deployment
+		
+
+		Continuous Integration ==> 
+
+
+		Jenkins --> Build Orchestration Tool
+
+			Developer -->
+				Create src code & push the code to src code repository (Manual Activities) 
+					Build src code --> Maven build tool -- artifacts
+					Published to QA - Test environment
+					QA - Testing
+
+					Published to UAT Environment
+					UAT Testing
+					Promote to Pre-prod
+					Deploy to PROD
+					Prod Testing
+					Prod Monitoring
+
+		Jenkins -->> Build Orchestration Tool - Is a Master Slave Architecture. 
+			Is used to distribute the Jenkins Workload to slave machines.
+			Extensive list of Plugins
+			Documentation
+			Use Groovy Scripts to create Jenkins Pipeline Projects.
+
+		- Jenkins Master (VM) --> Used to craete Jenkins jobs/project & Schedule the jobs to slave Nodes
+			Jenkins Slave --> Build servers
+
+
+		src code - java_maven_web_application
+			automated build & create artifacts. 
+		
+
+		Jenkins Jobs Example :::
+
+					Automated Build using Maven build tool
+					Create Artifacts
+					Published to QA - Test environment
+					Automated Testing
+
+		Jenkins Slave Machines are used to run the jenkins Jobs.
+
+		Process :::
+			
+		 - Master (Create jobs)
+			Jenkins Slave --> Build servers used to run the jenkins job.
+
+		Jenkins Master -- VM 		==> Craete Jenkins jobs/project & Schedule the jobs to slave Nodes
+			slave1 -- Java Application - maven (Workspace)
+			slave2 -- Python Application
+			slave3 -- .Net Application
+			slave4 -- Angular Application
+			slave5 -- NodeJS Application
+
+		
+		Alternatives to Jenkins :
+
+			Bamboo
+			gitlab-ci
+			az-pipeline
+			aws-code-pipeline		
+
+		Developers are just the consumers 
+
+		As a DevOps Engineer, What is your role in Jenkins ???
+
+		Jenkins Administrator :::
+			- Installation of Jenkins
+			- Plugins Management
+			- User Management
+			- Tools Management
+			- Slave/Nodes Management
+			- Jenkins Security Management
+			- User Access Management
+			- Credential Management
+			- Creating the CI/CD pipeline Projects
+			- Onboard Applications to Jenkins CI/CD Pipelines
+			- Jenkins Server(Master&Slaves) Managements
+				Security Patch update
+				Jenkins Upgrade including plugins
+			- Backup & Recovery
+
+
+		- Installation of Jenkins	
+			Dedicated Server to install Jenkins.
+				Windows/Linux/Mac
+			Containers - Docker / Kubernetes
+
+			Linux is preferred to install Jenkins.
+				Centos/RHEL/Ubundu/Fedora/ 
+
+		- Installation of Jenkins in AWS Ubuntu Machine
+			Slave Machines 	Ubuntu 
+			Test Server	Ubuntu
+
+
+First Launch AWS Ubuntu Machines (Master)
+
+Add Inbound Rule to security group
+port 8080
+
+
+https://www.jenkins.io/doc/book/installing/
+
+sudo apt update
+sudo apt install openjdk-11-jre
+java -version
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins			
+
+
+
+
+
+
+
+
+
