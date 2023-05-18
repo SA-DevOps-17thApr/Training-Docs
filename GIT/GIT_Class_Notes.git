@@ -2908,3 +2908,122 @@ New Release : to be commited : rel_1.5
   316  ls
   317  git log --oneline
   318  history
+
+
+
+##############
+17th May 2023
+##############	
+
+	Git Stash 
+	Git Remote Repositories
+
+	Git Stash 
+		--> 
+
+	Project_Repo. :
+
+		master
+			feature1 ---> working on the changes...... adding the changes to staging area.
+				There are some uncommitted Changes present in feature1.
+
+	Git Stash ---> All the uncommitted changes are moved to a temporary place.
+
+	git stash
+	git stash save "msg"
+	git stash apply	==> Used to apply the latest changes from stash list to staging area.
+	git stash pop	==> Used to apply the latest changes from stash list as well as remove it from stash list.
+	git stash drop	==> Used to delete latest changes from stash list.
+	git stash clear ==> Used to Clear/cleanup the stashed list.
+	git stash branch <temp-branch>
+
+	git stash show / apply / pop / drop ==> <Stash_ID>	
+	Eg.: 
+		git stash apply stash@{2}
+		git stash pop stash@{2}
+		git stash drop stash@{2}
+
+
+	
+	Git Remote Repositories :::
+
+	Developers' Workload :
+
+		New Project
+			git init --
+				push
+		
+		Change Requests / Bug fix
+			git clone
+				push
+
+		
+		git clone https://github.com/SA-DevOps-17thApr/testremoterepo1.git
+		git add
+		git commit
+		git push
+		git fetch
+		git pull
+		git remote
+
+
+		git credentials :::
+
+			GITHUB login_id  & Access Token
+	
+
+
+	1. How to create a remote repo.
+		create files/folders
+		commits
+		create branches 
+		merge 
+		pull request
+
+
+
+	git ignore ==> ???
+		
+
+
+
+			git clone	==> Is used to clone/copy the entire remote repository into the local Machine/Repository
+
+			git fetch/pull 	==> Is used to handle the incremental changes from remote repository.
+
+			git fetch ==> 	Is used to check if there is any incremental changes available in remote repository
+					If there is any incremental changes available in remote repository, It will just update the change in Local Repository.
+					It will NEVER Update the changes in Working Directory.
+				 	
+			git pull  ==> 	Is used to check if there is any incremental changes available in remote repository. 
+					If there is any incremental changes available in remote repository, It will just update the change in Local Repository and 
+					It will Update the changes in Working Directory as well.
+
+			git push  ==> 	Is used to push the incremental changes from local repository to remote repository			
+			
+			git fork  ==> 	Is used to clone/copy the entire remote repository to another remote repository
+
+	
+		git remote -v
+		git remote add origin <url>
+		git remote remove origin <url>
+
+		Change Request :: CR#
+
+		git commit -m "CR10091 - Created f2.txt"
+
+		git commit --amend -m "Valid Commit Message"
+
+
+
+Summary :::
+
+	GIT Module -
+		Install git 
+		Working with local git repo.
+		GIT workflow
+		reset,revert
+		Branches
+		Rebase,squash,stash
+		Remote Repo.
+		
