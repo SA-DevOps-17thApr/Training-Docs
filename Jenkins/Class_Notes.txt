@@ -133,6 +133,125 @@ sudo apt-get install jenkins
 
 
 
+##############
+22nd May 2023
+##############	
+
+	Continuous Integration using Jenkins :::
+
+	How to perform Automated Build, Automated Unit Testing and Create Artifacts for Java Maven Web Application ::::
+
+	Build Tool ::: Maven
+	
+	Jenkins Master ::: 	To Define --> the Jenkins Job/Project -> freestyle/pipeline Project 
+			  	Schedule the Job/Project to execute in Slave Machines
+
+	Jenkins Slave ::: 	Is to exec the jobs
+
+	Pipeline Project :::
+		- Scripted Pipeline 
+			
+		- Declarative Pipeline
+
+	How to create a simple Jenkins pipeline project 
+	Enhance the same with build tools
+	Enhance the same with Master/Slave Architecture.
+
+
+
+Jenkins CI/CD Pipeline Jobs:::
+
+	composed of various stages ::
+	
+	C_Development --> CI/CD - Workflow :::
+
+
+	1. Developers - Create the source code 
+	2. Push the src code to github repo.
+	3. build & Create artifacts, 
+	4. Promote the appln. to Test Environment
+	5. Perform automated Testing - QA / UAT  
+	6. Deploy to Production
+
+
+	C_Development ::
+
+	1. Developers - Create the source code 
+	2. Push the src code to github repo.
+
+	CI/CD - Workflow ::
+
+	1. SCM - Checkout Stage
+		--> Clone / Copy the src code from remote git repo. to Jenkins Build server
+	2. Build Stage
+		--> Compile, Perform Automated Unit Testing, Create Artifact
+	3. Deploy Stage to QA Test Server 
+		--> Copy the artifacts from Jenkins Build Server to QA-Test Server
+
+
+pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "slave_maven"
+    }
+
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/LoksaiETA/Java-mvn-app2.git'
+            }
+	}
+        stage('Maven Build') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+	}
+}
+}
+	
+
+pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "slave_maven"
+    }
+
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/LoksaiETA/Java-mvn-app2.git'
+            }
+	}
+        stage('Maven Build') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+	}
+}
+}
+
+
+
+Maven Tools Installation :::
+
+	apt-get update -y
+	apt-get install openjdk-17-jdk -y
+	java --version
+	apt-get install maven -y
+	mvn --version
+
+
+
+
+
 
 
 
