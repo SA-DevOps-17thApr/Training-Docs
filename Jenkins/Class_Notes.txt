@@ -251,6 +251,226 @@ Maven Tools Installation :::
 
 
 
+	
+
+
+##############
+23rd May 2023
+##############	
+
+	Jenkins Master / Slave Configuration :::
+
+		1. Launch 2 Vms - (1 Jenkins MAster / Slave)
+			Jenkins Master ::	Ubuntu(Prev.Version) --> java, jenkins
+			Jenkins Slave1 ::	Ubuntu(Prev.Version) --> java, maven, git
+
+		2. Add Users to Jenkins Slave Machine
+		3. Create SSH Keys --> 
+			private and public keys 
+
+				Type of SSH Key is based on the version of Linux Distribution.
+					RSA
+					OPENSSH
+			ssh-keygen -t rsa -b 4096 -m PEM
+			ssh-keygen ===> Create 
+
+
+		4. Configure Nodes in the Jenkins Console.
+
+
+IN SLAVE Machine :::
+
+#INSTALL BUILD TOOLS :::
+
+	sudo apt update
+	sudo apt install openjdk-11-jre
+	java -version
+	apt-get install maven -y
+	mvn --version
+
+
+#Add User : 
+
+	useradd -m -d /home/devopsadmin devopsadmin
+
+#useradd devopsadmin
+
+su - devopsadmin
+
+#ssh-keygen
+
+#for Ubuntu ::
+ssh-keygen -t rsa -b 4096 -m PEM
+
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+#cat id_rsa & copy the private key and paste it into jenkins node config. enter private key directly field.  Then,
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+
+chown -R devopsadmin1 /home/devopsadmin1/.ssh
+chmod 600 /home/devopsadmin1/.ssh/authorized_keys
+chmod 700 /home/devopsadmin1/.ssh
+
+ON JENKINS CONSOLE :::
+
+	1. goto manage jenkins --> Manage Nodes
+	2. Add Node
+	3. Configure Node
+		host - private ip addr of Node
+		credentials to be created with private key of devopsadminuser
+		host key verification strategy - Manual choose host key verification strategy (3rd option)
+		
+	4. Global Tool Config. - Add Maven Path
+	5. Create pipeline project
+
+
+##############
+24th May 2023
+##############	
+	
+	
+
+	CI/CD - Workflow ::
+
+	1. SCM - Checkout Stage
+		--> Clone / Copy the src code from remote git repo. to Jenkins Build server
+	2. Build Stage
+		--> Compile, Perform Automated Unit Testing, Create Artifact
+	3. Deploy Stage to QA Test Server 
+		--> Copy the artifacts from Jenkins Build Server to QA-Test Server
+
+
+	How to Configure Application_Server to run the application :::
+
+	What is Application Server ???
+
+	Non-Prod						Prod
+	Dev_Server (VM)
+	Build_Server 
+	Test_Servers/Target_Server/Hosted Server (VM)
+		Application_Server (Software)
+			Eg.: Tomcat / Nginx	
+	  QA/UAT	
+
+
+
+	SCM_Checkout	-> 	Build		->	Deploy the artifacts to Target_Server
+
+
+	Jenkins_Architecture ::
+		1. Jenkins_Master
+			Jenkins_Slave (*.war)
+		2. Test_Server
+
+	How to Configure the Application_Server :::
+
+		1. Launch an Instance(ubuntu)
+		2. jdk
+		3. Define Envi. for JAVA_HOME
+		4. Install Tomcat 
+			https://tomcat.apache.org/download-80.cgi
+		5. Start Tomcat Server
+		
+		
+		6. Configure Tomcat Server in Jenkins Master
+
+			6.1 Create user in tomcat server
+			6.2 Create SSH-Key to the user
+			6.3 Grant access to Tomcat Server
+
+			6.4 Login to Jenkins Console
+			6.5 Use Pubish over ssh plugins to connect to Tomcat Server
+				GOTO Manage Jenkins --> Manage Plugins --> Available Tab 
+							--> search for Pubish over ssh plugins --> Install & Restart Jenkins
+	
+		7. Deploy the web application using CI/CD Pipeline
+		8. Run the web application using External IP Address of Tomcat Server & port : 8080
+
+
+
+	Deployment :::
+	
+		Copy the artifact from <Source_Server> to <Target_Server>
+
+		Copy the artifact 
+
+	from:  	/home/devopsadmin/workspace/SA17-Pipeline-MVN_Build_Project/target/mvn-hello-world.war 
+
+	to:	/opt/tomcat/webapps/mvn-hello-world.war 
+
+
+
+
+pipeline {
+    agent { label 'slave1' }
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "maven"
+    }
+
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/LoksaiETA/Java-mvn-app2.git'
+            }
+	}
+        stage('Maven Build') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+	}
+        stage('Deploy to Tomcat Server') {
+            steps {
+		script {
+		sshPublisher(publishers: [sshPublisherDesc(configName: 'Tomcat_Server', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: 'target/', sourceFiles: 'target/mvn-hello-world.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+		}
+            }
+	}
+}
+}
+
+
+
+
+Build Triggers ::::
+
+	Build Periodic ::
+		Used to trigger the jenkins job based on the schedule.
+		Trigger the jobs irrespective of any src code commit. 
+
+	Poll SCM
+		Used to trigger the jenkins job based on the schedule.
+		Trigger the job only of there is any changes happened in source code repository. 
+		GIT should be installed in Jenkins_Master.	
+
+	Github Webhook
+		Used to trigger the jenkins job Whenever the commit happened in the source code repository.
+		Trigger the job as soon as the commit happened in the repo. It will never wait for any schedule. 
+		GIT should be installed in Jenkins_Master.
+
+		Should configure Jenkins payload url and config github webhook in github repo.
+
+		http://<Jenkins_Server_URL>/github-webhook/
+		Eg.: http://13.126.225.245:8080/github-webhook/
+
+
+
+
+
 
 
 
