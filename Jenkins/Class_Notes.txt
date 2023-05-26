@@ -541,6 +541,130 @@ chown -R devopsadmin /opt/tomcat
 
 
 
+##############
+25th May 2023
+##############	
+
+		Java Application ::: built and deploy
+	
+			Testing -->
+				Dev --> unit test -> test cases, test data  -- 20 scenarios
+
+
+				15 --->
+					CODE COVERAGE TOOL::
+						JaCoCo - Java Code Coverage
+
+			Promote t code to QA envi,
+
+
+			SCM CHK OUT --> BUILD CREATE ARTIFACTS --> DEPLOY TO QA ENVI. --> D,T
+
+		EMail Notifications :::
+
+			
+Email Notification Plugins :::
+
+SMTP Server :
+smtp.gmail.com
+
+SMTP Authentication
+
+SMTP Port :: 465
+
+Login to Gmail :::
+
+Click Account Settings
+
+Security 
+
+Create App Token --- 16 
+
+
+
+	Containerization :::: Docker 
+
+		https://hub.docker.com/
+
+	Docker & Kubernetes **********
+
+	Docker --> It is a Containerization Tool :::
+
+	Used to Create Docker Images and Containers --->
+
+
+	Virtual Machines ???
+
+	What is the Need for VM ???
+
+		To scale h/w s/w update ???
+
+
+	To work on more than one OS.
+
+		
+
+		Hypervisor		
+
+
+
+
+
+
+	Virtual Machines ::::
+
+	- VMs are used to run multiple OS.
+	- It is Hardware level Virtualization.	
+	- It is used to run OS.
+	- It required huge space
+	- Consume time to start up.
+
+
+
+In any cloud platform :::
+
+Regions --> 
+	Availability Zones
+	  Data Centers(Servers)
+
+ap-south1a --> Virtual Machines..
+
+
+	Virtual Machines ::::
+
+	- VMs are used to run multiple OS.
+	- It is Hardware level Virtualization.	
+	- It is used to run OS.
+	- It required huge space
+	- Consume time to start up.
+	- VM will continue to runn even if the application is completed.
+
+	Containers ::::
+
+	- Containers are not to run operating systems.
+	- Containers are OS level Virtualization
+	- Containers are used to run Application, and NOT Operating System
+	- It doesn't require much space, as it is jus used to run applications.
+	- It is faster to start up.
+	- Containers will exit as soon the application is completed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
