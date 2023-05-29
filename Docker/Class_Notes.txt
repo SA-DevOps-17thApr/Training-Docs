@@ -225,3 +225,159 @@ ap-south1a --> Virtual Machines..
    57  docker inspect 5d0da3dc9764
    58  docker images
    59  docker history 5d0da3dc9764
+
+
+
+
+
+##############
+29th May 2023
+##############
+
+	
+
+	Docker Commands :::
+
+		- To login to running container.
+
+		docker exec -it <Container_id>
+		docker exec -it 7d4b5a2e61aa bash
+
+		docker run (vs) exec
+
+		docker run -it <image_id>
+		docker run -it centos 
+
+		Port Mapping / Binding :::
+
+	Eg.. Run an application server inside the container.
+
+	Port Mapping / Port Binding is used to map the Container volume to the corresponding host volume
+
+	docker run -it -p 8085:8080 tomcat:8.5
+
+	port mapping ==> -p <host_port>:<container_port>
+
+	docker run -it -p 8086:80 nginx
+
+	<public_ip>:8085
+
+
+
+	Build Container Images ::::
+
+		Setup a VM for my Java Maven webapp Build.
+
+			OS,jdk,maven,git
+
+		Setup a Container Image for my Java Maven webapp Build.
+			OSImage,jdk,maven,git
+
+	In order to build the container image ::
+
+	Should start with the Base Image :::
+
+
+	These are commands used to create/build new container Images :	
+
+		Docker Commit 
+		Docker Build 
+
+  106  clear
+  107  docker ps -a
+  108  docker run centos sleep 100
+  109  docker ps
+  110  clear
+  111  docker run -it -p 8085:8080 tomcat:8.5
+  112  clear
+  113  docker ps
+  114  docker exec -it f3ab1490f3bf bash
+  115  clear
+  116  docker ps
+  117  docker ps -a
+  118  clear
+  119  docker ps -a
+  120  docker run -it debian bash
+  121  docker ps -a
+  122  docker commit ac3d7157d154 loksaieta/mvnbuild:v1.0
+  123  docker images
+  124  docker run -it loksaieta/mvnbuild:v1.0
+  125  history
+			
+	docker commit ---> 
+
+  120  docker run -it debian bash
+  121  docker ps -a
+  122  docker commit ac3d7157d154 loksaieta/mvnbuild:v1.0
+  123  docker images
+  124  docker run -it loksaieta/mvnbuild:v1.0
+
+
+	docker build ---->
+
+	Dockerfile
+
+FROM debian
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get openjdk-11-jre -y
+RUN apt-get install maven -y
+
+	
+	Docker commit (vs) build ::::
+
+		docker commit ac3d7157d154 loksaieta/mvnbuild:v1.0
+		docker commit <container_id> loksaieta/mvnbuild:v1.0
+	 	docker build -t loksaieta/mvnbuild:v0 .
+
+
+How to Publish the images to Docker Hub.
+
+	Login to docker hub using dockercli
+		 username & Access Token
+			
+dckr_pat_LFGTymNNKdskIvIBctn23qObPOQ
+
+  127  mkdir Docker-Content
+  128  cd Docker-Content/
+  129  clear
+  130  vi Dockerfile
+  131  vi Dockerfile
+
+FROM debian
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get openjdk-11-jre -y
+RUN apt-get install maven -y
+
+  132  docker build -t loksaieta/mvnbuild:v0 .
+  133  docker build -t loksaieta/mvnbuild:v0 .
+  134  docker images
+  135  docker history loksaieta/mvnbuild:v0
+  136  docker run -it loksaieta/mvnbuild:v0
+  137  clear
+  138  docker images
+  139  docker login -u loksaieta
+  140  docker push loksaieta/mvnbuild:v1.0
+  141  history
+
+
+Eg.:
+
+
+
+	Create a Image for application build and test using tomcat 
+
+	ubuntu
+	install git, jdk, mvn, tomcat 
+
+Summary ::
+
+	docker exec 
+	docker container port mapping
+	docker image builds... commit & build cmds
+	create Dockerfile
+	publish images to dockerhub
+
+	
+
