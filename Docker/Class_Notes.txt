@@ -379,5 +379,262 @@ Summary ::
 	create Dockerfile
 	publish images to dockerhub
 
+
+
+
+##############
+30th May 2023
+##############
+
+	Docker build 
+
+	Dockerfile :::::
+
 	
+FROM debian
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get openjdk-11-jre -y
+RUN apt-get install maven -y
+	
+	Best Practise for writting Dockerfile :::
+		Reduce the no. of Layers in Docker Image.
+
+vi Dockerfile
+
+FROM debian
+RUN apt-get update -y && apt-get install git -y && apt-get openjdk-11-jre -y && apt-get install maven -y
+
+
+
+Docker Build Workflow ::
+
+	Create Dockerfile 	--->	Docker Build		--->	Docker Image	---> 	Publish Dockerhub	--->	Docker Container
+
+
+Dockerfile Instructions ::::
+
+FROM 	:	--> Used to specify the Base Image
+
+RUN	:	--> Used to run package managers to manage(install/remove/update) the packages within the container
+
+COPY	:	--> Used to copy the files from the host machine into container volume/Dir.
+			Eg.: Jenkins_Slave : --> build appln. artifacts	--> target/javaapp.war
+				Docker_Engine --> build Docker tomcat image using artifacts
+							tomcat/webapps/javaapp.war
+				Dir ==> collection of dir/files
+
+CP	:	--> Used to copy the files within the container volumes/Dir.
+			Eg.: tomcat/webapps-dest/*.* to tomcat/webapps/
+				CP tomcat/webapps-dest/*.* tomcat/webapps/
+
+WORKDIR	:	--> Used to Identify te current working Directory of host machine.
+
+			FROM tomcat:8.0
+			WORKDIR workspace/target/
+			COPY javaapp.war tomcat/webapps/
+			EXPOSE 8080
+			CMD "/bin/bash"
+
+ENV	:	--> Used to define Environment Variables
+
+EXPOSE	:	--> Used to Expose Container Port.
+
+CMD	:	--> Used to specific the default/start-up command to run the container. Allows users to pass the any command at run time.
+			Eg.: docker run -it centos sleep 60
+
+				FROM tomcat:8.0
+				WORKDIR workspace/target/
+				COPY javaapp.war tomcat/webapps/
+				EXPOSE 8080
+				CMD "echo Hello"
+
+				docker run -it tempimg2 sleep 60
+
+				docker run -it tempimg2 sleep 100
+
+				docker run -it tempimg2 echo Hello 
+
+				docker run -it tempimg2 sleep 80
+
+				docker run -it tempimg2 sleep 60
+
+ENTRYPOINT 	--> Used to specific the default/start-up command to run the container. The command cannot be modified at run time.
+			Eg.: 
+				FROM tomcat:8.0
+				WORKDIR workspace/target/
+				COPY javaapp.war tomcat/webapps/
+				EXPOSE 8080
+				ENTRYPOINT "echo Hello"
+
+				docker run -it tempimg1 sleep 60
+
+
+
+			Eg.: 
+				FROM debian
+				RUN apt-get update
+				RUN apt-get install git -y
+				RUN apt-get openjdk-11-jre -y
+				RUN apt-get install maven -y
+				CMD "sleep 50"
+
+				docker run -it tempimg3 sleep 100
+				docker run -it tempimg3 sleep 20
+				docker run -it tempimg3 sleeep 500
+
+			Eg.: 
+				FROM debian
+				RUN apt-get update
+				RUN apt-get install git -y
+				RUN apt-get openjdk-11-jre -y
+				RUN apt-get install maven -y
+				ENTRYPOINT "sleep "
+				CMD "50"
+
+				docker run -it tempimg3 500
+
+				Eg.: docker run -it tempimg3 sleep 500
+
+
+			Eg.: 
+				FROM debian
+				RUN apt-get update
+				RUN apt-get install git -y
+				RUN apt-get openjdk-11-jre -y
+				RUN apt-get install maven -y
+				ENTRYPOINT "mkdir "
+				CMD "/dummy"
+
+				Eg.: 
+					docker run -it tempimg3				==>	mkdir /dummy
+					docker run -it tempimg3 /sampledir1		==>	mkdir /sampledir1
+
+
+
+Container Volumes ::::
+
+	Host Machine ==> mkdir /sampledir1/file1.txt
+
+
+	Container    ==> docker run -it centos bash 
+				$ mkdir /sampledir1/file1.txt
+				$ exit
+				
+			docker run -it centos bash 
+
+
+			docker run -it webappsignin bash 
+
+	Applications :::
+
+		Stateless Application
+			
+		
+		Stateful Application
+			
+			Micro-Service :::
+				3-tier Architecture :::	signup service
+					
+					Front-End (UI)		Container1
+					Application Logic 	Container2	signup.war ==> produce some data - log/report/	==> moved to host vol
+					Back-End (Dbase)	Container3
+		
+
+
+	Persistant Volume :::
+
+		Docker Volume Command :::
+
+		Docker Volume :::
+	
+		docker volume 
+
+  175  clear
+  176  docker ps
+  177  docker ps -a
+  178  clear
+  179  docker ps -a
+  180  docker volume list
+  181  docker volume create sa17vol1
+  182  docker volume list
+  183  docker volume inspect sa17vol1
+  184  cd /var/lib
+  185  cd docker/
+  186  ls
+  187  pwd
+  188  cd volumes/
+  189  ls
+  190  cd sa17vol1/
+  191  ls
+  192  cd _data/
+  193  ls
+  194  pwd
+  195  docker volume create sa17vol1
+  196  docker volume create sa17vol2
+  197  docker volume create sa17vol3
+  198  docker volume list
+  199  cd ..
+  200  cd .
+  201  ll
+  202  cd ..
+  203  ls
+  204  pwd
+  205  docker volume inspect sa17vol2
+  206  docker run -it centos bash
+  207  docker run -it --mount source=sa17vol1,destination=/sa17vol1 centos bash
+  208  cd sa17vol1
+  209  ls
+  210  cd _data/
+  211  ls
+  212  cat file1fromcontainer.txt
+  213  ls
+  214  echo "rec from host Machine" >> hostfile1.txt
+  215  ls
+  216  echo "rec from host Machine" >> hostfile1.txt
+  217  ls
+  218  cat hostfile1.txt
+  219  docker run -it --mount source=sa17vol1,destination=/sa17vol1 centos bash
+  220  history
+
+
+
+	webApplication:
+
+		create the user login_history 
+			date&time.txt  in container
+
+
+
+Docker Compose ::::
+
+	Docker Compose is Docker plugin. It is used to run multiple Containers as single service.
+			
+			Micro-Service :::
+				3-tier Architecture :::	signup service
+					
+					Front-End (UI)		appimg1-Container1
+					Application Logic 	appimg2-Container2
+					Back-End (Dbase)	appimg3-Container3	
+
+			docker run 
+
+		Docker Compose :: 
+
+		Installation :
+			https://docs.docker.com/compose/install/linux/
+ 
+			docker compose version
+			docker compose up
+			docker compose down
+
+		yaml script to define multiple containers.
+
+Summary ::
+		Docker Build 
+		Dockerfile
+		Dockerfile Instructions
+		Docker Volume
+		Started with Docker Compose.
+
 
