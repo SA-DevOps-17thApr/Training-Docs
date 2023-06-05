@@ -1,0 +1,157 @@
+
+2nd June 2023.
+
+	Kubernetes :::
+	
+		It is a open-source container orchestration tool. to manage and deploy the containerized workload.		
+		Micro-service based application Architecture.		
+		This can be compared to Docker-Swarm.
+		
+		Kubernetes was owned by google.
+		
+		
+	-	Kubernetes Architecture
+	-	Kubernetes Installation & Configuration
+	-	Kubernetes Master - Workernodes
+	-	Working with Kubernetes	
+			Pods
+			Deployment controllers
+			Namespaces
+			Volumes 
+			Kubernetes Services
+			
+			
+	-	Kubernetes Architecture ::::
+	
+		Master 		==>
+			Cluster
+				Workernode1
+				Workernode2
+				Workernode3
+		
+		Cluster ::: --> It is a collection of Workernodes
+		
+		Kubernetes :
+			Self-Managed (Open Source)
+			Managed Service from service provider
+				Eg.:
+					AWS --> EKS
+					AZ  --> AKS
+					GCP --> GKS
+	
+	
+	Core Kubernetes Architecture
+	
+	Master
+		APIServer
+		Scheduler
+		ETCD 
+		Controller Manager
+	Workernodes
+		kube-proxy
+		CRI - Docker 
+		Kubelet
+		
+	POD :: 	It is an atomic unit of schedule.
+			It runs the container
+			Collection controller components.
+	
+Next :::
+	Installation of Open-Source Kubernetes along with its cluser.
+	Pods  &  Deployment controller
+	
+	
+****************
+*5th June. 2023*
+****************
+
+		
+	Installation of Open-Source Kubernetes::
+	
+		Kubernetes-Master				VM 
+			Kubernetes-Workernode1		VM
+			Kubernetes-Workernode2		VM
+			Kubernetes-Workernode3		VM 
+			
+	
+	
+	Installation & Configuration ::
+		kubeadm 	==>	
+		minikube 	==> light weight K8s
+		
+	Managed Services :::
+	
+		AWS --> EKS 
+		Az	--> AKS 
+		GCP --> GKS 
+		
+	
+	Instal Kubernetes using Kubeadm :::
+	
+		Kubernetes-Master				VM 			==> to create pods, schedule.
+			Kubernetes-Workernode1		VM				
+			Kubernetes-Workernode2		VM
+			Kubernetes-Workernode3		VM 	
+	
+	
+	Hardware requirements :::
+		2 CPU or More
+		3 GB RAM or more
+		Enable full connectivity across the cluster the master nodes 
+		Disable Selinux 
+		swap off
+	
+	
+	
+	Kubernetes Concepts :::
+	
+		Kubectl 
+		
+		Pod 
+		Deployment Controller 
+		Services 
+	
+	
+	Namespace ==> is a logical pratitioning of the cluster.
+	
+	
+	
+	
+	Pod (containers)
+	
+			3-tier archi . user_registration_Module :
+			
+			
+			front-End 				container/pod1	
+			Application 			pod2		---> failed ???
+			Dbase - backend.		pod3
+	
+	Service ::::
+			ClusterIP -- Default service
+			NodePort 	-- used to expose the pod to internet.
+			LoadBalancer -- LoadBalancing 
+	
+	
+	
+	host port :::
+	
+		port mapping / binding 
+		
+			-p 8086:80
+			
+			
+			Node Port :::
+			
+			
+		master ::
+			workernode1,2,3,4,................,50
+			
+				workernode5 ==> port 8086
+				
+				I need a port to expose my web application. and that port should handled at cluster level NOT at a specific HOST Level.
+			
+		NodePort ---> 30000 range of port.
+		
+Next ::
+
+	Deployment Controller Object. 
