@@ -155,3 +155,165 @@ Next :::
 Next ::
 
 	Deployment Controller Object. 
+
+****************
+*6th June. 2023*
+****************
+
+	Deployment Controller Object. 
+	
+		-	Used to replicate the pod instance
+				replicas - 5 
+		-	Scale up / down
+		-	Upgrade 
+		- 	Rollback the changes 
+		
+	Service ::		
+		Nodeport service.
+		
+	
+	1. Create Deployment Controller using manifest file
+	
+	
+	Deployment Strategy :::	RollingUpdate -- is default deployment strategy.
+	
+	Rollingupdate ::::
+	
+	3 replicas:
+	
+	pod1	nginx:1.7.9 		1.9.1 
+	pod2	nginx:1.7.9			1.9.1 
+	pod3 	nginx:1.7.9			1.9.1 
+	
+	upgrade to 1.9.1 
+	
+	
+	developer ==> java appln. -- *.war_v1.0		=> image ==> mywebapp_v1.0		--===> mywebapp_v1.0	
+	
+	developer ==> java appln. -- *.war_v1.1		=> image ==> mywebapp_v1.1		--===> mywebapp_v1.1	
+	
+	Replicas ::: ???
+	
+	What is the purpose of Replicas ::::
+	
+		Used to ensure high availability of PODs 
+		
+	1 instance of POD ===> 
+	
+	Multiple Instances of Pod ==> replicas as 5
+	
+	
+	Scale up / Down ?? 
+	
+		Used at the time of handling Application Traffic.
+		
+	
+	Namespaces :::
+	
+		Logical partitioning of the kubernetes cluster :::
+		
+	Deployment ::::
+
+		Environments :
+		
+			Dev 
+			QA
+			UAT								PROD
+		
+		
+		
+		Non-Prod Kubernetes Cluster				Prod Kubernetes Cluster 
+		
+		Namespaces:								Namespace:
+			Dev										Prod_Active
+			QA 
+			UAT 
+	
+		Namespaces are defined at the cluster level.
+	
+	
+	Services in Kubernetes :::
+	
+		-	ClusterIP
+		- 	NodePort 
+		-	LoadBalancer
+
+git, jenkins, docker, kubernetes 
+	
+		Automate the build and Deployment of web application in Kubernetes Cluster
+	
+	CICD - Workflow ::::
+	
+		STAGES OF JENKINS PIPELINE ::
+		
+			SCM CHECKOUT
+			
+			BUILD
+			
+			DEPLOY TO TOMCAT SERVER
+			
+			
+			
+		DOCKER & kubernetes
+		
+		PRE-REQUISTIES :::
+		
+			- Install Kubernetes 
+	
+			- Enable Docker/Kubernetes Access
+
+
+		scm_checkout	=>	Build ==> create the docker  image 		==> publish to docker registry ==> Deploy using kubernetes
+
+
+		Jnkins_pipeline project
+		
+**************
+7th June 2023
+**************
+
+
+	Jenkins CI/CD Pipeline to build and deploy java web application in kubernetes cluster :::
+
+	Project Level Discussion :::
+	
+		Tools involved in this process ???
+			
+				jdk,jenkins,git,maven,docker,kubernetes 		==> DevOps Tools 
+				
+		Infra-Structure :::
+		
+		Servers/VM - 6-VMs
+		
+			Jenkins_Master			jdk,jenkins,git 			
+				Jenkins Slave 		jdk,git,maven,docker 
+			Kubernetes_Master 		Kubernetes Components - docker, kubeadm,kubectl,........
+			Kubernetes_WorkerNode1,2,3
+		
+		
+		Jenkins Pipeline Stages ::::
+		
+			SCM_Check_Out
+			Application_Build
+			Docker_Build
+			Publish_to_DockerHub
+			Deploy_in _Kubernetes_Cluster	
+
+
+		Jenkins Build Triggers ::: 
+			Build Periodic
+			Poll SCM 
+			Github Webhook 
+			
+		
+		
+		
+FROM tomcat:8.0
+COPY ./target/loksaieta.war /usr/local/tomcat/webapps
+EXPOSE 8080
+	
+	
+	
+		Deployment controller object :: *.yaml
+			
+
