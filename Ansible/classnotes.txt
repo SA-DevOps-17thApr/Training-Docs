@@ -1,0 +1,180 @@
+
+
+**************
+8th June 2023
+**************
+
+
+		Configuration Management Tool :::
+		
+			Ansible :::
+			
+		Configuration Management Tool 
+		
+		Infra-Structure Team :::
+		
+			Provision infra Structure!!!
+			
+			aws console --- Manually Launched !!!!
+			
+		
+		CICD Pipeline ::
+		
+		SCM Checkout - build 	- create artifacts - build image	- publish to docker hub -- deploy to k8s
+		
+		Adhoc requirement ::::
+		hotfix/bugfix 
+		
+		code changes -- build - test -- promote to prod 
+		
+		
+		1. Dynamically Create Test Servers.
+		
+		2. Dynamically Configure the Test Servers.
+			
+			
+		IAC Tool ====> Infra-Structure As Code :::
+		
+		Terraform	--> Server Provisioning  test server!
+		
+		Ansible 	--> Server Configs --> tomcat / nginx / selenium 
+		
+			shell scripts!!! along with aws cli..
+			
+			IAC Tools --> Scripts --> 
+			
+				yaml scripts 
+				HCI scripts 
+				
+		Ansible ::: 
+				Ansible is a configuration Management Tool
+				Ansible uses push mechanism to achieve the task.
+				Ansible is Agentless 
+			
+			
+			Ansible Controller 
+			
+					Target1
+					Target2
+					Target3 
+					
+			Inject/push the modules to the target machines.
+			
+			Inventory file --> Contains the information about the target servers.
+			
+					name - target1
+					auth - shh key 
+					host - ip_addr
+			
+		
+					name - target2
+					auth - shh key 
+					host - ip_addr		
+					
+			Playbooks --> script that are used to execute the modules in target machine.
+			
+			
+			Using Ansible Adhoc Commands 
+			Using Ansible Playbooks
+			
+			
+			Adhoc command to ping that server ==> 
+			
+			
+			Install of Kubernetes --> 
+			
+		
+		Components of Ansible Architecture :::
+		
+			- Ansible Controller/Engine			-	SSH Connection to 			- 	Ansible Targets/Nodes
+			- Modules
+			- Playbooks
+			- Inventoryfile
+			- ansible - config
+			
+		Script ::
+		
+		yaml ::: --> Key value pairs
+		
+		
+		Working with Ansible :::
+		
+			Install Ansible.
+			Add the target servers.
+				Ansible uses push mechanism to achieve the task.
+				Ansible is Agentless
+				
+		
+		Launch 3 VM :::
+			
+		Ansible Contoller :
+			Ansible Node1
+			Ansible Node2
+			
+		How to perform SSH Key based auth. ????
+					
+			Jenkins_Server					Jenkins_Slave 
+												devopsadmin - ssh key 
+																private & public key / auth.key 
+			copied the private key of slave to jenkins master 	
+		
+		Infra-Structure Team :::
+				Config... 
+				
+			Ansible --> 
+			
+			
+			Ansible Controller 				(SSH)				Nodes 
+																	Dev_Team 
+																			Dev_Server1
+																				ssh_key 
+																					private & public key / auth.key
+																					
+																					
+																		Testing_Team
+																		Deployment_Servers 
+																		
+			
+			Ansible Controller 				(SSH)				Nodes 
+																	Dev_Team 
+																			Dev_Server1
+																																								create SSH-Key 
+					private & public 						 	copy the public key from controller as a auth. key in all the target servers
+					
+					
+		
+		
+		Installation & Config.
+		
+		Working with Ansible.
+		
+			Inventoryfile 
+		
+		
+		[DBServers]
+		
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+		Databaseserver1 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin		
+		Databaseserver2 ansible_ssh_host=172.31.34.226 ansible_ssh_user=ansibleadmin
+
+Next: 	
+	Ansible - Modules 
+			Playbooks 
+			Roles 
+			
+			
+			
+			
