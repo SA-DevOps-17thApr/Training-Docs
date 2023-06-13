@@ -177,4 +177,180 @@ Next:
 			
 			
 			
+**************
+9th June 2023
+**************
+
+
+		Playbook :: is written using YAML Script !!!
+		
+		composed of keys & Values.
+		
+mytestfile.yaml 
+		
+---
+ - hosts: testnodes
+   tasks:
+   - debug:  
+      msg:
+       - "The os distribution is: {{ansible_distribution}}" 
+       - "THe os name is: {{ansible_system}}"
+       - "The os family is: {{ansible_os_family}}"
+       - "THe mount points are :{{ansible_mounts}}"
+	   
+	   
+	   
+	   debug -a msg/var 
+	   
+Handling Variables in Ansible Playbook::::
+
+	1. Hardcode the variables in playbook using vars key.
+	2. Pass the values thur external file to playbook using vars_files
+	3. Just parameterize the playbook and pass te inputs at runtime. using -e 
+	eg.: ansible-playbook manage_pkg.yaml -e "host_name=samplenode1 tool_name=git tool_state=absent"
+	
+	
+a = 10 
+b = 20 
+
+c = a + b
+
+echo c
+
+Summary :::
+	Install AC, AN1,.....,n
+		manage the servers using SSH
+		Install req. tools and services.
+		
+			
+***************
+12th June 2023
+***************
+
+		Ansible Playbooks .
+		Ansible Variables 
+		Handlers
+		Roles
+		
+		Variables ::
+			Ansible Environment Variables 
+			Ansible User Defined Variables
+			
+		Handlers 
+		Roles 
+		Misc.
+			
+			
+---
+ - hosts: testnodes
+   tasks:
+   - debug:  
+      msg:
+       - "The os distribution is: {{ansible_distribution}}" 
+       - "THe os name is: {{ansible_system}}"
+       - "The os family is: {{ansible_os_family}}"
+       - "THe mount points are :{{ansible_mounts}}"			
+   - debug:  
+      msg:
+       - "The os distribution is: {{ansible_distribution}}" 
+       - "THe os name is: {{ansible_system}}"
+       - "The os family is: {{ansible_os_family}}"
+       - "THe mount points are :{{ansible_mounts}}"	
+   - debug:  
+      msg:
+       - "The os distribution is: {{ansible_distribution}}" 
+       - "THe os name is: {{ansible_system}}"
+       - "The os family is: {{ansible_os_family}}"
+       - "THe mount points are :{{ansible_mounts}}"	
+	   
+
+
+Configure my jenkins Slave Machine ::
+
+		jdk,maven,git,docker
+		
+		task: 
+		
+				git 
+				docker 
+				jdk
+				maven 
+
+
+	Handlers :::
+	
+		QA_Server ::
+					jdk 
+					tomcat 
+					Start tomcat server
+
+
+	Ansible Role ::
+		
+			It is used to organise, reuse and share the ansible components
+		
+
+	Dev Team ==> wants to config the dev servers 150 servers.
+			playbook
+			var_files 
+			inventory
+			
+	Organize the Ansible Components :::
+		
+	Ansible roles :::
+	
+		Used to organise, reuse and share the ansible components 
+		
+		ansible-galaxy init role_name 
+		
+Ansible :::
+	
+		Ansible Architecture :
+			Installation & Cofiguration of Ansible Controller and nodes 
+		
+		Working with Inventory files
+		Working with Ansible Modules using Ansible Adhoc Commands/Playbooks 
+		Handling variables 
+		Handlers 
+		Loops 
+		Roles 
+		
+	How you deployed artifacts using jenkins?
+		Publish over SSH ?
+		
+		
+		Ansible Controller Machine :
+		
+				-	Jenkins_Master 
+				-	Jenkins_SLave
+				-	QA_Server
+			
+		Ansible fetch / copy Module ?
+		Write a Playbook : 
+			To copy the artifacts from Jenkins Slave to Ansible Controller to QA_Server.
+			
+		
+		ansible-galaxy init <rolename1>
+		
+		
+		Java Applications :::
+		
+			Java Project --> 
+				java-application1 --> tested - selenium/Junit/TestNG
+			
+			Maven Project --->
+				Managing all the dependencies and plugins using pom.xml
+
+			Application Framework:
+				Spring boot application framework :::
+				
+			.Net Core framework -- asp.net apps / c#.net
+		
+			Python --> web application framework - Django / flask
+			
+			
+			
+		How to create java applications using Spring boot application framework.?
+		
+					
 			
