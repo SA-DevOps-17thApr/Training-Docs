@@ -1,0 +1,59 @@
+***************
+13th June 2023
+***************		
+	
+		Continuous Monitoring!!!!
+		
+			Infra-Structure
+			
+				Monitoring Tool :::
+				
+				Production Support Team
+				Production Monitoring Team
+			
+				How Monitoring Happens ???
+				
+					Prometheus/SPlunk/Dynatrace/NAgios 	--> Monitoring Tools 
+					Grafana								--> Visualization Tool
+
+			
+			Application
+				- AppDynamics 
+				
+		
+		Prometheus :::
+				Open Source Monitoring Tool --
+				Alert Management
+				Webhook 
+				
+		Grafana :: Is a Visualization Tool 
+		
+		
+			Architecture of Prometheus.
+			Installation and Configuration of Prometheus /Grafana 
+			
+			
+		Prometheus Tool ==> Monitor my Prod_Server --> Memory utilization is reached the limit.
+		
+			- CleanUp the volume 
+			- Add more Volume
+			- Add More servers 
+			
+		Jenkins pipeline ---> Webhook --> 
+		
+		
+			
+			Architecture of Prometheus.
+			
+			Server 								Targets 						Agent 
+			
+			Prometheus Server 			--> 	Jenkins_Master 					Node Exporter Agent
+												Jenkins Slave 					Node Exporter Agent
+												Production Servers				Node Exporter Agent
+												Kubernetes Cluster 				Node Exporter Agent
+												
+			
+			Installation and Configuration of Prometheus /Grafana ::
+			
+			
+			
