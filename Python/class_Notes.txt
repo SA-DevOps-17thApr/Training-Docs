@@ -1,0 +1,154 @@
+
+***************
+16th June 2023
+***************	
+			Python fundamentals / 
+			
+			
+			
+			int a = 6;
+			
+			x=5
+			
+		msg="""Hello,
+				How are you doing,
+				Is Everything fine"""
+				
+				
+		Pipeline ::: 
+		
+			list1 == [1,2,3,4,5,6,7]
+					
+			
+					index will start from 0
+				print(list1[0]) ==> 1
+				
+		
+		Functions ==> set of instruction to perform a task?
+		
+		
+		
+		Web_application :::
+		
+			User_Registration 			REGISTER WITH VALID EMAIL-ID,NUMBER			data validation ???
+			
+			User_Login 
+			
+			Update_User_Profile
+			
+
+
+
+			validate_Email()
+			{
+			adfasd
+			fas
+			df
+			asdf
+			}
+			
+			validate_Contact
+			
+			input statement 		input()
+			output statement 		print()
+			
+			
+		Work with Python ::
+		
+			Install Python :::
+			
+			IDE -> 	Eclipse 
+					Pycharm IDE
+					visual studio Code
+					IDLE base editor for python
+					
+			What are the type of Python Application we can create :::
+			
+					Desktop Apps
+					Web Application 
+						Web Application Frameworks
+							Django
+							Flask 
+					Mobile Application 
+					
+					
+			sum()
+			{
+			}
+	
+			sum(a,b)
+			{
+			}	
+
+
+		Install Python ::: https://www.python.org/downloads/
+		
+			
+			sum()				// Function Definition 
+			{
+				a=5
+				b=5
+				return c = a + b			
+			}
+
+			sum()				// func. Invocation 
+
+			sum()				// func. Invocation 
+
+			sum()				// func. Invocation 	
+
+
+			sum(x,y)				// Function Definition 
+			{
+				return c = x + y			
+			}
+
+
+			sum(5,6)				// func. Invocation 
+
+			sum(10,23)				// func. Invocation 
+
+	pip install flask
+	
+	set FLASK_APP=sample
+	
+	python -m flask run
+
+
+//app.py
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+
+def sample():
+	return render_template("sample.html")
+
+if "__name__" == "__main__":
+	app.run(debug=True)
+
+
+
+//sample.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>www.loksaieta.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="jumbotron" style="background-color:white">
+      <img src="https://octodex.github.com/images/spidertocat.png" alt="Spidertocat"
+           class="img-responsive center-block" style="width:250px"/>
+      <h2 class="text-center">Hello Everyone</h2>
+      <p class="text-center"> Staragile Batch 17 - Python Web_Application Demo...</p>
+  </div>
+</body>
+</html>	
+
+
+
