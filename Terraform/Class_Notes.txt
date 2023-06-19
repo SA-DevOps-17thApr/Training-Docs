@@ -1,0 +1,118 @@
+			
+***************
+14th June 2023
+***************	
+
+		Terraform :::
+		
+			IAC --> Infra-Structure As Code :::
+			
+			
+			Server Provisioning		-- Terraform --> open source IAC tool used to provision the servers 
+										
+			Server Configuration 	-- Ansible --> Configuration Management Tool 
+			
+			
+			Terraform	--> Used to server provisioning
+			IAC 	-- terraform used HCL -- json 
+
+
+			Steps to be followed :::
+			
+				- Identify the scope of server 
+				- Write the config file to create server 
+				- terraform init 		# It is used to initialize the providers 
+				- terraform plan
+				- terraform apply
+				
+			Statefile --> used to keep trace of the resource.
+			
+			Installation of Terraform :::
+			
+				on  windows
+				Linux
+				Mac.
+			https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+			
+			
+***************
+15th June 2023
+***************	
+		
+			https://developer.hashicorp.com/terraform/downloads
+				
+				Installation of Terraform :::
+			
+				on  windows
+				
+				
+			Download the terraform 
+			Define Environment variable :
+			
+			Visual Studio Code :::
+				https://code.visualstudio.com/download
+				
+				
+				
+			Folder :
+			
+				*.tf  --> HCL 
+
+
+			Create AWS Instance :::
+				User Auth. 
+					Access token/key 
+			
+			End-to-End Infra-Structure. -->
+
+Access Key :
+dfgdfgdfgIUEGUTZ3ZG5QGS
+
+Secret Key :
+KkMrNfdddddddddmjcs9zh
+
+
+
+				Terraform Actions on Resources :::
+				
+					add 		+ 
+					
+					update 		~
+					
+					destroy 	-
+					
+					
+	CICD Pipeline :::
+		To deploy my appln in test server .
+		Test server shd be created & Configured dynamically.
+
+	SCM Checkout 
+	Build 
+	
+	
+	SCM Checkout --> 	Build	--> Deploy to Test_Server 
+
+	Dev_Cycle
+	Release Cycle 
+	
+	dev, qa, uat 
+	
+	Dynamic Test Servers ---> 
+
+500+services:
+
+1 time trigger : 
+
+	SCM Checkout --> 	Build	--> Provision_server_using_Terraform 	--> Config_using_Ansible	--> Deploy to Test Server	--> Testing
+			--> promote to Prod -- terraform destory 
+			
+	
+2 time trigger :	
+	
+	
+	
+	
+	
+DevOps on Cloud Platform ::::
+	AWS / Azure / GCP
+	
