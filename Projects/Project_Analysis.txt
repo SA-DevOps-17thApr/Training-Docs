@@ -9,10 +9,9 @@
 		
 		Banking/HealthCare/Insurance --> Developers will have thorough knowledge on Domain.
 		
-		20 - 30 Mins ==> Discuss about All these Domains.		
-		
-		
-	Developers' Workload 
+		20 - 30 Mins ==> Discuss about All these Domains.
+
+Developers' Workload 
 	
 		--> New Project/Service 
 		--> Enhancements 
@@ -55,8 +54,42 @@
 			Install all the reqired Tools 	
 	
 	- How many VMs you need?
-	
-	
-	
 	- In each VM, what are all the tools you are gng to install?
+	
+	Various DevOps Stages!!!!
+	
+		Continuous Development :::
+				Local Machine ::: Windows
+					Eclipse IDE - web development --: 
+						Clone the Application Repo.
+						Selenium Test Cases 
+						JUnit/TestNG 
+						Push the updated source code to GITHUB Repo.
+	
+		Continuous Integration :::
+			
+			Ansible_controller ::
+				Jenkins_Master		==> 	jdk,jenkins,git
+				Jenkins_Slave 		==> 	git,jdk,maven -- artifacts / docker? --> create docker img & publish to docker hub
+				
+				Kubernetes_Master
+					Kubernetes_WorkerNode1
+					Kubernetes_WorkerNode2				
+				
+					
+	
+	Jenkins_Master 
+	
+	Ansible_controller 
+	Ansible_Node1
+	Ansible_Node2 
+
+	Docker 
+	
+	
+	
+	
+	
+	
+	
 	- Integrate the VMs using SSH 
