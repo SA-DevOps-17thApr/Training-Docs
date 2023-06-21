@@ -1,0 +1,391 @@
+
+
+***************
+16th June 2023
+***************	
+			Python fundamentals / 
+			
+			
+			
+			int a = 6;
+			
+			x=5
+			
+		msg="""Hello,
+				How are you doing,
+				Is Everything fine"""
+				
+				
+		Pipeline ::: 
+		
+			list1 == [1,2,3,4,5,6,7]
+					
+			
+					index will start from 0
+				print(list1[0]) ==> 1
+				
+		
+		Functions ==> set of instruction to perform a task?
+		
+		
+		
+		Web_application :::
+		
+			User_Registration 			REGISTER WITH VALID EMAIL-ID,NUMBER			data validation ???
+			
+			User_Login 
+			
+			Update_User_Profile
+			
+
+
+
+			validate_Email()
+			{
+			adfasd
+			fas
+			df
+			asdf
+			}
+			
+			validate_Contact
+			
+			input statement 		input()
+			output statement 		print()
+			
+			
+		Work with Python ::
+		
+			Install Python :::
+			
+			IDE -> 	Eclipse 
+					Pycharm IDE
+					visual studio Code
+					IDLE base editor for python
+					
+			What are the type of Python Application we can create :::
+			
+					Desktop Apps
+					Web Application 
+						Web Application Frameworks
+							Django
+							Flask 
+					Mobile Application 
+					
+					
+			sum()
+			{
+			}
+	
+			sum(a,b)
+			{
+			}	
+
+
+		Install Python ::: https://www.python.org/downloads/
+		
+			
+			sum()				// Function Definition 
+			{
+				a=5
+				b=5
+				return c = a + b			
+			}
+
+			sum()				// func. Invocation 
+
+			sum()				// func. Invocation 
+
+			sum()				// func. Invocation 	
+
+
+			sum(x,y)				// Function Definition 
+			{
+				return c = x + y			
+			}
+
+
+			sum(5,6)				// func. Invocation 
+
+			sum(10,23)				// func. Invocation 
+
+	pip install flask
+	
+	set FLASK_APP=sample
+	
+	python -m flask run
+
+
+//app.py
+
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+
+def sample():
+	return render_template("sample.html")
+
+if "__name__" == "__main__":
+	app.run(debug=True)
+
+
+
+//sample.html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>www.loksaieta.com</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="jumbotron" style="background-color:white">
+      <img src="https://octodex.github.com/images/spidertocat.png" alt="Spidertocat"
+           class="img-responsive center-block" style="width:250px"/>
+      <h2 class="text-center">Hello Everyone</h2>
+      <p class="text-center"> Staragile Batch 17 - Python Web_Application Demo...</p>
+  </div>
+</body>
+</html>	
+
+
+***************
+19th June 2023
+***************	
+		Continuous Testing ::::
+		
+		Selenium Testing Tool
+		TestNG - Reporting Tool 
+		
+		
+		Testing ==> dev,qa,uat,pre-prod ===> Prod 
+		
+			Install JDK
+			Install Eclipse
+			Download the chromedriver.exe – version should be same as the chrome already installed from this link - https://chromedriver.chromium.org/ - choose 32bit for windows
+			https://chromedriver.chromium.org/downloads
+			Create new workspace
+			Create Maven Project with simple archetype
+			Create a folder in project call Drivers and copy the chormedriver.exe in it.
+			Update pom.xml file with the required dependencies and plugins like selenium and testNG and compiler
+
+			Create package under src/test/java
+			Create Class under this package 
+			And all the test script as shown 
+			Run as testNG
+
+		Java Project :::
+		
+		Install TestNg. 
+		
+		
+DevOps CICD Pipeline :::
+
+
+SCM Checkout --> Build --> Create Aritfacts --> Deploy to QA --> Automated Testing --> Publish the Test Report
+
+	Deploy to UAT ---> Automated UAT Testing ---> Deploy to PROD 
+		
+	Banking
+	HealthCare
+	Insurance
+	
+***************
+20th June 2023
+***************	
+
+		DataBase Management System --> SQL - Structured Query Language.
+		
+		Install and Work with SQL ::::
+		
+		
+		SDLC ==> Application Program :::
+		
+		Micro-service ---> 3 - tier Application 
+		
+		Front-End / Application Logic / Backend ==> (Used to Store Data)
+		
+		
+		What is Data ???			
+				Raw - meaningless text is what we call as data!
+				
+				Processed data ==> becomes Information!
+
+		What is Information ???
+			Structured Data 
+			
+		DataBase ==> 
+		
+		Data Management :::
+		
+			variable :			
+				int a = 5;
+			Arrays :
+				int a[5] = {2,3,4,5,6}
+			File :	
+					India is a Country
+					Paki is a Country
+					4
+					5
+			Indexed File :
+					2
+					3
+					4
+					5
+					6
+			Tables :
+				Sno		Name		Country
+				2		adsf		INDIA
+				3		asdf		asdfasdf
+				4		asdf		asdfasd
+				5		asdfasdf	asdfasdfasdfasd
+				
+			DataBase :
+				Collection of Tables
+				
+			DataBase Management System 
+			
+			INDIA ===> India is a Country 
+			
+			Tables :
+				Sno		Name		Country
+				2		adsf		INDIA
+				3		asdf		asdfasdf
+				4		asdf		asdfasd
+				5		asdfasdf	asdfasdfasdfasd
+				
+				
+			In Micro-service Based Application :::
+			
+					Source Code Repo.
+					Database.
+					
+			Customer_Account Table 			= Parent Table 
+			
+			Account_No. 	Cutomer_ID	 	Name 		Contact_no 		Addr 	Nominees 	pincode
+			10001			200001			12312		323423			sd 		asdfsdf		2131231
+			10002			200002			12312		32123123423		sd 		asdfsdf		2131231		deletion is not possible 
+			10004
+			
+			Customer_Loan_Details Table		= Child Table 
+			
+			Account_No.		Loan_ID			Interest	
+			10001			LN10001			10			
+			10002			LN10003			10			in process 			
+			10004 										deletion is possible 
+			
+			
+			Data Constraints ::: - Conditions 
+			Referential Integrity Constraint 
+			
+			RDBMS Relational DataBase Management System 
+			
+			
+			SQL  --> Used to Create and Manage the Database objects.
+			
+			DataBase :::
+			
+				MYSQL
+				ORACLE
+			
+			SQL ---> 
+			
+			DBA - DataBase Admins.
+			
+			
+			
+			
+E_Commerce Appln.
+Banking Appln.
+	Customer_Details
+		Account Details
+		Loans Details 
+	Service_Details 
+Insurance Appln.
+
+asdfasdfasdfasdfsa
+dfas
+df
+
+
+Customer_Account_Table 			= Parent Table 
+
+Account_No. 	Cutomer_ID	 	Name 		Contact_no 		Addr 	Nominees 	pincode		Salary
+10001			200001			12312		323423			sd 					2131231		>=5000
+10002			200002			12312		32123123423		sd 		asdfsdf		2131231	    5000
+10003			200003			12312		323423			sd 					2131231		>=5000
+10004			200004			12312		32123123423		sd 		asdfsdf		2131231	    50000
+
+Customer_Loan_Details Table		= Child Table 
+
+Account_No.		Loan_ID			Interest	
+10001			LN10001			0			
+10002			LN10003			10			
+
+
+Install & Working with SQL Database :::
+
+SQLiteStudio ==> 
+
+SQL :::
+
+	Create and Manage the Database and Tables :::
+	
+	DDL	--> Create,Alter,Drop,truncate
+	DML	--> Insert,update,delete,select 
+	DCL
+	
+	
+	Conditions ::: where 
+	
+	select * from Customer_Account_Table; 
+	select * from Customer_Account_Table where Account_No = 10002;
+	select * from Customer_Account_Table where salary > 10000;
+	
+	select Account_No, Name from Customer_Account_Table; 
+	
+	
+	
+	delete from table where where Account_No = 10002;
+	
+		SQL join --
+		Sub Query 
+	
+	
+	EMP_TABLE :::
+	
+	EMP_NO		EMP_NAME	DEPT	SALARY
+	1001		ASDF		IT		15000
+	1002		ASDF		CS		10000
+	1003		ADFSAD		IT		13000
+	1004		WERWER		MS		15000
+	1005		DVZXC		AD		8000
+	
+	
+	SELECT EMP_NAME FROM EMP_TABLE WHERE SALARY > 10000;
+	
+	
+	SELECT EMP_NO FROM EMP_TABLE WHERE SALARY > 10000;			
+	1001
+	1003
+	1004
+	
+	SELECT MAX(SALARY) FROM EMP_TABLE; ===> 15000
+	
+	SELECT EMP_NAME FROM EMP_TABLE;
+	
+	ASDF	
+	ASDF	
+	ADFSAD	
+    WERWER	
+    DVZXC	
+	
+	SELECT EMP_NAME FROM EMP_TABLE WHERE SALARY = (SELECT MAX(SALARY) FROM EMP_TABLE);
+	
+	query optimization ::::
+	
+	code review :::
+	
