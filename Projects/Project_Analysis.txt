@@ -1,0 +1,62 @@
+###############
+21st June 2023
+###############
+
+
+	Project :::
+	
+		Domain Knowledge :::::
+		
+		Banking/HealthCare/Insurance --> Developers will have thorough knowledge on Domain.
+		
+		20 - 30 Mins ==> Discuss about All these Domains.		
+		
+		
+	Developers' Workload 
+	
+		--> New Project/Service 
+		--> Enhancements 
+		--> Bugfix/Hotfix
+		
+		
+	Source Code Repo. 
+		-->
+		
+		
+	Project ::::
+	
+	Implementation :::::
+	
+	
+	
+	1. Pre-requisites
+		Infra-Structure & Tools 
+		
+		
+	2. Workflow	
+	3. Usecases 
+	
+	
+	Phase 1 ::: Infra-Structure & Tools
+			Launch all the required servers 
+			Install all the reqired Tools 
+			
+	Phase 2 ::: CI/CD 	
+		Pipeline -- Workflow ::::		
+			Pipeline Stages ????			
+	
+	Phase 3 ::: Monitoring
+		
+
+
+			
+	Phase 1 ::: Infra-Structure & Tools
+			Launch all the required servers 
+			Install all the reqired Tools 	
+	
+	- How many VMs you need?
+	
+	
+	
+	- In each VM, what are all the tools you are gng to install?
+	- Integrate the VMs using SSH 
