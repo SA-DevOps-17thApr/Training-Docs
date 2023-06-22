@@ -93,3 +93,211 @@ Developers' Workload
 	
 	
 	- Integrate the VMs using SSH 
+	
+###############
+22nd June 2023
+###############
+	
+	
+			Ansible_controller ::
+			
+				Jenkins_Master			==> 	jdk,jenkins,git
+				Java_App_Build_Server	==> 	git,jdk,maven -- artifacts / docker? --> create docker img & publish to docker hub
+				Kubernetes_Master
+					Kubernetes_WorkerNode1
+					Kubernetes_WorkerNode2	
+					
+					
+		AC ==> To config --- all the req. servers.
+		
+	
+	scm-checkout 
+	build
+	deploy to qa 
+	
+	
+	Infra-Structure :::
+		
+		Use Terraform and Ansible ::::
+			To Provision and Configuration of the required servers and Tools.
+		
+
+	Continuous Development :::
+	
+		Local Machine ::: Windows
+			Eclipse IDE - web development --: 
+				Clone the Application Repo.
+				Selenium Test Cases 
+				JUnit/TestNG 
+				Push the updated source code to GITHUB Repo.
+						
+	CI/CD :::
+	
+		Create CICD Pipeline ::::
+		
+		Stages ::::
+		
+			1. SCM Checkout 				===>	Checkout the src_code into 
+			2. Build_Application 			===>	Application Build -- Compile & Create Aritfacts 
+			3. Build_Docker_Image			===> 	Create Docker Image based on Application Artifacts
+			4. Login_to_DockerHub
+			5. Publish_to_DockerHub
+			6. Deploy_to_Kubernetes			===> 	Manifest file - Deployment Object --> NodePort Service 
+			
+		Number of VMs :
+		
+			Ansible_controller ::
+			
+				Jenkins_Master			==> 	jdk,jenkins,git
+						Jenkins_Slave1	==> 	git,jdk,maven 	-- artifacts 	--> Publish the artifacts to Artifacts_Library(JFrog_Artifactory)
+						Jenkins_Slave2	==> 	git,python 		-- artifacts 	--> Publish the artifacts to Artifacts_Library
+						Jenkins_Slave3	==> 	git,Angular		-- artifacts 	--> Publish the artifacts to Artifacts_Library
+						
+				Docker_Build_Server		==>						-- Create Docker Image &  Publish to Dockerhub
+				
+				Kubernetes_Master
+					Kubernetes_WorkerNode1
+					Kubernetes_WorkerNode2			
+
+Discussions :::
+
+
+		Continuous Development :::
+		
+				Local Machine ::: Windows
+					Eclipse IDE - web development --: 
+						Clone the Application Repo.
+						Selenium Test Cases 
+						JUnit/TestNG 
+						Push the updated source code to GITHUB Repo.		src_code_proj_v1.0,src_code_proj_v1.1,src_code_proj_v1.2		
+						
+		Create CICD Pipeline Workflow ::::	
+		
+				Jenkins_Master			==> 	jdk,jenkins,git
+						Jenkins_Slave1	==> 	git,jdk,maven 	--> artifacts -> target/*.war ==> Publish it to Artifacts_Library(JFrog_Artifactory)
+																								  src_code_proj.war_v1.0
+																								  src_code_proj.war_v1.1
+																								  src_code_proj.war_v1.2
+																								  
+				Docker_Build_Server		==>		docker 			--> Create Docker Image:::  loksaieta/src_code_proj:v1.0 ==> Publish to Dockerhub	
+																							loksaieta/src_code_proj:v1.1 ==> Publish to Dockerhub
+																							loksaieta/src_code_proj:v1.2 ==> Publish to Dockerhub
+
+
+				
+				Kubernetes_Master								-->	Deploy loksaieta/src_code_proj:v1.0		Test the Web Application 	
+					Kubernetes_WorkerNode1						
+					Kubernetes_WorkerNode2		
+					
+					Namespace : default		-- Here all the pods will get deployed. 
+
+
+Recommendations ::::
+
+
+	Continuous Development :::
+	
+		Local Machine ::: Windows
+			Eclipse IDE - web development : 
+				Clone the Application Repo.
+				Selenium Test Cases 
+				JUnit/TestNG 
+				Push the updated source code to GITHUB Repo.
+
+		Steps ::::
+			
+			1.	Download Project as ZIP file.				
+			2.  Extract into folder 
+			3.  Open Eclipse 
+			4. 	Import Project from Local Drive
+			5.  Go to src folder, make some changes in source code
+			6.  Run the application - to test the application 
+			6.1 Use Selenium UseCase
+			7.  Goto Git Bash --> open the project folder
+			8.  git init 
+			8.1	Login to github and create empty git repo. for the proj.
+			9.  git remote add origin <remote github repo url>
+			10. git push -u origin
+	
+	Create CICD Pipeline Workflow ::::	
+	
+		Jenkins_Master			==> 	jdk,jenkins,git
+				Jenkins_Slave1	==> 	git,jdk,maven 	--> artifacts target/*.war	--> Create Docker Image --> Publish to Dockerhub
+				
+		Kubernetes_Master								-->	Deploy loksaieta/src_code_proj:v1.0		Test the Web Application 	
+			Kubernetes_WorkerNode1						
+			Kubernetes_WorkerNode2		
+			Namespace : default		-- Here all the pods will get deployed. 	
+	
+		Create CICD Pipeline ::::
+		
+		Stages ::::
+		
+			1. SCM Checkout 				===>	Checkout the src_code into 
+			2. Build_Application 			===>	Application Build -- Compile & Create Aritfacts 
+			3. Build_Docker_Image			===> 	Create Docker Image based on Application Artifacts
+			4. Login_to_DockerHub
+			5. Publish_to_DockerHub
+			6. Deploy_to_Kubernetes			===> 	Manifest file - Deployment Object --> NodePort Service 
+			
+			
+	Create CICD Pipeline Workflow ::::	
+	
+		Jenkins_Master			==> 	jdk,jenkins,git
+			
+			- Add Jenkins_Node Configuration
+			- Global Tool Configuration
+			- Docker File 					===> will be available in source code Repository.
+							docker build -t loksaieta/bnkingapp:latest .
+			- Login to dockerhub - Use Credential Manager to save the dockerhub credentials in jenkins
+			- Kubernetes Deployment -- Manifest file - Deployment Object --> NodePort Service ===> will be available in source code Repository.
+						Deploy to cluster.
+				
+			
+			
+			
+			- System Configuration 
+			
+				Jenkins_Slave1	==> 	git,jdk,maven 	--> artifacts target/*.war	--> Create Docker Image --> Publish to Dockerhub
+				
+
+docker run -it -p 8080:8080 loksaieta/loksai-eta-app:latest
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loksai-eta-deploy
+  labels:
+    app: loksai-eta-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: loksai-eta-app
+  template:
+    metadata:
+      labels:
+        app: loksai-eta-app
+    spec:
+      containers:
+      - name: loksai-eta-container
+        image: loksaieta/loksai-eta-app
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loksai-eta-np-service
+  labels:
+    app: loksai-eta-app
+spec:
+  selector:
+    app: loksai-eta-app
+
+  type: NodePort
+  ports:
+  - nodePort: 31000
+    port: 8080
+    targetPort: 8080
