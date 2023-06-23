@@ -301,3 +301,219 @@ spec:
   - nodePort: 31000
     port: 8080
     targetPort: 8080
+
+	
+	
+################
+23rd June. 2023 
+################
+
+
+			kubectl create -f kubernetesdeploy.yaml
+			
+			kubectl create -n dev -f kubernetesdeploy.yaml
+
+			kubectl apply -n dev -f kubernetesdeploy.yaml
+
+pipeline {
+    agent { label 'jappbuildserver1' }	
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "maven_3.6.3"
+    }
+
+	environment {	
+		DOCKERHUB_CREDENTIALS=credentials('dockerloginid')
+	} 
+    
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/LoksaiETA/BankingApp.git'
+                //git 'https://github.com/LoksaiETA/Java-mvn-app2.git'
+            }
+		}
+        stage('Maven Build') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+		}
+       stage("Docker build"){
+            steps {
+				sh 'docker version'
+				sh "docker build -t loksaieta/bankapp-eta-app:${BUILD_NUMBER} ."
+				sh 'docker image list'
+				sh "docker tag loksaieta/bankapp-eta-app:${BUILD_NUMBER} loksaieta/bankapp-eta-app:latest"
+            }
+        }
+		stage('Login2DockerHub') {
+
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+		stage('Push2DockerHub') {
+
+			steps {
+				sh "docker push loksaieta/bankapp-eta-app:latest"
+			}
+		}
+        stage('Deploy to Kubernetes Dev Environment') {
+            steps {
+		script {
+		sshPublisher(publishers: [sshPublisherDesc(configName: 'Kubernetes', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'kubectl apply -n dev -f kubernetesdeploy.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '*.yaml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+		       }
+            }
+    	}
+    }
+}
+		
+		
+Best Practices ::::
+	
+		-	Use Jenkinsfile in github repo. to maintain the pipeline scripts.
+		
+		-	Use Github webhook to automate the build pipeline trigger.
+		
+		- 	Continuos Delivery (vs) Deployment 
+				Introduce Approval Stage
+				
+		-	Send Email Notifications to the users(Developer/Testing Team) 	
+
+		-	Cleanup the Workspace in Jenkins Slave Machine
+					rm -rf /home/devopsadmin/workspace/*					
+			
+				Build Triggers ???		--> Schedule the cleanup job to run on daily/weekly basis
+				
+				Create a Jenkins_Job :
+						Cleanup_Job --> 
+
+pipeline {
+    agent { label 'jappbuildserver1' }	
+
+        stage('Cleanup_Workspace') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh "rm asdfasdfasdf"
+            }
+		}				
+	}
+}
+
+		Jenkins Scenario Based Questions::::
+		
+		GIT ???
+			Build Application :
+			
+			Manage Repository :::
+			
+			We have to create github repos. for devops Team.
+					To Manage and version controll all DevOps Scripts.
+						pipeline scripts
+						Ansible Playbooks
+						Kubernetes Manifest files & Scripts 
+						Dockerfile -->  to manage the server templating
+						
+						
+			Change in source code :::
+						
+		
+						
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+pipeline {
+    agent { label 'jappbuildserver1' }	
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "maven_3.6.3"
+    }
+
+	environment {	
+		DOCKERHUB_CREDENTIALS=credentials('dockerloginid')
+	} 
+    
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                git 'https://github.com/LoksaiETA/devops-java-webapp.git'
+                //git 'https://github.com/LoksaiETA/Java-mvn-app2.git'
+            }
+		}
+        stage('Maven Build') {
+            steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+		}
+       stage("Docker build"){
+            steps {
+				sh 'docker version'
+				sh "docker build -t loksaieta/loksai-eta-app:${BUILD_NUMBER} ."
+				sh 'docker image list'
+				sh "docker tag loksaieta/loksai-eta-app:${BUILD_NUMBER} loksaieta/loksai-eta-app:latest"
+            }
+        }
+        stage('Approve - Publish Image to dockerhub'){
+            steps{
+                
+                //----------------send an approval prompt-------------
+                script {
+                   env.APPROVED_DEPLOY = input message: 'User input required Choose "yes" | "Abort"'
+                       }
+                //-----------------end approval prompt------------
+            }
+        }
+		stage('Login2DockerHub') {
+
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+		stage('Push2DockerHub') {
+
+			steps {
+				sh "docker push loksaieta/loksai-eta-app:latest"
+			}
+		}
+        stage('Approve - Deploy to Kubernetes'){
+            steps{
+                
+                //----------------send an approval prompt-------------
+                script {
+                   env.APPROVED_DEPLOY = input message: 'User input required Choose "yes" | "Abort"'
+                       }
+                //-----------------end approval prompt------------
+            }
+        }
+        stage('Deploy to Kubernetes Cluster') {
+            steps {
+		script {
+		sshPublisher(publishers: [sshPublisherDesc(configName: 'Kubernetes', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'kubectl apply -n dev -f k8smvndeployment.yaml', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '*.yaml')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+		       }
+            }
+    	}
+    }
+}
+		
